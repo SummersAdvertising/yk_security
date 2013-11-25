@@ -1,0 +1,59 @@
+<%= javascript_include_tag 'peditor' %>
+
+<%= form_for([:admin, @instruction]) do |f| %>
+  <% if @instruction.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@instruction.errors.count, "error") %> prohibited this admin_instruction from being saved:</h2>
+
+      <ul>
+      <% @instruction.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+    <section class="title">
+      <table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <th><%= @instruction.created_at.strftime('%Y-%m-%d') %></th>
+          <td><%= f.text_field :title, :placeholder => '請輸入文章標題' %></td>
+        </tr>
+      </table>
+    </section>
+    <!--title-->
+  
+    <%= render :partial => 'admin/peditor/editor' %>
+    
+  <section class="button"> <a href="javascript: document.getElementsByTagName('form')[0].submit();"><img src="<%= image_path("save.png") %>">儲存</a> <a href="<%= admin_instruction_path(@instruction) %>"><img src="<%= image_path("cancel.png") %>">取消</a> </section>
+  
+	<%= fields_for @instruction.article do | a | %>
+	
+		<%= a.hidden_field :content, {:id => 'instruction_content'} %>
+	
+	<% end %>
+
+
+  
+<% end %>
+
+<script type="text/javascript">
+
+$(document).ready(function(){
+	editor.init({ articleModel: 'instruction', photoUpload: '../../peditor/<%= @instruction.article.id %>/createPhoto',p_selectList: [] });
+
+	$("#submit").click(function(e){
+		e.preventDefault();
+
+		if(!editor.isPostNotSent()){
+			$("#edit_article_<%= @instruction.article.id %>").submit();
+		}
+		else{
+			editor.alert("段落編輯尚未完成。", "error");
+		}
+		
+	});
+});
+
+</script>

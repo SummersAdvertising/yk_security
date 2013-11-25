@@ -1,0 +1,32 @@
+
+<%= form_for([:admin, @chapter]) do |f| %>
+<section class="text text-edit">
+  <div class="one">
+    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <th valign="top">分類名稱：</th>
+        <td> <%= f.text_field :title %></td>
+      </tr>
+    </table>
+  </div>
+</section>
+  <section class="button"> <a href="javascript: document.forms[0].submit();"><img src="<%= image_path("add.png") %>">新增分類</a> </section>
+  
+<% end %>
+<!--button-->
+<section class="list">
+  <table width="100%" border="0" cellspacing="0" cellpadding="0">  
+    <tr>
+      <th align="left">分類名稱</th>
+      <th align="left" class="x1">刪除</th>
+    </tr>
+    <% @chapters.each do |chapter| %>
+    <tr>
+      <td><a href="<%= admin_chapter_path(chapter) %>"> <%= chapter.title %> </a></td>
+      <td><%= link_to image_tag('delete.png'), admin_chapter_path(chapter), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+    <% end %>
+    </table>
+</section>
+<!--list-->
+  

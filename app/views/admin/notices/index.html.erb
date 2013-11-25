@@ -1,0 +1,30 @@
+<section class="button"> <%= link_to image_tag('add.png') + '刊登職缺', new_admin_notice_path %></section>
+<!--button-->
+<section class="list">
+  <table width="100%" border="0" cellspacing="0" cellpadding="0">
+    <tr>
+      <th align="left" class="x0 x1">狀態</th>
+      <th align="left" class="x0 x1">&nbsp;</th>
+      <th align="left" class="x0 x2">地區</th>
+      <th align="left">職務名稱<br></th>
+      <th align="left" class="x0 x1">編輯</th>
+      <th align="left" class="x1">刪除</th>
+    </tr>
+    
+    
+    <% @notices.each do |notice| %>
+        
+    <tr>
+      <td class="x0"><%= image_tag('fire.png') if notice.notice_type == 'wanted' %></td>
+      <td class="x0"><%= image_tag('man.png') if !notice.checked %></td>
+      <td class="x0"><%= notice.area %></td>
+      <td><a href="<%= admin_notice_path(notice) %>"><%= notice.title %></a></td>
+      <td class="x0"><%= link_to image_tag('edit.png'), edit_admin_notice_path( notice ) %></td>
+      <td class="x0"><%= link_to image_tag('delete.png'), admin_notice_path( notice ), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+    
+    <% end %>
+    
+  </table>
+</section>
+<!--list-->

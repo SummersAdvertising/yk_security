@@ -1,0 +1,31 @@
+# encoding: utf-8
+module RubyExtendsions      
+  module HashExtendsions      
+    def self.included(base)     #hook, 当这个module在被include的时候触发
+      base.send :include, InstanceMethods  #引入实例方法
+      base.send :extend, ClassMethods          # 引入类方法
+    end
+
+    module InstanceMethods
+    end#InstanceMethods
+
+    module ClassMethods
+      #TODO
+      def hash_reverse   #我们的hash_reverse是实例方法
+        puts 'this is test'
+        hash_new = {}
+        self.each {|key,value|
+          if not hash_new.has_key?(key) then hash_new[value] = key end
+        }
+        return hash_new
+      end
+    end#ClassMethods
+
+  end #HashExtendsions
+end #RubyExtendsions
+
+
+#真正的扩展
+class Hash
+  include RubyExtendsions::HashExtendsions
+end

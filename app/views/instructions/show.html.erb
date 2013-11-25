@@ -1,0 +1,43 @@
+
+<%= javascript_include_tag 'peditor' %>
+
+<%= render :partial => 'layouts/intro_menu' %>
+
+
+<article _height="auto" id="educate">
+  <section class="content">
+    <nav><a href="<%= root_url %>">首頁</a><span>></span><a>教育訓練</a></nav>
+    <div class="inner">
+      <div class="left">
+        <ul>
+        <% @instructions.each do | instruction | %>
+        	<li <%= 'class="active"'.html_safe if instruction.id == @instruction.id %>> <span><%= instruction.created_at.strftime('%Y年%m月%d日') %></span><br>
+            <a href="<%= instruction_path( instruction, :year => params[ :year ]) %>"><%= instruction.title %></a></li>
+        <% end %>
+          
+        </ul>
+        <div class="page"> <%= paginate @instructions %></div>
+        <div class="years"> 
+        	<a href="<%= instruction_path(@instruction ) %>" <%= 'class="active"'.html_safe if params[ :year ].nil? %>>全部</a>
+        <% @years.each do | year | %>
+        	<a href="<%= instructions_path( :year => year ) %>" <%= 'class="active"'.html_safe if year == params[ :year ] %>><%= year %> 年</a>
+        <% end %>
+        </div>
+      </div>
+      <div class="right">
+        <header><span class="date"><%= @instruction.created_at.strftime('%Y年%m月%d日') %></span>
+          <h3><%= @instruction.title %></h3>
+        </header>        
+        <article id="articleContent"></article>
+      </div>
+    </div>
+  </section>
+</article>
+
+
+<input id="article_content" style="display:none;" type="text" value="<%= @instruction.article.content %>">
+<script>
+	$(document).ready(function() {	
+		editor.output();	
+	});
+</script>

@@ -1,0 +1,14 @@
+
+<div id="banner" _height="none">
+ <section class="content">
+      <nav>
+      	<%= link_to params[ :page ] == 'about' ? '<img src="/images/ab-nav.png">'.html_safe : '關於誼光', page_pages_path( :page => 'about' ),:class => ( 'active'  if params[ :page ] == 'about' ) %>      	
+      	<%= link_to  params[ :page ] == 'office' ? '<img src="/images/of-nav.png">'.html_safe : '服務據點', page_pages_path( :page => 'office' ),:class => ( 'active'  if params[ :page ] == 'office' ) %>     
+
+      	<%= link_to params[ :controller ] == 'instructions' ? '<img src="/images/ed-nav.png">'.html_safe : '教育訓練', instructions_path,:class => ( 'active'  if params[ :controller ] == 'instructions' ) %>
+      	<%= link_to params[ :controller ] == 'prises' ? '<img src="/images/pr-nav.png">'.html_safe : '員工表揚', prises_path,:class => ( 'active'  if params[ :controller ] == 'prises' ) %>      	
+      	<%= link_to params[ :controller ] == 'notices' ? '<img src="/images/rc-nav.png">'.html_safe : '人員招募', notices_path,:class => ( 'active'  if params[ :controller ] == 'notices' ) %>      	
+      	<%= link_to params[ :controller ] == 'static_pages' && params[ :page ] == 'control' ? '<img src="/images/ct-nav.png">'.html_safe : '誼光管制中心', page_pages_path( :page => 'control' ),:class => ( 'active'  if params[ :controller ] == 'static_pages' && params[ :page ] == 'control') %>      	
+      	
+    </section>
+</div>

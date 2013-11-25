@@ -1,0 +1,166 @@
+
+<section class="hgroup">
+  <h2>職務內容</h2>
+</section>
+<!--hgroup-->
+<section class="title">
+  <table width="100%" border="0" cellspacing="0" cellpadding="0">
+    <tr>
+      <th>職務名稱</th>
+      <td><%= @notice.title %></td>
+    </tr>
+  </table>
+</section>
+<!--title-->
+
+<section class="text text-show">      
+  <div class="three">
+    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <th valign="top">工作待遇：<br></th>
+        <td><%= @notice.compensation %></td>
+      </tr>
+    </table>
+  </div>
+  <div class="three">
+    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <th valign="top">全／兼職：</th>
+        <td><%= @notice.job_type %></td>
+      </tr>
+    </table>
+  </div>
+  <div class="three">
+    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <th valign="top">上班地點：<br></th>
+        <td><%= @notice.area %></td>
+      </tr>
+    </table>
+  </div>
+  <div class="three">
+    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <th valign="top">上班時段：</th>
+        <td><%= @notice.shift %></td>
+      </tr>
+    </table>
+  </div>
+  <div class="three">
+    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <th valign="top">休假制度：<br></th>
+        <td><%= @notice.holiday %></td>
+      </tr>
+    </table>
+  </div>
+  <div class="three">
+    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <th valign="top">工作經驗：<br></th>
+        <td><%= @notice.experience %></td>
+      </tr>
+    </table>
+  </div>
+  <div class="three">
+    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <th valign="top">學歷要求：<br></th>
+        <td><%= @notice.educated %></td>
+      </tr>
+    </table>
+  </div>
+  <div class="three">
+    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <th valign="top">其他條件：<br></th>
+        <td><%= @notice.comment %></td>
+      </tr>
+    </table>
+  </div>
+  <div class="three">
+    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <th valign="top">急徵：<br></th>
+        <td><%= @notice.notice_type == 'wanted' ? '是' : '否' %></td>
+      </tr>
+    </table>
+  </div>
+  <div class="one">
+    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <th valign="top">工作內容：<br></th>
+        <td><%= @notice.content.gsub("\n", '<br>').html_safe %></td>
+      </tr>
+    </table>
+  </div>
+</section>
+<!--text-->
+
+<section class="hgroup">
+  <h2>聯絡窗口</h2>
+</section>
+<!--hgroup-->
+
+<section class="text text-show">
+  <div class="half">
+    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <th valign="top">聯絡人：<br></th>
+        <td><%= @notice.contact_name %></td>
+      </tr>
+    </table>
+  </div>
+  <div class="half">
+    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <th valign="top">電話：<br></th>
+        <td><%= @notice.contact_phone %></td>
+      </tr>
+    </table>
+  </div>
+  <div class="half">
+    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <th valign="top">Email：<br></th>
+        <td><%= @notice.contact_email %></td>
+      </tr>
+    </table>
+  </div>
+  <div class="half">
+    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <th valign="top">地址：<br></th>
+        <td><%= @notice.contact_address %></td>
+      </tr>
+    </table>
+  </div>      
+</section>
+<!--text-->
+
+<section class="button"> <a href="<%= edit_admin_notice_path( @notice ) %>"><img src="<%= image_path("edit.png") %>">編輯</a> <a href="<%= admin_notices_path %>"><img src="<%= image_path("back.png") %>">返回</a> </section>
+<!--button--> 
+
+<section class="hgroup">
+  <h2>應徵者列表</h2>
+</section>
+<!--hgroup-->
+
+<section class="list">
+  <table width="100%" border="0" cellspacing="0" cellpadding="0">
+    <tr>
+      <th align="left" class="x0 x2">日期</th>
+      <th align="left">姓名<br></th>
+      <th align="left" class="x1">刪除</th>
+    </tr>
+  <% @notice.recruits.each do | recruit | %>
+    <tr>
+      <td class="x0"><%= recruit.created_at.strftime('%Y-%m-%d') %></td>
+      <td> <%= image_tag('man.png') if !recruit.checked %> <%= link_to recruit.name, admin_notice_recruit_path( @notice, recruit ) %> </td>
+      <td><%= link_to image_tag('delete.png'), admin_notice_recruit_path( @notice, recruit ), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+  <% end %>
+  </table>
+</section>
+<!--list-->
+    

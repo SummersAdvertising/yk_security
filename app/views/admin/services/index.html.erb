@@ -1,0 +1,54 @@
+
+<section class="button"><%= link_to image_tag('add.png') + '新增' , admin_services_path, :method => :post %>  </section>
+<!--button-->
+<section class="hgroup">
+  <h2>文章列表</h2>      
+</section>
+<!--hgroup-->
+<section class="list">
+  <table width="100%" border="0" cellspacing="0" cellpadding="0">
+    <tr>
+      <th align="left" class="x0 x2">日期</th>
+      <th align="left">標題</th>
+      <th align="left" class="x0 x1">編輯</th>
+      <th align="left" class="x1">刪除</th>
+    </tr>
+    
+    <% @regular_services.each do |service| %>
+    <tr>
+      <td class="x0"><%= service.created_at.strftime('%Y-%m-%d') %></td>
+      <td><a href="<%= admin_service_path( service ) %>"> <%= service.title %></a></td>
+      <td class="x0"><a href="<%= edit_admin_service_path( service ) %>"><img src="<%= image_path('edit.png') %>" /></a></td>
+      <td><%= link_to image_tag('delete.png'),  admin_service_path( service ) , method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+    
+    <% end %>
+  </table>
+</section>
+<!--list-->
+<section class="hgroup">
+  <h2>連結列表</h2>      
+</section>
+<!--hgroup-->
+<section class="list">
+  <table width="100%" border="0" cellspacing="0" cellpadding="0">
+    <tr>
+      <th align="left" class="x0 x2">日期</th>
+      <th align="left">標題</th>
+      <th align="left" class="x0 x1">編輯</th>
+      <th align="left" class="x1">刪除</th>
+    </tr>
+    
+    
+    <% @external_services.each do |service| %>
+    <tr>
+      <td class="x0"><%= service.created_at.strftime('%Y-%m-%d') %></td>
+      <td><a href="<%= admin_service_path( service ) %>"> <%= service.title %></a></td>
+      <td class="x0"><a href="<%= edit_admin_service_path( service ) %>"><img src="<%= image_path("edit.png") %>"></a></td>
+      <td><%= link_to image_tag('delete.png'),  admin_service_path( service ) , method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+    
+    <% end %>
+  </table>
+</section>
+<!--list-->    

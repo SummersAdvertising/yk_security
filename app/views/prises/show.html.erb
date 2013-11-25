@@ -1,0 +1,42 @@
+<%= render :partial => 'layouts/intro_menu' %>
+
+<article _height="auto" id="praise">
+  <section class="content">
+    <nav><a href="<%= root_url %>">首頁</a><span>></span><a>員工表揚</a></nav>
+    <div class="inner">
+      <div class="left">
+        <ul>
+        <% @prises.each do | prise | %>
+        	<li <%= 'class="active"'.html_safe if prise.id == @prise.id %> ><a href="<%= prise_path(prise, :year => params[ :year ]) %>"><%= prise.title %></a></li>
+        <% end %>
+          
+        </ul>
+        <div class="page"> <%= paginate @prises %> </div>
+        <div class="years"> 
+	        <a href="<%= prise_path(@prise ) %>" <%= 'class="active"'.html_safe if params[ :year ].nil? %>>全部</a>
+        <% @years.each do | year | %>
+        	<a href="<%= prises_path(:year => year ) %>" <%= 'class="active"'.html_safe if year == params[ :year ] %>><%= year %> 年</a>
+        <% end %>
+            
+        </div>
+      </div>
+      <div class="right">
+        <header>
+          <h3><%= @prise.title %></h3>
+        </header>
+        <article>
+          	<% @prise.honorees.each do | honoree | %>          		
+	          <table width="100%" border="0" cellspacing="0" cellpadding="0">
+	            <tr>
+	              <th width="34%" valign="top"><img src="<%= honoree.cover %>"></th>
+	              <td width="66%" valign="top"><span><%= honoree.area %></span><br>
+	                <b><%= honoree.name %></b><br>
+	                <p><%= honoree.content %></p></td>
+	            </tr>
+	          </table>
+          	<% end %>
+          </article>
+      </div>
+    </div>
+  </section>
+</article>

@@ -1,0 +1,75 @@
+<%= render :partial => 'layouts/intro_menu' %>
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr>
+  <th align="left" class="x0 x1">狀態</th>
+  <th align="left" class="x0 x1">&nbsp;</th>
+  <th align="left" class="x0 x2">地區</th>
+  <th align="left">職務名稱<br></th>
+  <th align="left" class="x0 x1">編輯</th>
+  <th align="left" class="x1">刪除</th>
+</tr>
+
+
+<% @notices.each do |notice| %>
+    
+<tr>
+  <td class="x0"><%= image_tag('fire.png') if notice.notice_type == 'wanted' %></td>
+  <td class="x0"><%= image_tag('man.png') if !notice.checked %></td>
+  <td class="x0"><%= notice.area %></td>
+  <td><a href="<%= notice_path(notice) %>"><%= notice.title %></a></td>
+  <td class="x0"><%= link_to image_tag('edit.png'), edit_admin_notice_path( notice ) %></td>
+  <td class="x0"><%= link_to image_tag('delete.png'), admin_notice_path( notice ), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+</tr>
+
+<% end %>
+
+</table>
+
+
+<div style="display:none">
+  <section id="inline_content">
+    <h3>我對此工作有興趣</h3>
+    <p>請填寫個人資料，誼光保全將會由專人與您聯繫。 <b>*為必填欄位</b></p>
+    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <th width="12%" align="right">應徵職務<b>*</b></th>
+        <td width="38%"><input name="" type="text" class="text"></td>
+        <th width="12%" align="right">性別<b>*</b></th>
+        <td width="38%"><input name="" type="checkbox" value="">男  <input name="" type="checkbox" value="">女</td>
+      </tr>
+      <tr>
+        <th align="right">姓名<b>*</b></th>
+        <td><input name="" type="text" class="text"></td>
+        <th align="right">生日<b>*</b></th>
+        <td class="birth">民國 <input name="" type="text" class="text"> 年 <input name="" type="text" class="text"> 月 <input name="" type="text" class="text"> 日</td>
+      </tr>
+      <tr>
+        <th align="right">電話<b>*</b></th>
+        <td><input name="" type="text" class="text"></td>
+        <th align="right">地址<b>*</b></th>
+        <td><input name="" type="text" class="text"></td>
+      </tr>
+      <tr>
+        <th align="right">email<b>*</b></th>
+        <td><input name="" type="text" class="text"></td>
+        <th align="right">學歷<b>*</b></th>
+        <td><input name="" type="text" class="text"></td>
+      </tr>
+      <tr>
+        <th align="right">工作經驗</th>
+        <td colspan="3"><input name="" type="text" class="text"></td>
+      </tr>
+      <tr>
+        <th align="right" valign="top" style="padding-top:5px">自傳</th>
+        <td colspan="3"><textarea name="" cols="" rows=""></textarea></td>
+      </tr>
+    </table>
+    <input name="" type="button" class="button">
+  </section>
+
+<script>
+$(document).ready(function(){
+	$(".inline").colorbox({inline:true, width:"800"});	
+});
+</script>

@@ -1,0 +1,26 @@
+
+<section class="list">
+  <table width="100%" border="0" cellspacing="0" cellpadding="0">
+    <tr>
+      <th align="left" class="x0 x2">日期</th>
+      <th align="left">公司名稱</th>
+      <th align="left" class="x0 x2">姓名</th>
+      <th align="left" class="x1">刪除</th>
+    </tr>
+    
+    <% @tickets.each do |ticket| %>
+	    <tr>
+	      <td class="x0"><%= ticket.created_at.strftime('%Y-%m-%d') %></td>
+	      <td><a href="<%= admin_ticket_path( ticket ) %>"> <%= ticket.company %> </a></td>
+	      <td class="x0"> <%= ticket.name %></td>
+	      <td><%= link_to image_tag('delete.png'), admin_ticket_path( ticket ), :method => :delete, data: { confirm: "確定刪除 #{ticket.name} 的留言嗎？" } %></td>
+	    </tr>
+    <% end %>
+  </table>
+</section>
+<!--list-->
+<section class="page">
+<%= paginate @tickets %>
+</section>
+<!--page-->
+ 

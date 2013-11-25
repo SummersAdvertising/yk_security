@@ -1,0 +1,167 @@
+<%= javascript_include_tag "jquery.colorbox-min", "data-turbolinks-track" => true %>
+<%= javascript_include_tag "jquery.validate", "data-turbolinks-track" => true %>
+
+<%= render :partial => 'layouts/intro_menu' %>
+
+
+<article _height="auto" id="recruit">
+  <section class="content">
+    <nav><a href="<%= root_url %>">首頁</a><span>></span><a>人員招募</a></nav>
+    <div class="inner">
+      <div class="left">
+      	<ul>
+      	<% @notices.each do | notice | %>      		
+        <li class=" <%= 'active' if notice.id == @notice.id %> <%= 'fire' if notice.notice_type == 'wanted' %>">
+	        <span><%= notice.area %></span><br>
+	        <a href="<%= notice_path( notice ) %>"><%= notice.title %></a>
+        </li>
+      	<% end %>
+        </ul>
+        <div class="page">
+	        <%= paginate @notices %>
+        </div>
+      </div>
+      <div class="right">
+      <header <%= 'class="fire"'.html_safe if @notice.notice_type == 'wanted' %>>
+      <span class="date"><%= @notice.area %></span>
+      <h3><%= @notice.title %></h3>
+      <a href="#inline_content" class="inline">我要應徵</a>
+      </header>
+      <article>
+      <table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td><b>工作內容：</b><br>
+    <%= @notice.content.gsub("\n", '<br>').html_safe %>
+    </td>
+  </tr>
+  <tr>
+    <td><b>工作待遇：</b><%= @notice.compensation %></td>
+  </tr>
+  <tr>
+    <td><b>全職/兼職：</b><%= @notice.job_type %></td>
+  </tr>
+  <tr>
+    <td><b>上班地點：</b><%= @notice.area %></td>
+  </tr>
+  <tr>
+    <td><b>上班時段：</b><%= @notice.shift %></td>
+  </tr>
+  <tr>
+    <td><b>休假制度：</b><%= @notice.holiday %></td>
+  </tr>
+  <tr>
+    <td><b>工作經驗：</b><%= @notice.experience %></td>
+  </tr>
+  <tr>
+    <td><b>學歷要求：</b><%= @notice.educated %></td>
+  </tr>
+  <tr>
+    <td><b>其他條件：</b><%= @notice.comment %></td>
+  </tr>
+  <tr>
+    <td><b>應徵方式：</b><br>
+    <p class="contact">
+    聯絡人：<%= @notice.contact_name %><br>
+電話： <%= @notice.contact_phone %><br>
+地址：<%= @notice.contact_address %><br>
+email：<a href="mailto:<%= @notice.contact_email %>" target="_blank"><%= @notice.contact_email %></a> </p></td>
+  </tr>
+</table>
+
+      </article>
+      </div>
+    </div>
+  </section>
+</article>
+
+
+<hr>
+
+
+
+<div style="display:none">
+  <section id="inline_content">
+  <%= form_for([@notice, @recruit]) do |f| %>
+  
+    <h3>我對此工作有興趣</h3>
+    <p>請填寫個人資料，誼光保全將會由專人與您聯繫。 <b>*為必填欄位</b></p>
+    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <th width="12%" align="right">應徵職務<b>*</b></th>
+        <td width="38%"><%= @notice.title %></td>
+        <th width="12%" align="right">性別<b>*</b></th>
+        <td width="38%">
+	        <%= f.radio_button :sex, '男性' %><%= f.label :sex, '男性', :value => '男性' %> <%= f.radio_button :sex, '女性' %><%= f.label :sex, '女性', :value => '女性' %>
+    	</td>
+      </tr>
+      <tr>     
+        <th align="right"><%= f.label :name %><b>*</b></th>
+        <td><%= f.text_field :name, :class => 'text' %></td>
+        <th align="right">生日<b>*</b></th>
+        <td class="birth">民國 <input name="recruit[birthday][year]" type="text" class="text"> 年 <input name="recruit[birthday][month]" type="text" class="text"> 月 <input name="recruit[birthday][day]" type="text" class="text"> 日</td>
+      </tr>
+      <tr>
+        <th align="right"><%= f.label :phone, '電話' %><b>*</b></th>
+        <td><%= f.text_field :phone, :class => 'text' %></td>
+        <th align="right"><%= f.label :phone, '地址' %><b>*</b></th>
+        <td><%= f.text_field :address, :class => 'text' %></td>
+      </tr>
+      <tr>
+        <th align="right"><%= f.label :email, 'Email' %><b>*</b></th>
+        <td><%= f.text_field :email, :class => 'text' %></td>
+        <th align="right"><%= f.label :educated, '學歷' %><b>*</b></th>
+        <td><%= f.text_field :educated, :class => 'text' %></td>
+      </tr>
+      <tr>
+        <th align="right"><%= f.label :experience, '工作經驗' %></th>
+        <td colspan="3"><%= f.text_field :experience, :class => 'text' %></td>
+      </tr>
+      <tr>
+        <th align="right" valign="top" style="padding-top:5px"><%= f.label :brief, '自傳' %></th>
+        <td colspan="3"><%= f.text_area :brief %></td>
+      </tr>
+    </table>
+    <%= f.submit '' ,:class => 'button' %>
+    <% end %>
+  </section>
+
+<script>
+$(document).ready(function(){
+	$(".inline").colorbox({inline:true, width:"800"});	
+	
+	// validate signup form on keyup and submit
+	$("#new_recruit").validate({
+		rules: {
+			'recruit[name]': "required",
+			'recruit[sex]': "required",
+			'recruit[phone]': {
+				required: true
+			},
+			'recruit[email]': {
+				required: true,
+				email: true
+			},
+			'recruit[birthday][year]': "required",
+			'recruit[birthday][month]': "required",
+			'recruit[birthday][day]': "required",
+			'recruit[address]': "required",
+			'recruit[educated]': "required"
+			
+		},
+		messages: {
+			'recruit[name]': "請輸入您的名字",
+			'recruit[sex]': "請選擇性別",
+			'recruit[phone]': {
+				required: "請輸入有效的電話號碼"
+			},
+			'recruit[email]': "請輸入有效的電子信箱",
+			'recruit[birthday][year]': "",
+			'recruit[birthday][month]': "",
+			'recruit[birthday][day]': "",
+			'recruit[address]': "請輸入您的聯絡地址",
+			'recruit[educated]': "請輸入您的最高學歷"
+		}
+	});
+	
+});
+</script>

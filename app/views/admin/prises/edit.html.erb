@@ -1,0 +1,36 @@
+
+<%= render 'form' %>
+
+
+<section class="hgroup">
+  <h2>文章預覽</h2>
+</section>
+<!--hgroup-->
+
+<section class="text-show text">
+  <% @prise.honorees.each do | honoree | %>
+  <% next if !honoree.valid? %>
+  <div class="one">
+    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <th width="150" rowspan="3" valign="top"><img src="<%= honoree.cover %>" width="150" height="150"></th>
+        <th width="80" valign="top">地區：</th>
+        <td width="275" valign="top"><%= honoree.area %></td>
+        <td width="16" valign="top"><%= link_to image_tag('delete.png'), admin_prise_honoree_path( @prise, honoree ), method: :delete, data: { confirm: '是否刪除表揚 ' + honoree.name } %></td>
+      </tr>
+      <tr>
+        <th valign="top">姓名：</th>
+        <td valign="top"><%= honoree.name %></td>
+        <td valign="top">&nbsp;</td>
+      </tr>
+      <tr>
+        <th valign="top">內文：</th>
+        <td valign="top"><%= honoree.content.gsub("\n", '<br>') %></td>
+        <td valign="top">&nbsp;</td>
+      </tr>
+    </table>
+  </div>
+  <% end %>
+</section>
+<!--text--> 
+

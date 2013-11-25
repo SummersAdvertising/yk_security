@@ -1,0 +1,25 @@
+<h1>Listing peditor_tests</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @peditor_tests.each do |peditor_test| %>
+      <tr>
+        <td><%= link_to 'Show', peditor_test %></td>
+        <td><%= link_to 'Edit', edit_peditor_test_path(peditor_test) %></td>
+        <td><%= link_to 'Destroy', peditor_test, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Peditor test', new_peditor_test_path %>

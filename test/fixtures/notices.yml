@@ -1,0 +1,37 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  title: MyString
+  area: MyString
+  content: MyText
+  compensation: MyString
+  job_type: MyString
+  shift: MyString
+  holiday: MyString
+  experience: MyString
+  educated: MyString
+  comment: MyString
+  contact_name: MyString
+  contact_phone: MyString
+  contact_address: MyText
+  contact_email: MyString
+  notice_type: MyString
+  status: MyString
+
+two:
+  title: MyString
+  area: MyString
+  content: MyText
+  compensation: MyString
+  job_type: MyString
+  shift: MyString
+  holiday: MyString
+  experience: MyString
+  educated: MyString
+  comment: MyString
+  contact_name: MyString
+  contact_phone: MyString
+  contact_address: MyText
+  contact_email: MyString
+  notice_type: MyString
+  status: MyString

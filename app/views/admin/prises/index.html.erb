@@ -1,0 +1,27 @@
+
+<section class="button"> <a href="<%= new_admin_prise_path %>"><img src="<%= image_path('add.png') %>">新增月份</a> </section>
+<!--button-->
+<section class="list">
+  <table width="100%" border="0" cellspacing="0" cellpadding="0">
+    <tr>
+      <th align="left" class="x0 x2">月份</th>
+      <th align="left">標題</th>
+      <th align="left" class="x0 x1">編輯</th>
+      <th align="left" class="x1">刪除</th>
+    </tr>
+    
+    <% @prises.each do |prise| %>
+    <tr>
+      <td class="x0"><%= prise.month.strftime('%Y-%m') %></td>
+      <td><a href="<%= edit_admin_prise_path( prise ) %>"> <%= prise.title %></a></td>
+      <td class="x0"><a href="<%= edit_admin_prise_path(prise) %>"><img src="<%= image_path("edit.png") %>"></a></td>
+      <td><%= link_to image_tag('delete.png'), admin_prise_path( prise ), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+    <% end %>
+  </table>
+</section>
+<!--list-->
+<section class="page">
+<%= paginate @prises %>
+</section>
+

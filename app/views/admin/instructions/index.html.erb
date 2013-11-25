@@ -1,0 +1,25 @@
+<section class="button"><%= link_to image_tag('add.png') + '新增文章' , admin_instructions_path, :method => :post %>  </section><!--button-->
+<section class="list">
+  <table width="100%" border="0" cellspacing="0" cellpadding="0">
+    <tr>
+      <th align="left" class="x0 x2">日期</th>
+      <th align="left">標題</th>
+      <th align="left" class="x0 x1">編輯</th>
+      <th align="left" class="x1">刪除</th>
+    </tr>
+    
+    <% @instructions.each do |instruction| %>
+    <tr>
+      <td class="x0">2013-03-05</td>
+      <td><%= link_to instruction.title, admin_instruction_path(instruction) %></td>
+      <td class="x0"><a href="<%=  edit_admin_instruction_path(instruction) %>"><img src="<%= image_path("edit.png") %>"></a></td>
+      <td><%= link_to  image_tag('delete.png'), admin_instruction_path(instruction), method: :delete, data: { confirm: 'Are you sure?' }  %></td>
+    </tr>
+    <% end %>
+  </table>
+</section>
+<!--list-->
+<section class="page">
+  <%= paginate @instructions %>
+</section>
+<!--page-->

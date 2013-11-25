@@ -1,0 +1,6 @@
+
+        <ul>
+        <% @chapters.each do | chapter | %>
+          <li class="<%= 'active' if chapter.id == @chapter.id %>"><%= link_to chapter.title, chapter_path( chapter ) %></li>
+        <% end %>
+        </ul>

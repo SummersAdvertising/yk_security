@@ -1,0 +1,30 @@
+<section class="hgroup">
+  <h2>文章列表</h2> 
+  <p>／<%= @chapter.title %></p>     
+</section>
+<section class="button"> <a href="<%= new_admin_chapter_knowledge_path(@chapter) %>"><img src="<%= image_path("add.png") %>">新增文章</a> </section>
+<!--button-->
+<section class="list">
+  <table width="100%" border="0" cellspacing="0" cellpadding="0">
+    <tr>
+      <th align="left" class="x0 x2">日期</th>
+      <th align="left">標題</th>
+      <th align="left" class="x0 x1">編輯</th>
+      <th align="left" class="x1">刪除</th>
+    </tr>
+    <% @knowledges.each do | knowledge | %>
+    <tr>
+      <td class="x0"><%= knowledge.created_at.strftime('%Y-%m-%d') %></td>
+      <td><a href="<%= admin_chapter_knowledge_path( @chapter, knowledge ) %>"> <%= knowledge.title %></a></td>
+      <td class="x0"><a href="<%= edit_admin_chapter_knowledge_path( @chapter, knowledge ) %>"><img src="<%= image_path("edit.png") %>"></a></td>
+      <td><%= link_to image_tag('delete.png'), admin_chapter_knowledge_path(@chapter, knowledge), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+    <% end %>
+    </table>
+</section>
+<section class="page">
+  <%= paginate @knowledges %>
+</section>
+<!--list-->
+<section class="button"> <a href="<%= admin_chapters_path %>"><img src="<%= image_path("back.png") %>">返回</a> </section>
+<!--button-->

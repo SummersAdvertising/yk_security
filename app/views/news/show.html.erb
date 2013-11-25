@@ -1,0 +1,34 @@
+<%= javascript_include_tag 'peditor' %>
+
+<article _height="auto" id="news">
+  <section class="content">
+    <nav><a href="<%= root_url %>">首頁</a><span>></span><a>最新消息</a></nav>
+    <div class="inner">
+      <div class="left">
+        <ul>
+        <% @newses.each do | news | %>        	
+          <li class="<%= 'active' if news.id == @news.id %>"> <span><%= news.created_at.strftime('%Y年%m月%d日') %></span><br>
+            <a href="<%= news_path( news ) %>"><%= news.title %></a></li>
+        <% end %>
+        </ul>
+        <div class="page"> <%= paginate @newses %> </div>        
+      </div>
+      <div class="right">
+        <header><span class="date"><%= @news.created_at.strftime('%Y年%m月%d日') %></span>
+          <h3><%= @news.title %></h3>
+        </header>        
+        <article id="articleContent">
+        	        
+        </article>
+      </div>
+    </div>
+  </section>
+</article>
+
+
+<input id="article_content" style="display:none;" type="text" value="<%= @news.article.content %>">
+<script>
+	$(document).ready(function() {	
+		editor.output();	
+	});
+</script>

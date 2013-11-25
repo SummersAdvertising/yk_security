@@ -1,0 +1,28 @@
+<%= javascript_include_tag 'peditor' %>
+
+ <section class="title">
+  <table width="100%" border="0" cellspacing="0" cellpadding="0">
+    <tr>
+      <th><%= @instruction.created_at.strftime('%Y-%m-%d')%></th>
+      <td><%= @instruction.title %></td>
+    </tr>
+  </table>
+</section>
+<!--title-->    
+<section class="hgroup">
+  <h2>文章內文</h2>      
+</section>
+<!--hgroup-->
+<section class="text text-show" id="articleContent">      
+</section>
+<!--text-->
+<section class="button"> <a href="<%= edit_admin_instruction_path(@instruction) %>"><img src="<%= image_path("edit.png") %>">編輯</a> <a href="<%= admin_instructions_path %>"><img src="<%= image_path("back.png") %>">返回</a> </section>
+<!--button-->
+    
+
+<input id="article_content" style="display:none;" type="text" value="<%= @instruction.article.content %>">
+<script>
+	$(document).ready(function() {	
+		editor.output();	
+	});
+</script>

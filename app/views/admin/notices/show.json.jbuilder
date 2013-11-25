@@ -1,0 +1,1 @@
+json.extract! @notice, :title, :area, :content, :compensation, :job_type, :shift, :holiday, :experience, :educated, :comment, :contact_name, :contact_phone, :contact_address, :contact_email, :notice_type, :status, :created_at, :updated_at

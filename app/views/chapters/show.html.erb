@@ -1,0 +1,26 @@
+
+
+<div id="banner" _height="none">
+  <section class="content">
+    <nav><a class="active"><img src="/images/ep-nav.png"></a></nav>
+  </section>
+</div>
+
+<article _height="auto" id="encyclopedia">
+  <section class="content">
+    <nav><a href="<%= root_url %>">首頁</a><span>></span><a>保全百科</a></nav>
+    <div class="inner">
+      <div class="left">
+      <%= render :partial => 'chapters/list' %>
+      </div>
+      <div class="right">
+      <ul>
+      <% @knowledges.each do | knowledge | %>
+      	<li><%= link_to knowledge.title, chapter_knowledge_path( @chapter, knowledge ) %></li>
+      <% end %>
+      </ul>
+      <div class="page"><%= paginate @knowledges %></div>
+      </div>
+    </div>
+  </section>
+</article>

@@ -1,0 +1,157 @@
+
+/*-----------------------------------------------------------------------員工表揚---*/
+
+#praise .left li{text-align:center}
+#praise .left li a{color:#222}
+#praise .left li a:hover{color:#c70000}
+#praise .left .active a{color:#c70000;font-weight:900}
+
+#praise .right h3{height:132px;background:url(/images/pr-title.png) 0 0 no-repeat;padding:35px 0 0 90px}
+#praise .right table{margin: 0 0 40px 0}
+#praise .right th img{border:5px solid #E9E9E9;width:100%;max-width:178px;height:auto}
+#praise .right td{padding:0 0 0 15px}
+#praise .right td span{color:#ff5a00}
+#praise .right td b{font:900 28px 微軟正黑體,Microsoft JhengHei}
+
+/*-----------------------------------------------------------------------服務據點---*/
+
+#office .grid { float: left; height: 60px; width: 180px; margin: 15px; font-size: 12px; line-height: 1.7em; color: #555 }
+#office .grid b { font-size: 14px; color: #000 }
+#office .content { background: url(/images/of-bg.png) 55px 60px no-repeat }
+#office .inner { width: 630px; margin: 70px 0 0 360px }
+
+/*-----------------------------------------------------------------------管制中心---*/
+
+#control .content { background: url(/images/ct-bg.jpg) 0 155px no-repeat }
+#control .inner { width: 580px; padding: 0 0 350px 0 }
+
+/*-----------------------------------------------------------------------關於誼光---*/
+
+#about { background: url(/images/ab-bg.jpg) center 105px no-repeat }
+#about .inner { width: 580px; padding: 0 0 500px 0 }
+
+/*-----------------------------------------------------------------------人員招募---*/
+
+#recruit .left li{padding-left:30px!important}
+#recruit .left .fire{background:url(/images/rc-fire.gif) 0 center no-repeat}
+#recruit .left .active a{color:#c70000}
+#recruit .left li span{font-size:13px}
+#recruit .left li a{color:#005191}
+
+#recruit .right header{position:relative;height:100px}
+#recruit .right header a{position:absolute;right:0;top:30px;width:113px;height:30px;display:block;text-indent:-9999px;background:url(/images/rc-a.png)}
+#recruit .right header a:hover{background:url(/images/rc-ah.png)}
+#recruit .right header h3{font-size:35px}
+#recruit .right .fire{background:url(/images/rc-fire.gif) 2px 28px no-repeat;}
+#recruit .right .fire h3{padding:0 0 0 30px;}
+
+#recruit .right article b{color:#fa6a00;font-weight:900}
+#recruit .right article td{padding:5px 0}
+#recruit .right article .contact{background:#FFF9D8;padding:15px}
+
+#inline_content b{color:#e40505}
+#inline_content h3{color:#e40505;font:900 26px 微軟正黑體,Microsoft JhengHei}
+#inline_content table{margin:10px 0}
+#inline_content th{padding:0 15px 0 0}
+#inline_content td{padding:5px 0}
+#inline_content input.text,
+#inline_content textarea{border:3px solid #FCEDBB;border-radius:5px;width:100%;padding:5px}
+#inline_content textarea{min-height:150px}
+#inline_content .birth input.text{width:50px}
+#inline_content .button{display:block;background:url(/images/rc-b.jpg) 0 0 no-repeat;width:441px;margin:0 auto;height:41px;border:none;cursor:pointer}
+#inline_content .button:hover{background:url(/images/rc-bh.jpg) 0 0 no-repeat}
+
+input.error { border-color: red!important; }
+
+label.error { 
+width: 268px;
+height: 4px;
+text-align: right;
+margin: -30px 0 0 2px;
+overflow: hidden;
+display: block;
+position: absolute;
+color: red;
+}
+
+label.error:hover { height: inherit;}
+
+/*-----------------------------------------------------------------------教育訓練---*/
+
+#educate .left li span{font-size:13px;color:#747474}
+#educate .left li a{color:#222}
+#educate .left li a:hover{color:#c70000}
+#educate .left .active a{color:#c70000}
+
+#educate .right header{height:100px}
+#educate .right img{width:100%;max-width:544px;height:auto}
+
+/*-----------------------------------------------------------------------最新消息---*/
+
+#news .right h3{color:#005191}
+#news .right .date{color:#747474}
+
+#news .left li span{color:#747474}
+#news .left li a{color:#222}
+#news .left li a:hover{color:#c70000}
+#news .left .active a{color:#c70000}
+
+/*-----------------------------------------------------------------------服務項目---*/
+
+#service .grid{display:block;float:left;width:220px;height:175px;border:3px solid #00344F;
+margin:0 5px 50px 5px;position:relative}
+#service .grid img{width:214px;height:169px}
+#service .grid h4{background:#1479B0;background:rgba(21,122,176,.9);width:100%;position:absolute;
+bottom:0;left:0;padding:10px 0 0 10px;height:45px;color:#fff;font:900 22px 微軟正黑體,Microsoft JhengHei;
+-webkit-transition:all ease .3s;-moz-transition:all ease .3s;text-shadow:0 -1px 0 #236B91,0 1px 0 #539FC6}
+#service .grid:hover h4{height:55px;}
+
+#service .left ul{border:none;padding:10px}
+#service .left ul li{border:none;padding:10px 0}
+#service .left h3{font:900 31px 微軟正黑體,Microsoft JhengHei;color:#ff5a00}
+
+/*-----------------------------------------------------------------------保全百科---*/
+
+#encyclopedia .left{width:230px}
+#encyclopedia .left ul{border:none;padding:0}
+#encyclopedia .left li{padding:10px 0}
+#encyclopedia .left li a{color:#9f9f9f;font-size:20px}
+#encyclopedia .left li a:hover,
+#encyclopedia .left .active a{color:#c70000}
+#encyclopedia .left .active{background:url(/images/ep-01.jpg) right center no-repeat}
+
+#encyclopedia .right{width:645px}
+#encyclopedia .right li a{color:#4f4f4f}
+#encyclopedia .right li{background:url(/images/ep-02.jpg) 0 center no-repeat;padding:5px 0 5px 20px}
+#encyclopedia .right li a:hover{text-decoration:underline}
+
+#encyclopedia .right .page{margin:50px 0 0 0}
+#encyclopedia .right .page a{margin:0 5px 0 0}
+
+#encyclopedia .right h3{color:#005191}
+
+/*-----------------------------------------------------------------------連絡誼光---*/
+
+#form p{height:75px}
+#form .left{text-align:right}
+#form .left h3{color:#005191;padding:15px 0 0 0}
+#form .right th{text-align:right;padding:0 15px 0 0;font-weight:300}
+#form .right td{padding:10px 0}
+#form .right .text{width:100%;border:5px solid #FCEDBB;border-radius:5px;padding:5px}
+#form .right span{font-size:13px;padding:0 0 0 90px}
+#form .right span a{color:#005191;font-size:13px;text-decoration:underline}
+
+#form .button{display:block;background:url(/images/rc-b.jpg) 0 0 no-repeat;width:441px;height:41px;border:none;cursor:pointer;margin:50px 0 0 0}
+#form .button:hover{background:url(/images/rc-bh.jpg) 0 0 no-repeat}
+
+/*-----------------------------------------------------------------------事業體表列---*/
+
+#enterprise p{width:710px}
+#enterprise h3{margin:50px 0 0 0}
+#enterprise img{margin:0 auto}
+#enterprise .image-box{width:710px;text-align:center}
+
+/*-----------------------------------------------------------------------客戶表列---*/
+
+#client{background:url(/images/cl-bg.jpg) 90% bottom no-repeat}
+#client h4{color:#1d5d93;font:900 18px 微軟正黑體,Microsoft JhengHei;margin:20px 0 0 0}

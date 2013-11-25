@@ -1,0 +1,44 @@
+<%= javascript_include_tag 'peditor' %>
+
+<%= form_for([:admin,@chapter, @knowledge]) do |f| %>
+
+    <section class="title">
+      <table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <th><%= @knowledge.created_at.strftime('%Y-%m-%d') %></th>
+          <td><%= f.text_field :title, :placeholder => '請輸入文章標題' %></td>
+        </tr>
+      </table>
+    </section>
+  
+    <%= render :partial => 'admin/peditor/editor' %>
+  
+	<%= fields_for @knowledge.article do | a | %>
+	
+		<%= a.hidden_field :content, {:id => 'knowledge_content'} %>
+	
+	<% end %>
+
+<section class="button"> <a href="javascript: document.getElementsByTagName('form')[0].submit();"><img src="<%= image_path("save.png") %>">儲存</a> <a href="<%= admin_chapter_knowledge_path(@chapter, @knowledge) %>"><img src="<%= image_path("cancel.png") %>">取消</a> </section>
+  
+<% end %>
+
+<script type="text/javascript">
+
+$(document).ready(function(){
+	editor.init({ articleModel: 'knowledge', photoUpload: '/admin/peditor/<%= @knowledge.article.id %>/createPhoto',p_selectList: [] });
+
+	$("#submit").click(function(e){
+		e.preventDefault();
+
+		if(!editor.isPostNotSent()){
+			$("#edit_article_<%= @knowledge.article.id %>").submit();
+		}
+		else{
+			editor.alert("段落編輯尚未完成。", "error");
+		}
+		
+	});
+});
+
+</script>

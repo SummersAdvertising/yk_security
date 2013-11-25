@@ -1,0 +1,146 @@
+
+<%= form_for([:admin, @notice]) do |f| %>
+<section class="hgroup">
+  <h2>職務內容</h2>
+</section>
+<!--hgroup-->
+<section class="title">
+  <table width="100%" border="0" cellspacing="0" cellpadding="0">
+    <tr>
+      <th>職務名稱</th>
+      <td><%= f.text_field :title, :placeholder => "請輸入職務名稱" %></td>
+    </tr>
+  </table>
+</section>
+<!--title-->
+
+<section class="text text-edit">      
+
+  <div class="three">
+    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <th valign="top"><%= f.label :compensation, '工作待遇：' %><br></th>
+        <td><%= f.text_field :compensation %></td>
+      </tr>
+    </table>
+  </div>
+  <div class="three">
+    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <th valign="top"><%= f.label :job_type, '全／兼職：' %></th>
+        <td><%= f.text_field :job_type %></td>
+      </tr>
+    </table>
+  </div>
+  <div class="three">
+    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <th valign="top"><%= f.label :area, '上班地點：' %><br></th>
+        <td><%= f.text_field :area %></td>
+      </tr>
+    </table>
+  </div>
+  <div class="three">
+    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <th valign="top"><%= f.label :shift, '上班時段：' %></th>
+        <td><%= f.text_field :shift %></td>
+      </tr>
+    </table>
+  </div>
+  <div class="three">
+    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <th valign="top"><%= f.label :holiday, '休假制度：' %><br></th>
+        <td><%= f.text_field :holiday %></td>
+      </tr>
+    </table>
+  </div>
+  <div class="three">
+    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <th valign="top"><%= f.label :experience, '工作經驗：' %><br></th>
+        <td><%= f.text_field :experience %></td>
+      </tr>
+    </table>
+  </div>
+  <div class="three">
+    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <th valign="top"><%= f.label :educated, '學歷要求：' %><br></th>
+        <td><%= f.text_field :educated %></td>
+      </tr>
+    </table>
+  </div>
+  <div class="three">
+    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <th valign="top"><%= f.label :comment, '其他條件：' %><br></th>
+        <td><%= f.text_field :comment %></td>
+      </tr>
+    </table>
+  </div>
+  <div class="three">
+    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <th valign="top"><%= f.label :notice_type, '急徵：' %><br></th>
+        <td><%= f.check_box :notice_type, { :class => 'checkbox' }, [ :wanted ] %></td>
+      </tr>
+    </table>
+  </div>
+  <div class="one">
+    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <th valign="top"><%= f.label :content, '工作內容：' %><br></th>
+        <td><%= f.text_area :content %></td>
+      </tr>
+    </table>
+  </div>
+</section>
+<!--text-->
+
+<section class="hgroup">
+  <h2>聯絡窗口</h2>
+</section>
+<!--hgroup-->
+
+<section class="text text-edit">
+  <div class="half">
+    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <th valign="top"><%= f.label :contact_name, '聯絡人：' %><br></th>
+        <td><%= f.text_field :contact_name %></td>
+      </tr>
+    </table>
+  </div>
+  <div class="half">
+    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <th valign="top"><%= f.label :contact_phone, '電話：' %><br></th>
+        <td><%= f.text_field :contact_phone %></td>
+      </tr>
+    </table>
+  </div>
+  <div class="half">
+    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <th valign="top"><%= f.label :job_type, 'Email：' %><br></th>
+        <td><%= f.text_field :contact_email %></td>
+      </tr>
+    </table>
+  </div>
+  <div class="half">
+    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <th valign="top"><%= f.label :contact_address, '地址：' %><br></th>
+        <td><%= f.text_field :contact_address %></td>
+      </tr>
+    </table>
+  </div>      
+</section>
+<!--text-->
+
+<section class="button"> <a href="javascript: document.forms[0].submit();"><img src="<%= image_path('save.png') %>">儲存</a> <a href="<%= admin_notices_path %>"><img src="<%= image_path('cancel.png') %>">取消</a> </section>
+<!--button-->
+
+<% end %>

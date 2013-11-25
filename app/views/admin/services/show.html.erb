@@ -1,0 +1,57 @@
+<%= javascript_include_tag 'peditor' %>
+
+ <section class="title">
+  <table width="100%" border="0" cellspacing="0" cellpadding="0">
+    <tr>
+      <th><%= @service.created_at.strftime('%Y-%m-%d')%></th>
+      <td><%= @service.title %></td>
+    </tr>
+  </table>
+</section>
+<!--title-->    
+<section class="hgroup">
+  <h2>文章封面</h2>      
+</section>
+<!--hgroup-->
+<section class="text text-show">  
+  <div class="one">
+    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+      <tr>            
+        <td><img src="<%= @service.cover %>"></td>
+      </tr>
+    </table>
+  </div>
+</section>
+<!--text-->
+
+
+<section class="hgroup">
+  <h2>左側列表</h2>
+</section>
+<!--hgroup-->
+<section class="text text-show">
+  <div class="part"> 
+  	<ul>
+  	<% @service.items.each_with_index do | item, key | %>
+      <li><%= "#{key+1}. #{item}" %></li>
+  	<% end %>
+    </ul>
+  </div>      
+</section>
+
+<section class="hgroup">
+  <h2>文章內文</h2>
+</section>
+<!--hgroup-->
+<section class="text text-show" id="articleContent"></section>
+<!--text-->
+<section class="button"> <a href="<%= edit_admin_service_path(@service) %>"><img src="<%= image_path("edit.png") %>">編輯</a> <a href="<%= admin_services_path %>"><img src="<%= image_path("back.png") %>">返回</a> </section>
+<!--button-->
+    
+
+<input id="article_content" style="display:none;" type="text" value="<%= @service.article.content %>">
+<script>
+	$(document).ready(function() {	
+		editor.output();	
+	});
+</script>

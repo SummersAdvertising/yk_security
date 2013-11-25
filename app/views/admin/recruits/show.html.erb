@@ -1,0 +1,86 @@
+
+<section class="hgroup">
+  <h2>應徵者資料</h2>
+</section>
+<!--hgroup-->
+<section class="title">
+  <table width="100%" border="0" cellspacing="0" cellpadding="0">
+    <tr>
+      <th><%= @recruit.created_at.strftime('%Y-%m-%d') %></th>
+      <td><%= @recruit.name %></td>
+    </tr>
+  </table>
+</section>
+<!--title-->
+
+<section class="text text-show">
+  <div class="one">
+    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <th valign="top">性別：<br></th>
+        <td><%= @recruit.sex %></td>
+      </tr>
+    </table>
+  </div>
+  <div class="one">
+    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <th valign="top">生日：</th>
+        <td><%= @recruit.birthday %></td>
+      </tr>
+    </table>
+  </div>
+  <div class="one">
+    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <th valign="top">電話：<br></th>
+        <td><%= @recruit.phone %></td>
+      </tr>
+    </table>
+  </div>
+  <div class="one">
+    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <th valign="top">Email：</th>
+        <td><%= @recruit.email %></td>
+      </tr>
+    </table>
+  </div>
+  <div class="one">
+    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <th valign="top">地址：<br></th>
+        <td><%= @recruit.address %></td>
+      </tr>
+    </table>
+  </div>
+  <div class="one">
+    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <th valign="top">學歷：</th>
+        <td><%= @recruit.educated.gsub("\n", '<br>') %></td>
+      </tr>
+    </table>
+  </div>
+  <div class="one">
+    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <th valign="top">工作經驗：</th>
+        <td><%= @recruit.experience.gsub("\n", '<br>') %></td>
+      </tr>
+    </table>
+  </div>
+  <div class="one">
+    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <th valign="top">自傳：</th>
+        <td><%= @recruit.brief.gsub("\n", '<br>') %></td>
+      </tr>
+    </table>
+  </div>
+  
+</section>
+<!--text-->
+
+<section class="button"> <a href="<%= admin_notice_path( @notice ) %>"><img src="<%= image_path "back.png"%>">返回</a> </section>
+<!--button--> 

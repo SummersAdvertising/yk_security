@@ -1,0 +1,49 @@
+<h1>Listing recruits</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Notice</th>
+      <th>Sex</th>
+      <th>Birthday</th>
+      <th>Phone</th>
+      <th>Address</th>
+      <th>Email</th>
+      <th>Educated</th>
+      <th>Experience</th>
+      <th>Brief</th>
+      <th>Status</th>
+      <th>Checked</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @recruits.each do |recruit| %>
+      <tr>
+        <td><%= recruit.name %></td>
+        <td><%= recruit.notice_id %></td>
+        <td><%= recruit.sex %></td>
+        <td><%= recruit.birthday %></td>
+        <td><%= recruit.phone %></td>
+        <td><%= recruit.address %></td>
+        <td><%= recruit.email %></td>
+        <td><%= recruit.educated %></td>
+        <td><%= recruit.experience %></td>
+        <td><%= recruit.brief %></td>
+        <td><%= recruit.status %></td>
+        <td><%= recruit.checked %></td>
+        <td><%= link_to 'Show', recruit %></td>
+        <td><%= link_to 'Edit', edit_recruit_path(recruit) %></td>
+        <td><%= link_to 'Destroy', recruit, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Recruit', new_recruit_path %>

@@ -1,0 +1,33 @@
+<%= javascript_include_tag 'peditor' %>
+
+
+<div id="banner" _height="none">
+  <section class="content">
+    <nav><a class="active"><img src="/images/ep-nav.png"></a></nav>
+  </section>
+</div>
+
+<article _height="auto" id="encyclopedia">
+  <section class="content">
+    <nav><a href="<%= root_url %>">首頁</a><span>></span><a href="<%= chapters_path %>">保全百科</a><span>></span><a><%= @knowledge.title %></a></nav>
+    <div class="inner">
+      <div class="left">
+      <%= render :partial => 'chapters/list' %>
+      </div>
+      <div class="right">
+     <a href="<%= chapter_path( @chapter ) %>" class="back">回到文章列表</a>
+     <h3><%= @knowledge.title %></h3>
+      <p id="articleContent" ></p>
+<a href="<%= chapter_path( @chapter ) %>" class="back">回到上一層</a>
+      </div>
+    </div>
+  </section>
+</article>
+
+
+<input id="article_content" style="display:none;" type="text" value="<%= @knowledge.article.content %>">
+<script>
+	$(document).ready(function() {	
+		editor.output();	
+	});
+</script>

@@ -1,0 +1,65 @@
+<%= form_for([@notice, @recruit]) do |f| %>
+  <% if @recruit.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@recruit.errors.count, "error") %> prohibited this recruit from being saved:</h2>
+
+      <ul>
+      <% @recruit.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :notice_id %><br>
+    <%= f.number_field :notice_id %>
+  </div>
+  <div class="field">
+    <%= f.label :sex %><br>
+    <%= f.text_field :sex %>
+  </div>
+  <div class="field">
+    <%= f.label :birthday %><br>
+    <%= f.text_field :birthday %>
+  </div>
+  <div class="field">
+    <%= f.label :phone %><br>
+    <%= f.text_field :phone %>
+  </div>
+  <div class="field">
+    <%= f.label :address %><br>
+    <%= f.text_field :address %>
+  </div>
+  <div class="field">
+    <%= f.label :email %><br>
+    <%= f.text_field :email %>
+  </div>
+  <div class="field">
+    <%= f.label :educated %><br>
+    <%= f.text_field :educated %>
+  </div>
+  <div class="field">
+    <%= f.label :experience %><br>
+    <%= f.text_field :experience %>
+  </div>
+  <div class="field">
+    <%= f.label :brief %><br>
+    <%= f.text_area :brief %>
+  </div>
+  <div class="field">
+    <%= f.label :status %><br>
+    <%= f.text_field :status %>
+  </div>
+  <div class="field">
+    <%= f.label :checked %><br>
+    <%= f.check_box :checked %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
