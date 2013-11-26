@@ -59,7 +59,7 @@ gem 'capistrano-ext'
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
-gem 'devise'
+gem 'devise', github: 'plataformatec/devise'
 gem 'carrierwave'
 gem 'mini_magick'
 
