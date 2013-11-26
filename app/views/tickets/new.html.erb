@@ -1,3 +1,9 @@
+<% if !flash[ :notice ].nil? %>
+	<script>
+		alertify.alert('<%= flash[ :notice ] %>');
+	</script>
+<% end %>
+
 <%= form_for(@ticket) do |f| %>
 
 <div id="banner" _height="none">

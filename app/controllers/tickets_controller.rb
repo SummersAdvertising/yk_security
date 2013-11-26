@@ -1,3 +1,4 @@
+# encoding: utf-8
 class TicketsController < ApplicationController
   before_action :set_ticket, only: [:show, :edit, :update, :destroy]
 
@@ -23,12 +24,12 @@ class TicketsController < ApplicationController
 
   # POST /tickets
   # POST /tickets.json
-  def create
+  def create  
     @ticket = Ticket.new(ticket_params)
 
     respond_to do |format|
       if @ticket.save
-        format.html { redirect_to new_ticket_path(@ticket), notice: 'Ticket was successfully created.' }
+        format.html { redirect_to new_ticket_path, notice: '感謝您的聯絡，請等候服務專員聯絡！' }
         format.json { render action: 'show', status: :created, location: @ticket }
       else
         format.html { render action: 'new' }
@@ -69,6 +70,6 @@ class TicketsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def ticket_params
-      params.require(:ticket).permit(:name, :company, :phone, :mobile, :address, :email, :services, :status)
+      params.require(:ticket).permit(:name, :company, :phone, :mobile, :address, :email, {:services => [] }, :status)
     end
 end

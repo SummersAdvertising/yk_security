@@ -53,7 +53,13 @@
     <table width="100%" border="0" cellspacing="0" cellpadding="0">
       <tr>
         <th valign="top">需求</th>
-        <td><%= @ticket.services %></td>
+        <td>
+        	<ol style="list-style: inherit;">
+        	<% @ticket.services.each do | service | %>
+        		<li><%= service %></li>
+        	<% end %>
+        	</ol>
+        </td>
       </tr>
     </table>
   </div>
