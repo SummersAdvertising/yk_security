@@ -2,7 +2,7 @@
   <h2>文章列表</h2> 
   <p>／<%= @chapter.title %></p>     
 </section>
-<section class="button"> <a href="<%= new_admin_chapter_knowledge_path(@chapter) %>"><img src="<%= image_path("add.png") %>">新增文章</a> </section>
+<section class="button"><%= link_to image_tag('add.png') + '新增文章' , admin_chapter_knowledges_path(@chapter), :method => :post %>  </section>
 <!--button-->
 <section class="list">
   <table width="100%" border="0" cellspacing="0" cellpadding="0">

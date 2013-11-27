@@ -22,7 +22,7 @@ class Admin::InstructionsController < AdminController
     @instruction.save
 
     respond_to do |format|
-        format.html { redirect_to edit_admin_instruction_path(@instruction), notice: '最新消息已建立.' }
+        format.html { redirect_to edit_admin_instruction_path(@instruction), notice: '教育訓練已建立.' }
         format.json { render action: 'show', status: :created, location: @instruction }
     end
   end

@@ -10,17 +10,14 @@
 <meta name="Robots" content="index,follow"/>
 <meta http-equiv="content-language" content="zh-TW" />
 <title>誼光保全後台管理系統</title>
-  <%= stylesheet_link_tag    "admin", media: "all", "data-turbolinks-track" => true %>
-   
-  
-  <%= stylesheet_link_tag    "rwd/mobile", media: "screen and (max-width: 543px)", "data-turbolinks-track" => true %>
-  <%= stylesheet_link_tag    "rwd/tablet", media: "screen and (min-width: 544px) and (max-width: 896px)", "data-turbolinks-track" => true %>
-  <%= stylesheet_link_tag    "rwd/desktop", media: "screen and (min-width: 897px)", "data-turbolinks-track" => true %>
-   
-  <%= stylesheet_link_tag    "admin/custom", media: "all", "data-turbolinks-track" => true %>
-  
-  
-  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+	<link rel="stylesheet" href="/css/reset.css">
+	<link rel="stylesheet" href="/css/default.css">
+	<link rel="stylesheet" media="screen and (max-width: 543px)" href="/css/mobile.css" />
+	<link rel="stylesheet" media="screen and (min-width: 544px) and (max-width: 896px)" href="/css/tablet.css" />
+	<link rel="stylesheet" media="screen and (min-width: 897px)" href="/css/desktop.css" />
+	<link rel="stylesheet" href="/css/custom.css">
+	<link rel="stylesheet" href="/css/alertify.css" />
+	<link rel="stylesheet" href="/css/alertify.default.css"/>
   <%= csrf_meta_tags %>
   
   <script>
@@ -38,12 +35,12 @@
 
 <body>
 <header _height="none">
-  <section id="top"> <a id="nav-ctrl"><img src="images/nav.png"></a>
+  <section id="top"> <a id="nav-ctrl"><img src="/images/nav.png"></a>
     <div class="left">
       <h1><a href="#">誼光保全後台管理系統</a></h1>
     </div>
     <!--left-->
-    <aside> <a id="aside-ctrl"><img src="images/set.png"></a>
+    <aside> <a id="aside-ctrl"><img src="/images/set.png"></a>
       <div id="aside-box"> <a href="system-setting.html">修改個人資料</a> <a href="#">登出</a> <a href="http://www.summers.com.tw/">返回首頁</a> </div>
     </aside>
   </section>

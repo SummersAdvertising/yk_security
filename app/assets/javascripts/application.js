@@ -16,5 +16,4 @@
 //= require jquery.ui.sortable
 //= require jquery.ui.datepicker
 //= require alertify
-//= require turbolinks
 //= require_tree ./common

@@ -1,5 +1,5 @@
 
-<section class="button"> <a href="<%= new_admin_prise_path %>"><img src="<%= image_path('add.png') %>">新增月份</a> </section>
+<section class="button"> <%= link_to image_tag('add.png') + '新增月份' , admin_prise_path, :method => :post %> </section>
 <!--button-->
 <section class="list">
   <table width="100%" border="0" cellspacing="0" cellpadding="0">
