@@ -12,5 +12,4 @@
  *= require reset.css
  *= require alertify/core
  *= require alertify/default
- *= require_tree ./common
- */
+  */
