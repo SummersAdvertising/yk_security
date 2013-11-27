@@ -1,6 +1,14 @@
 class NewsController < ApplicationController
 	def index
-		redirect_to News.all.order( :created_at => :desc )	.first
+		@news = News.all.order( :created_at => :desc ).first
+		
+		respond_to do | format |			
+			if @news.nil?
+				format.html{ render :template => 'layouts/empty' }
+			else
+				redirect_to @news
+			end
+		end
 	end
 
 	def show

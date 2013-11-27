@@ -3,10 +3,20 @@ class InstructionsController < ApplicationController
 	before_filter :get_years
 
 	def index
+		
 		if params[ :year ].nil?
-			redirect_to Instruction.all.order( :created_at => :desc ).first
+			@instruction = Instruction.all.order( :created_at => :desc ).first
 		else
-			redirect_to instruction_path(Instruction.all.order( :created_at => :desc ).group_by{ | p | p.created_at.strftime('%Y') }[ params[ :year ] ].first, :year => params[ :year ])
+			@instruction = Instruction.all.order( :created_at => :desc ).group_by{ | p | p.created_at.strftime('%Y') }[ params[ :year ] ].first
+		end
+			
+		
+		respond_to do | format |			
+			if @instruction.nil?
+				format.html{ render :template => 'layouts/empty' }
+			else
+				redirect_to prise_path(@instruction, :year => params[ :year ])
+			end
 		end
 		
 	end

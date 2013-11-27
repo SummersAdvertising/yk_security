@@ -1,6 +1,16 @@
 class NoticesController < ApplicationController
 	def index
-		redirect_to Notice.all.order( :created_at => :desc ).first
+	
+		@notice = Notice.all.order( :created_at => :desc ).first
+		
+		respond_to do | format |			
+			if @notice.nil?
+				format.html{ render :template => 'layouts/empty' }
+			else
+				redirect_to @notice
+			end
+		end
+
 	end
 	
 	def show

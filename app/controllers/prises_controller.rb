@@ -4,9 +4,18 @@ class PrisesController < ApplicationController
 	
 	def index
 		if params[ :year ].nil?
-			redirect_to Prise.all.order( :month => :desc ).first
+			@prise = Prise.all.order( :month => :desc ).first
 		else
-			redirect_to prise_path(Prise.all.order( :month => :desc ).group_by{ | p | p.month.strftime('%Y') }[ params[ :year ] ].first, :year => params[ :year ])
+			@prise = Prise.all.order( :month => :desc ).group_by{ | p | p.month.strftime('%Y') }[ params[ :year ] ].first
+		end
+			
+		
+		respond_to do | format |			
+			if @prise.nil?
+				format.html{ render :template => 'layouts/empty' }
+			else
+				redirect_to prise_path(@prise, :year => params[ :year ])
+			end
 		end
 		
 	end
