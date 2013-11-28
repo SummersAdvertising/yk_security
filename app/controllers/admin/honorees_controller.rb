@@ -8,7 +8,7 @@ class Admin::HonoreesController < AdminController
 		@honoree.destroy
 
 		respond_to do | format |
-			format.html { redirect_to edit_admin_prise_path( @prise ), notice: '刪除表揚 #{name} 已完成。' }
+			format.html { redirect_to edit_admin_prise_path( @prise ), notice: "刪除表揚 #{name} 已完成。" }
 		end
 
 	end

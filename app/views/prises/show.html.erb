@@ -31,7 +31,7 @@
 	              <th width="34%" valign="top"><img src="<%= honoree.cover %>"></th>
 	              <td width="66%" valign="top"><span><%= honoree.area %></span><br>
 	                <b><%= honoree.name %></b><br>
-	                <p><%= honoree.content %></p></td>
+	                <p><%= honoree.content.gsub("\n", '<br />').html_safe %></p></td>
 	            </tr>
 	          </table>
           	<% end %>

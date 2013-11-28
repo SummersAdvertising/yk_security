@@ -25,7 +25,7 @@
       </tr>
       <tr>
         <th valign="top">內文：</th>
-        <td valign="top"><%= honoree.content.gsub("\n", '<br>') %></td>
+        <td valign="top"><%= honoree.content.gsub("\n", '<br>').html_safe %></td>
         <td valign="top">&nbsp;</td>
       </tr>
     </table>

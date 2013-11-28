@@ -4,7 +4,7 @@ class HonoreeUploader < CarrierWave::Uploader::Base
 
   # Include RMagick or MiniMagick support:
   # include CarrierWave::RMagick
-  # include CarrierWave::MiniMagick
+   include CarrierWave::MiniMagick
 
   # Include the Sprockets helpers for Rails 3.1+ asset pipeline compatibility:
   # include Sprockets::Helpers::RailsHelper
@@ -34,6 +34,8 @@ class HonoreeUploader < CarrierWave::Uploader::Base
   # def scale(width, height)
   #   # do something
   # end
+  
+    process :resize_to_fill => [300, 300]
 
   # Create different versions of your uploaded files:
   # version :thumb do
