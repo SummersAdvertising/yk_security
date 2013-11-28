@@ -1,3 +1,5 @@
+<%= javascript_include_tag "jquery.validate", "data-turbolinks-track" => true %>
+
 <% if !flash[ :notice ].nil? %>
 	<script>
 		alertify.alert('<%= flash[ :notice ] %>');
@@ -80,3 +82,25 @@
 </article>
 
 <% end %>
+
+<script>
+$(document).ready(function(){
+	// validate signup form on keyup and submit
+	$("#new_ticket").validate({
+		rules: {
+			'ticket[name]': "required",
+			'ticket[phone]': {
+				required: true
+			},
+			
+		},
+		messages: {
+			'ticket[name]': "請輸入您的名字",
+			'ticket[phone]': {
+				required: "請輸入聯絡電話"
+			}
+		}
+	});
+	
+});
+</script>

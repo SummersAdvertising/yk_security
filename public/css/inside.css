@@ -144,6 +144,8 @@ bottom:0;left:0;padding:10px 0 0 10px;height:45px;color:#fff;font:900 22px 微�
 #form .button{display:block;background:url(/images/rc-b.jpg) 0 0 no-repeat;width:441px;height:41px;border:none;cursor:pointer;margin:50px 0 0 0}
 #form .button:hover{background:url(/images/rc-bh.jpg) 0 0 no-repeat}
 
+#new_ticket label.error { width: 440px;  }
+
 /*-----------------------------------------------------------------------事業體表列---*/
 
 #enterprise p{width:710px}
@@ -155,3 +157,10 @@ bottom:0;left:0;padding:10px 0 0 10px;height:45px;color:#fff;font:900 22px 微�
 
 #client{background:url(/images/cl-bg.jpg) 90% bottom no-repeat}
 #client h4{color:#1d5d93;font:900 18px 微軟正黑體,Microsoft JhengHei;margin:20px 0 0 0}
+
+
+
+/*-----------------------------------------------------------------------For Peditors---*/
+#articleContent div {
+	margin: 12px auto;
+}
