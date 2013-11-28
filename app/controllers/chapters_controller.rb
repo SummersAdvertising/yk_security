@@ -2,12 +2,14 @@ class ChaptersController < ApplicationController
 	def index
 		@chapter = Chapter.all.order( :created_at => :desc ).first
 		
-		if @chapter.nil?
-			format.html{ render :template => 'layouts/empty' }
-		else
-			redirect_to @chapter
-		end
 		
+		respond_to do | format |
+			if @chapter.nil?
+				format.html{ render :template => 'layouts/empty' }
+			else
+				format.html{ redirect_to @chapter }
+			end
+		end
 	end
 	
 	def show

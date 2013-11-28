@@ -10,12 +10,13 @@ class InstructionsController < ApplicationController
 			@instruction = Instruction.all.order( :created_at => :desc ).group_by{ | p | p.created_at.strftime('%Y') }[ params[ :year ] ].first
 		end
 				
-		if @instruction.nil?
-			format.html{ render :template => 'layouts/empty' }
-		else
-			redirect_to instruction_path(@instruction, :year => params[ :year ])
+		respond_to do | format |
+			if @instruction.nil?
+				format.html{ render :template => 'layouts/empty' }
+			else
+				format.html{ redirect_to instruction_path(@instruction, :year => params[ :year ]) }
+			end
 		end
-		
 	end
 	
 	def show

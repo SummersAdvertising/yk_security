@@ -11,7 +11,7 @@ class Admin::NoticesController < AdminController
   # GET /notices/1.json
   def show
   	@notice.check if @notice.recruits.where(:checked => false).count <= 0
-  	@recruits = @notice.recruits.all.order( "checked desc, created_at desc" )
+  	@recruits = @notice.recruits.order( "checked desc, created_at desc" ).all
   end
 
   # GET /notices/new
@@ -60,7 +60,7 @@ class Admin::NoticesController < AdminController
   def destroy
     @notice.destroy
     respond_to do |format|
-      format.html { redirect_to notices_url }
+      format.html { redirect_to admin_notices_url }
       format.json { head :no_content }
     end
   end

@@ -9,10 +9,12 @@ class PrisesController < ApplicationController
 			@prise = Prise.all.order( :month => :desc ).group_by{ | p | p.month.strftime('%Y') }[ params[ :year ] ].first
 		end
 			
-		if @prise.nil?
-			format.html{ render :template => 'layouts/empty' }
-		else
-			redirect_to prise_path(@prise, :year => params[ :year ])
+		respond_to do | format |
+			if @prise.nil?
+				format.html{ render :template => 'layouts/empty' }
+			else
+				format.html{ redirect_to prise_path(@prise, :year => params[ :year ]) }
+			end
 		end
 		
 	end
