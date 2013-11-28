@@ -3,7 +3,7 @@ class NewsController < ApplicationController
 		@news = News.all.order( :created_at => :desc ).first
 		
 		respond_to do | format |
-		format.html {render :template => 'layouts/empty' }
+		format.html 
 			if @news.nil?
 				format.html {render :template => 'layouts/empty' }
 			else
