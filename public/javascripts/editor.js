@@ -133,8 +133,11 @@ var editor = {
 		if(upload){
 			article.push(upload);
 		}
-
+		
+		
 		$("#"+editor.settings.articleModel+"_"+editor.settings.articleAttr).val(editor.filter(JSON.stringify(article), editor.parsequot));
+
+		$(editor.settings.articleSection).trigger('peditor_updated');
 
 		editor.save(editor.ajaxupdate);
 	},

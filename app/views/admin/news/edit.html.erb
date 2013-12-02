@@ -57,6 +57,10 @@ $(document).ready(function(){
 			editor.alert("段落編輯尚未完成。", "error");
 		}
 		
+		$('#articleContent').bind('peditor_updated', function() {
+			$('#main').height('inherit')
+		})
+		
 	});
 });
 

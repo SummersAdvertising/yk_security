@@ -58,6 +58,11 @@ $(document).ready(function(){
 		}
 		
 	});
+	
+	$('#articleContent').bind('peditor_updated', function() {
+		$('#main').height('inherit')
+	})
+	
 });
 
 </script>

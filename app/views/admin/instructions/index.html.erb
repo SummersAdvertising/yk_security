@@ -10,7 +10,7 @@
     
     <% @instructions.each do |instruction| %>
     <tr>
-      <td class="x0">2013-03-05</td>
+      <td class="x0"><%= instruction.created_at.strftime('%Y-%m-%d') %></td>
       <td><%= link_to instruction.title, admin_instruction_path(instruction) %></td>
       <td class="x0"><a href="<%=  edit_admin_instruction_path(instruction) %>"><img src="<%= image_path("edit.png") %>"></a></td>
       <td><%= link_to  image_tag('delete.png'), admin_instruction_path(instruction), method: :delete, data: { confirm: 'Are you sure?' }  %></td>
