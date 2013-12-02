@@ -1,7 +1,15 @@
 <%= javascript_include_tag "jquery.colorbox-min", "data-turbolinks-track" => true %>
 <%= javascript_include_tag "jquery.validate", "data-turbolinks-track" => true %>
 
+
+<% if !flash[ :notice ].nil? %>
+	<script>
+		alertify.alert('<%= flash[ :notice ] %>');
+	</script>
+<% end %>
+
 <%= render :partial => 'layouts/intro_menu' %>
+
 
 
 <article _height="auto" id="recruit">
