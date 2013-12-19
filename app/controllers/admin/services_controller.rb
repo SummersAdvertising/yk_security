@@ -105,7 +105,7 @@ class Admin::ServicesController < AdminController
     # Never trust parameters from the scary internet, only allow the white list through.
     def service_params
       atts = params.require(:service).permit(:title, {:items => []},:cover, :content, :external_link, :status, {:article_attributes => [ :content ]}, :id )
-      atts['items'] = atts['items'].reject!( &:empty? )
+      atts['items'] = atts['items'].reject { | i | i.length <= 0 }
       
       atts
       
