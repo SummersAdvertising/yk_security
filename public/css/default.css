@@ -129,7 +129,7 @@ border-radius:5px;width:202px;margin:0 auto}
 /*-----------------------------------------------------------------------欄位---*/
 
 .text{border:1px solid #ccc;background:#F9F9F9;border-radius:5px;overflow:hidden}
-.text div{float:left;padding:5px;line-height:1.5em}
+.text div{float:left;padding:5px;line-height:1.5em; clear: left;}
 .text th{font-weight:900;width:80px;}
 .text td{text-align:left}
 
