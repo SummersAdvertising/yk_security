@@ -15,7 +15,7 @@ class NoticesController < ApplicationController
 	end
 	
 	def show
-		@notices = Notice.all.page( params[ :page ] )
+		@notices = Notice.all.order( :created_at => :desc ).page( params[ :page ] )
 		@notice = Notice.find( params[ :id ] )
 		
 		@recruit = @notice.recruits.build
