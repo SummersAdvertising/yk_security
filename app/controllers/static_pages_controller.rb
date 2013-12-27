@@ -1,5 +1,11 @@
 class StaticPagesController < ApplicationController
 	def index
+	
+		@news = News.order( :created_at => :desc ).limit( 5 )
+	
+		respond_to do | format |
+			format.html { render layout: nil }
+		end
 	end
 	
 	def show
