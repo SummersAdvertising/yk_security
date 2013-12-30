@@ -241,27 +241,20 @@ $(window).load(function(){
 			<div class="content">
 				<h3>榮譽榜</h3>
 				<div class="slider">
+				
 					<ul class="bxslider">
+						<%= @honorees.each do | honoree | %>
 						<li>
 							<table width="100%" border="0" cellspacing="0" cellpadding="0">
 								<tr>
-									<td width="23%" class="photo"><img src="avator2.jpg"></td>
-									<td width="77%" class="text"><span>嘉義分公司嘉義分行/ 服務單位：萬泰銀行</span>
-										<h4><a href="#">王祺勳</a></h4>
-										<p>李員等服務萬泰銀行同仁依公司職員獎懲辦法規定，工作勤奮，服務態度良好，獲客戶讚許者應予嘉獎，予以嘉獎乙次以資獎勵。</p></td>
+									<td width="23%" class="photo"><img src="<%= honoree.cover %>"></td>
+									<td width="77%" class="text"><span><%= honoree.area %></span>
+										<h4><a href="<%= prise_path( honoree.prise ) %>"><%= honoree.name %></a></h4>
+										<p><%= honoree.content %></p></td>
 								</tr>
 							</table>
 						</li>
-						<li>
-							<table width="100%" border="0" cellspacing="0" cellpadding="0">
-								<tr>
-									<td width="23%" class="photo"><img src="avator2.jpg"></td>
-									<td width="77%" class="text"><span>嘉義分公司嘉義分行/ 服務單位：萬泰銀行</span>
-										<h4><a href="#">王祺勳</a></h4>
-										<p>李員等服務萬泰銀行同仁依公司職員獎懲辦法規定，工作勤奮，服務態度良好，獲客戶讚許者應予嘉獎，予以嘉獎乙次以資獎勵。</p></td>
-								</tr>
-							</table>
-						</li>
+						<% end %>
 					</ul>
 				</div>
 				<!--slider-->
