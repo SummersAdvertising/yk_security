@@ -1,64 +1,7 @@
-<!doctype html>
-<html>
-<head>
-<!--[if lt IE 9]>
-<script src="js/html5.js"></script>
-<![endif]-->
-<meta charset="utf-8">
-<meta name="Robots" content="index,follow"/>
-<meta http-equiv="content-language" content="zh-TW" />
-<meta name="Robots" content="index,follow"/>
-<meta name="keywords" content="誼光保全,新光保全,銀行警衛,物業管理,誼光國際,誼光迷你倉,叭叭房,誼光家事,百貨賣場保全,工商園區保全與管理,住家保全與管理"/>
-<title>誼光保全，守護您安居樂業的生活</title>
-<meta name="description" content="誼光保全連續7年獲得駐衛警保全排行第1的榮譽，是銀行與金融單位指定警衛的首選，也提供社區大樓全方位的物業管理服務，服務項目包括：銀行駐衛警、百貨賣場保全、工商園區保全與管理、住家保全與管理；我們有超過4,000位訓練有素的人員，與子公司叭叭房停車場、誼光迷你倉，滿足您不同層面的需求，請立刻聯絡誼光保全 02-25073286 " />
-<meta property="og:site_name" content="立刻聯絡誼光保全 02-25073286"/>
-<meta property="og:title" content="誼光保全，守護您安居樂業的生活"/>
-<meta property="og:description" content="誼光保全連續7年獲得駐衛警保全排行第1的榮譽，是銀行與金融單位指定警衛的首選，也提供社區大樓全方位的物業管理服務，服務項目包括：銀行駐衛警、百貨賣場保全、工商園區保全與管理、住家保全與管理；我們有超過4,000位訓練有素的人員，與子公司叭叭房停車場、誼光迷你倉，滿足您不同層面的需求，請立刻聯絡誼光保全 02-25073286 "/>
-<meta property="og:type" content="website"/>
-<meta property="og:image" content="http://park.summers.com.tw/toto/yks/images/thumb.jpg">
-<link rel="image_src" href="http://park.summers.com.tw/toto/yks/images/thumb.jpg">
-<link rel="shortcut icon" href="http://park.summers.com.tw/toto/yks/images/favicon.ico"/>
-<link rel="stylesheet" href="css/reset.css">
-<link rel="stylesheet" href="css/style.css">
-<link rel="stylesheet" href="css/inside.css">
-<script src="js/jquery-1.10.2.min.js"></script>
-<script src="js/auto-full-height.min.js"></script>
-<script>
 
-$(function(){	
-	var _showTab = 0;
-	var $defaultLi = $('.left li').eq(_showTab).addClass('active');
-	$($defaultLi.find('a').attr('href')).siblings().hide();
- 
-	$('.left li').click(function() {		
-		var $this = $(this),
-			_clickTab = $this.find('a').attr('href');		
-			console.log($this.parent().parent())
-		$('.left').find('.active').removeClass('active');		
-		$this.addClass('active')
-		$(_clickTab).stop(false, true).fadeIn().siblings().hide();
- 
-		return false;
-	}).find('a').focus(function(){
-		this.blur();
-	});
-});
-</script>
-<style>
-#banner .content { background: url(images/sv-banner.jpg) right 0 no-repeat }
-</style>
-</head>
-
-<body>
-<header _height="none">
-  <section class="content">
-    <h1></h1>
-    <nav><a href="#">最新消息</a><a href="#">公司簡介</a><a href="#">服務項目</a><a href="#">聯絡誼光</a><a href="#">保全百科</a><a href="#">客戶表列</a><a href="#">事業體表列</a><a href="#">回首頁</a></nav>
-  </section>
-</header>
 <div id="banner" _height="none">
   <section class="content">
-    <nav><a class="active"><img src="images/sv-nav.png"></a></nav>
+    <nav><a class="active"><img src="/images/sv-nav.png"></a></nav>
   </section>
 </div>
 <article _height="auto" id="service">
@@ -116,7 +59,7 @@ $(function(){
           <li><a href="#bbh-22">宜蘭</a></li>
         </ul>
       </div>
-      <div class="right"> <a href="#"  class="back">回到叭叭房簡介</a>
+      <div class="right"> <a href="<%= page_pages_path( :page => 'babahome-1' ) %>"  class="back">回到叭叭房簡介</a>
         <div id="bbh-box">
           <div id="bbh-1" class="bbh">
             <h5> 曼<br>
@@ -216,7 +159,7 @@ $(function(){
               </tr>
             </table>
             <div style="clear:both;text-align:right;color:#aaa;font-size:12px">如有異動，以現場公告費率為主</div>
-            <div class="photo"> <img src="images/bbh-01.jpg"> </div>
+            <div class="photo"> <img src="/images/bbh-01.jpg"> </div>
           </div>
           <!--bbh-1--> 
           <div id="bbh-2" class="bbh">
@@ -267,11 +210,3 @@ $(function(){
     </div>
   </section>
 </article>
-<footer _height="none">
-  <section class="content"> <img src="images/logo.png" width="158" height="40">
-    <p>誼光保全股份有限公司 ‧ 誼光國際公寓大廈管理股份有限公司<br>
-      版權所有 c2013 YKS. All Rights Reserved. </p>
-  </section>
-</footer>
-</body>
-</html>
