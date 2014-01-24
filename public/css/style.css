@@ -54,6 +54,8 @@ article .inner{overflow:hidden}
 
 /*-----------------------------------------------------------------------頁尾---*/
 
-body > footer{height:155px;background:#710908}
-footer .content{background:url(../images/footer.png) 94% 40px no-repeat;padding-top:30px}
-footer p{color:#fff}
+body > footer{height:255px;background:#710908;color:#fff}
+body > footer a{color:#fff}
+body > footer a:hover{color:#FFBBBA}
+body > footer .content{background:url(../images/footer2.png) 94% 40px no-repeat;padding-top:30px}
+body > footer p{color:#fff}
