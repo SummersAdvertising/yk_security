@@ -72,15 +72,15 @@ class Admin::ServicesController < AdminController
   # PATCH/PUT /admin/service/1
   # PATCH/PUT /admin/service/1.json
   def update
-  	
     respond_to do |format|
       if @service.update(service_params)
+      
         format.html { redirect_to admin_service_path(@service), notice: 'Service was successfully updated.' }
         format.js
         format.json { head :no_content }
       else
       	flash[ :warning ] = @service.errors.full_messages.join( '<br>' )
-        format.html { render action: 'edit' }
+        format.html { redirect_to edit_admin_service_path(@service) }
         format.json { render json: @service.errors, status: :unprocessable_entity }
       end
     end
@@ -105,7 +105,7 @@ class Admin::ServicesController < AdminController
     # Never trust parameters from the scary internet, only allow the white list through.
     def service_params
       atts = params.require(:service).permit(:title, {:items => []},:cover, :content, :external_link, :status, {:article_attributes => [ :content ]}, :id )
-      atts['items'] = atts['items'].reject { | i | i.length <= 0 }
+      atts['items'] = atts['items'].reject { | i | i.length <= 0 } if !atts['items'].nil?
       
       atts
       
