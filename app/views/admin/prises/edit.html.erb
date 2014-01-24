@@ -15,7 +15,7 @@
       <tr>
         <th width="150" rowspan="3" valign="top"><img src="<%= honoree.cover %>" width="150" height="150"></th>
         <th width="80" valign="top">地區：</th>
-        <td width="275" valign="top"><%= honoree.area %></td>
+        <td valign="top"><%= honoree.area %></td>
         <td width="16" valign="top"><%= link_to image_tag('delete.png'), admin_prise_honoree_path( @prise, honoree ), method: :delete, data: { confirm: '是否刪除表揚 ' + honoree.name } %></td>
       </tr>
       <tr>
