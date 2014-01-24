@@ -17,13 +17,11 @@
 
 #office .grid { float: left; height: 60px; width: 180px; margin: 15px; font-size: 12px; line-height: 1.7em; color: #555 }
 #office .grid b { font-size: 14px; color: #000 }
-#office .content { background: url(/images/of-bg.png) 55px 60px no-repeat }
+#office .content { background: url(/images/of-bg.png) 55px 273px no-repeat }
 #office .inner { width: 630px; margin: 70px 0 0 360px }
 
-/*-----------------------------------------------------------------------管制中心---*/
 
-#control .content { background: url(/images/ct-bg.jpg) 0 155px no-repeat }
-#control .inner { width: 580px; padding: 0 0 350px 0 }
+/*-----------------------------------------------------------------------管制中心---*/
 
 /*-----------------------------------------------------------------------關於誼光---*/
 
@@ -150,6 +148,9 @@ bottom:0;left:0;padding:10px 0 0 10px;height:45px;color:#fff;font:900 22px 微�
 
 /*-----------------------------------------------------------------------保全百科---*/
 
+#encyclopedia {}
+.eccp-lv1{background:url(/images/ep-bg.jpg) 73% bottom no-repeat}
+
 #encyclopedia .left{width:230px}
 #encyclopedia .left ul{border:none;padding:0}
 #encyclopedia .left li{padding:10px 0}
@@ -167,7 +168,6 @@ bottom:0;left:0;padding:10px 0 0 10px;height:45px;color:#fff;font:900 22px 微�
 #encyclopedia .right .page a{margin:0 5px 0 0}
 
 #encyclopedia .right h3{color:#005191}
-
 /*-----------------------------------------------------------------------連絡誼光---*/
 
 #form p{height:75px}
