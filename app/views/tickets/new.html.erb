@@ -1,4 +1,5 @@
-<%= javascript_include_tag "jquery.validate", "data-turbolinks-track" => true %>
+
+<script src="/js/jquery.validate.js"></script>
 
 <% if !flash[ :notice ].nil? %>
 	<script>
@@ -45,7 +46,9 @@
   </tr>
   <tr>
     <th><%= f.label :phone, '連絡電話' %></th>
-    <td><%= f.text_field :phone, :class => 'text' %></td>
+    <td>
+    	<%= f.text_field :phone_area, :class => 'text', :style => 'width: 50px;' %> - <%= f.text_field :phone, :class => 'text', :style => 'width: 232px;' %> 分機 <%= f.text_field :phone_ext, :class => 'text', :style => 'width: 50px;' %>
+    </td>
   </tr>  
   <tr>
     <th><%= f.label :address, '服務地址' %></th>
@@ -97,7 +100,7 @@ $(document).ready(function(){
 		messages: {
 			'ticket[name]': "請輸入您的名字",
 			'ticket[phone]': {
-				required: "請輸入聯絡電話"
+				required: ""
 			}
 		}
 	});

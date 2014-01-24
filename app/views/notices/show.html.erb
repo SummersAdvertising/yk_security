@@ -1,5 +1,6 @@
 <%= javascript_include_tag "jquery.colorbox-min", "data-turbolinks-track" => true %>
-<%= javascript_include_tag "jquery.validate", "data-turbolinks-track" => true %>
+<script src="/js/jquery.validate.js"></script>
+
 
 
 <% if !flash[ :notice ].nil? %>
@@ -132,7 +133,7 @@ email：<a href="mailto:<%= @notice.contact_email %>" target="_blank"><%= @notic
     <%= f.submit '' ,:class => 'button' %>
     <% end %>
   </section>
-
+</div>
 <script>
 $(document).ready(function(){
 	$(".inline").colorbox({inline:true, width:"800"});	

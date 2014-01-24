@@ -32,25 +32,13 @@ class TicketsController < ApplicationController
         format.html { redirect_to new_ticket_path, notice: '感謝您的聯絡，請等候服務專員聯絡！' }
         format.json { render action: 'show', status: :created, location: @ticket }
       else
+      	flash[ :warning ] = @ticket.errors.messages.values.flatten.join('<br />')
         format.html { render action: 'new' }
         format.json { render json: @ticket.errors, status: :unprocessable_entity }
       end
     end
   end
 
-  # PATCH/PUT /tickets/1
-  # PATCH/PUT /tickets/1.json
-  def update
-    respond_to do |format|
-      if @ticket.update(ticket_params)
-        format.html { redirect_to @ticket, notice: 'Ticket was successfully updated.' }
-        format.json { head :no_content }
-      else
-        format.html { render action: 'edit' }
-        format.json { render json: @ticket.errors, status: :unprocessable_entity }
-      end
-    end
-  end
 
   # DELETE /tickets/1
   # DELETE /tickets/1.json
@@ -70,6 +58,6 @@ class TicketsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def ticket_params
-      params.require(:ticket).permit(:name, :company, :phone, :mobile, :address, :email, {:services => [] }, :status)
+      params.require(:ticket).permit(:name, :company, :phone, :phone_area, :phone_ext, :mobile, :address, :email, {:services => [] }, :status)
     end
 end
