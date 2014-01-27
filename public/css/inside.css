@@ -170,9 +170,12 @@ bottom:0;left:0;padding:10px 0 0 10px;height:45px;color:#fff;font:900 22px 微�
 #encyclopedia .right h3{color:#005191}
 /*-----------------------------------------------------------------------連絡誼光---*/
 
+#form .content{background:url(/images/fm-01.jpg) 800px 273px no-repeat}
 #form p{height:75px}
-#form .left{text-align:right}
+#form .left{text-align:right;width:220px}
 #form .left h3{color:#005191;padding:15px 0 0 0}
+#form .right{width:650px}
+#form .right table{width:460px}
 #form .right th{text-align:right;padding:0 15px 0 0;font-weight:300}
 #form .right td{padding:10px 0}
 #form .right .text{width:100%;border:5px solid #FCEDBB;border-radius:5px;padding:5px}
