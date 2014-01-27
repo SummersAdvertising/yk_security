@@ -148,7 +148,7 @@ bottom:0;left:0;padding:10px 0 0 10px;height:45px;color:#fff;font:900 22px 微�
 
 /*-----------------------------------------------------------------------保全百科---*/
 
-#encyclopedia {}
+
 .eccp-lv1{background:url(/images/ep-bg.jpg) 73% bottom no-repeat}
 
 #encyclopedia .left{width:230px}
@@ -159,7 +159,7 @@ bottom:0;left:0;padding:10px 0 0 10px;height:45px;color:#fff;font:900 22px 微�
 #encyclopedia .left .active a{color:#c70000}
 #encyclopedia .left .active{background:url(/images/ep-01.jpg) right center no-repeat}
 
-#encyclopedia .right{width:645px}
+#encyclopedia .right{width:645px;padding:10px 0 0 0}
 #encyclopedia .right li a{color:#4f4f4f}
 #encyclopedia .right li{background:url(/images/ep-02.jpg) 0 center no-repeat;padding:5px 0 5px 20px}
 #encyclopedia .right li a:hover{text-decoration:underline}
