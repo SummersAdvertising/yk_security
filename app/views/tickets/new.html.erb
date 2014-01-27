@@ -99,13 +99,27 @@ $(document).ready(function(){
 		rules: {
 			'ticket[name]': "required",
 			'ticket[phone]': {
-				required: true
+				required: {
+					depends: function() {					
+						return $('input[name="ticket[mobile]"]').val().length <= 0;
+					}
+				}
 			},
+			'ticket[mobile]': {
+				required: {
+					depends: function() {					
+						return $('input[name="ticket[phone]"]').val().length <= 0;
+					}
+				}
+			}
 			
 		},
 		messages: {
 			'ticket[name]': "請輸入您的名字",
 			'ticket[phone]': {
+				required: ""
+			},
+			'ticket[mobile]': {
 				required: ""
 			}
 		}
