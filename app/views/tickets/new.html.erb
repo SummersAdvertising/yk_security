@@ -2,9 +2,9 @@
 <script src="/js/jquery.validate.js"></script>
 
 <% if !flash[ :notice ].nil? %>
-	<script>
-		alertify.alert('<%= flash[ :notice ] %>');
-	</script>
+<script>
+  alertify.alert('<%= flash[ :notice ] %>');
+</script>
 <% end %>
 
 <%= form_for(@ticket) do |f| %>
@@ -19,81 +19,73 @@
     <nav><a href="<%= root_url %>">首頁</a><span>></span><a>聯絡誼光</a></nav>
     <div class="inner">
       <p>您如有保全服務需要，誼光保全將會派遣專人與您聯繫，依照安全結構與需求進行安全規劃與費用估算。</p>
-      <div class="left">
-      <h3>請填寫基本資料</h3>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <h3>需求服務</h3>
+      <div style="overflow:hidden">
+        <div class="left">
+          <h3>請填寫基本資料</h3>          
+        </div>
+        <div class="right">
+          <table border="0" cellspacing="0" cellpadding="0">
+            <tr>
+              <th width="75"><%= f.label :name, '姓名' %></th>
+              <td width="385"><%= f.text_field :name, :class => 'text' %></td>
+            </tr>
+            <tr>
+              <th><%= f.label :company, '公司名稱' %></th>
+              <td><%= f.text_field :company, :class => 'text' %></td>
+            </tr>
+            <tr>
+              <th><%= f.label :phone, '連絡電話' %></th>
+              <td>
+                <%= f.text_field :phone_area, :class => 'text', :style => 'width: 50px;' %> - <%= f.text_field :phone, :class => 'text', :style => 'width: 232px;' %> 分機 <%= f.text_field :phone_ext, :class => 'text', :style => 'width: 50px;' %>
+              </td>
+            </tr>
+            <tr>
+              <th><%= f.label :mobile, '手機' %></th>
+              <td><%= f.text_field :mobile, :class => 'text' %></td>
+            </tr>
+            <tr>
+              <th><%= f.label :address, '服務地址' %></th>
+              <td><%= f.text_field :address, :class => 'text' %></td>
+            </tr>
+            <tr>
+              <th><%= f.label :email, 'Email' %></th>
+              <td><%= f.text_field :email, :class => 'text' %></td>
+            </tr>
+          </table>
+        </div>
+      </div><!--overflow:hidden-->      
+      <div style="overflow:hidden;margin-top:50px">
+        <div class="left">
+          <h3>需求服務</h3>
+        </div>
+        <div class="right" style="padding:10px 0 0 0">
+          <table border="0" cellspacing="0" cellpadding="0">        
+            <tr>
+             <% ['駐衛警', '大樓／社區保全與管理', '商場保全', '停車場管理', '迷你倉', '活動保全（如展覽、公共設施等）'].each do | service | %>
+             <label>
+              <input type="checkbox" class="checkbox" name="ticket[services][]" value="<%= service %>" />
+              <%= service %>
+              <br />
+              <br />
+            </label>
+            <% end %>    
+            <label>
+              　其他 <input type="text" class="text" style="width: 80%;" name="ticket[services][]" value="" />
+            </label>
+            <span>如需誼光家事服務，請至<a href="http://www.ykhome.com.tw/" target="_blank">誼光家事官網</a></span>
+          </tr>
+        </table>
+        <%= f.submit '', :class => 'button' %>
       </div>
-      <div class="right">
-      <table border="0" cellspacing="0" cellpadding="0">
-    
-    <th width="75"><%= f.label :name, '姓名' %></th>
-    <td width="385"><%= f.text_field :name, :class => 'text' %></td>
-  </tr>
-  <tr>
-    <th><%= f.label :company, '公司名稱' %></th>
-    <td><%= f.text_field :company, :class => 'text' %></td>
-  </tr>
-  <tr>
-    <th><%= f.label :phone, '連絡電話' %></th>
-    <td>
-    	<%= f.text_field :phone_area, :class => 'text', :style => 'width: 50px;' %> - <%= f.text_field :phone, :class => 'text', :style => 'width: 232px;' %> 分機 <%= f.text_field :phone_ext, :class => 'text', :style => 'width: 50px;' %>
-    </td>
-  </tr>
-  <tr>
-    <th><%= f.label :mobile, '手機' %></th>
-    <td><%= f.text_field :mobile, :class => 'text' %></td>
-  </tr>
-  <tr>
-    <th><%= f.label :address, '服務地址' %></th>
-    <td><%= f.text_field :address, :class => 'text' %></td>
-  </tr>
-  <tr>
-    <th><%= f.label :email, 'Email' %></th>
-    <td><%= f.text_field :email, :class => 'text' %></td>
-  </tr>
-  <tr>
-    <td colspan="2">
-    
-    <% ['駐衛警', '大樓／社區保全與管理', '商場保全', '停車場管理', '迷你倉', '活動保全（如展覽、公共設施等）'].each do | service | %>
-    <label>
-	    <input type="checkbox" class="checkbox" name="ticket[services][]" value="<%= service %>" />
-	    <%= service %>
-	    <br />
-	    <br />
-    </label>
-    <% end %>    
-    <label>
-      　其他 <input type="text" class="text" style="width: 80%;" name="ticket[services][]" value="" />
-    </label>
-      <span>如需誼光家事服務，請至<a href="http://www.ykhome.com.tw/" target="_blank">誼光家事官網</a></span>
-     </td>
-    </tr>
-</table>
-	<%= f.submit '', :class => 'button' %>
-
-      </div>
-      
-    </div>
-  </section>
+    </div><!--overflow:hidden-->    
+  </div>
+</section>
 </article>
 
 <% end %>
 
 <script>
-$(document).ready(function(){
+  $(document).ready(function(){
 	// validate signup form on keyup and submit
 	$("#new_ticket").validate({
 		rules: {
