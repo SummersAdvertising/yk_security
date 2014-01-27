@@ -56,12 +56,7 @@
 /* PAGER */
 
 .bx-wrapper .bx-pager {
-	text-align: left;
-	font-size: .85em;
-	font-family: Arial;
-	font-weight: bold;
-	color: #666;
-	padding-left: 290px;
+	text-align: center;
 }
 
 .bx-wrapper .bx-pager .bx-pager-item,
