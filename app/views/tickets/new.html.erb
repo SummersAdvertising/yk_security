@@ -31,14 +31,16 @@
       <br>
       <br>
       <br>
+      <br>
+      <br>
+      <br>
       <h3>需求服務</h3>
       </div>
       <div class="right">
-      <table width="100%" border="0" cellspacing="0" cellpadding="0">
-  <tr>
+      <table border="0" cellspacing="0" cellpadding="0">
     
-    <th width="16%"><%= f.label :name, '姓名' %></th>
-    <td width="84%"><%= f.text_field :name, :class => 'text' %></td>
+    <th width="75"><%= f.label :name, '姓名' %></th>
+    <td width="385"><%= f.text_field :name, :class => 'text' %></td>
   </tr>
   <tr>
     <th><%= f.label :company, '公司名稱' %></th>
@@ -49,7 +51,11 @@
     <td>
     	<%= f.text_field :phone_area, :class => 'text', :style => 'width: 50px;' %> - <%= f.text_field :phone, :class => 'text', :style => 'width: 232px;' %> 分機 <%= f.text_field :phone_ext, :class => 'text', :style => 'width: 50px;' %>
     </td>
-  </tr>  
+  </tr>
+  <tr>
+    <th><%= f.label :mobile, '手機' %></th>
+    <td><%= f.text_field :mobile, :class => 'text' %></td>
+  </tr>
   <tr>
     <th><%= f.label :address, '服務地址' %></th>
     <td><%= f.text_field :address, :class => 'text' %></td>
