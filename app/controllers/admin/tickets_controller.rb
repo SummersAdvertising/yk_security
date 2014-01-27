@@ -4,7 +4,7 @@ class Admin::TicketsController < AdminController
   # GET /tickets
   # GET /tickets.json
   def index
-    @tickets = Ticket.all.page( params[ :page ] )
+    @tickets = Ticket.order( "updated_at DESC" ).page( params[ :page ] )
   end
 
   # GET /tickets/1
