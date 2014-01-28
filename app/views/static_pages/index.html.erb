@@ -183,7 +183,7 @@ $(window).load(function(){
 									<td width="37%" class="photo"><img src="<%= news.cover %>"></td>
 									<td width="63%" class="text"><span><%= news.created_at.strftime('%Y年%m月%d日') %></span>
 										<h4><a href="<%= news_path( news ) %>"><%= news.title %></a></h4>
-										<p><%= news.article.get_meta %> <a href="<%= news_path( news ) %>">...more</a></p>
+										<p><%= news.article.get_meta.first(100) if news.article.get_meta.length > 0 %> <a href="<%= news_path( news ) %>">...more</a></p>
 									</td>
 								</tr>
 							</table>
