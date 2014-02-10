@@ -47,8 +47,8 @@ class Admin::KnowledgesController < AdminController
   def destroy
     @knowledge.destroy
     respond_to do |format|
-      format.html { redirect_to knowledge_index_url }
-      format.json { head :no_content }
+      format.html { redirect_to admin_chapter_path( @chapter ) }
+      format.json { head :no_content } 
     end
   end
 

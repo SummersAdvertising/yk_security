@@ -11,7 +11,7 @@
         <% end %>
           
         </ul>
-        <div class="page"> <%= paginate @prises %> </div>
+        <div class="page"> <%= paginate @prises, :window => 2 %> </div>
         <div class="years"> 
 	        <a href="<%= prise_path(@prise ) %>" <%= 'class="active"'.html_safe if params[ :year ].nil? %>>全部</a>
         <% @years.each do | year | %>

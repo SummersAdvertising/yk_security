@@ -27,7 +27,7 @@
       	<% end %>
         </ul>
         <div class="page">
-	        <%= paginate @notices %>
+	        <%= paginate @notices, :window => 2 %>
         </div>
       </div>
       <div class="right">

@@ -6,7 +6,7 @@ class Admin::ChaptersController < AdminController
   # GET /admin/chapters.json
   def index
   
-    @chapters = Chapter.all.order( :created_at => :desc )
+    @chapters = Chapter.all
     
     @chapter = Chapter.new
     
@@ -63,6 +63,23 @@ class Admin::ChaptersController < AdminController
       end
     end
   end
+  
+  def sort
+  	
+  	@sequence = params[ :sequence ].split(',')
+  	
+  	update_clause = ActiveRecord::Base.connection.raw_connection.prepare("UPDATE chapters set sort=? where id=?")
+  	
+  	@sequence.each_with_index do | s, i |
+  		update_clause.execute( i, s )
+  	end
+  	
+  	respond_to do | format |
+  		format.js {}
+  	end
+  	
+  end
+  
 
   # DELETE /admin/chapters/1
   # DELETE /admin/chapters/1.json

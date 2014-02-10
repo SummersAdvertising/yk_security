@@ -28,7 +28,7 @@ header .content > nav a:last-child{border:none}
 article .content{padding-bottom:60px}
 article nav{padding:5px 0 0 0;height:60px}
 article nav a{color:#BFBFBF;font-size:14px}
-article nav span{color:#BFBFBF;margin:0 5px;font-size:14px}
+article nav span{color:#BFBFBF;font-size:14px}
 article nav a:hover{color:#777}
 article h3{font:900 26px 微軟正黑體,Microsoft JhengHei;height:40px}
 article .inner{overflow:hidden}

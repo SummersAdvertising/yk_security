@@ -15,7 +15,7 @@
             <a href="<%= news_path( news ) %>"><%= news.title %></a></li>
         <% end %>
         </ul>
-        <div class="page"> <%= paginate @newses %> </div>        
+        <div class="page"> <%= paginate @newses, :window => 2 %> </div>        
       </div>
       <div class="right">
         <header><span class="date"><%= @news.created_at.strftime('%Y年%m月%d日') %></span>

@@ -1,4 +1,11 @@
 
+<style>
+  #chapter-list { list-style-type: none; margin: 0; padding: 0; width: 60%; }
+  #chapter-list li { margin: 0 5px 5px 5px; padding: 5px; font-size: 1.2em; height: 1.5em; }
+  html>body #chapter-list li { height: 1.5em; line-height: 1.2em; }
+  .ui-state-highlight { height: 1.5em; line-height: 1.2em; }
+</style>
+
 <%= form_for([:admin, @chapter]) do |f| %>
 <section class="text text-edit">
   <div class="one">
@@ -16,17 +23,40 @@
 <!--button-->
 <section class="list">
   <table width="100%" border="0" cellspacing="0" cellpadding="0">  
+  	<thead>
     <tr>
       <th align="left">分類名稱</th>
       <th align="left" class="x1">刪除</th>
     </tr>
+  	</thead>
+  	<tbody id="chapter-list">
     <% @chapters.each do |chapter| %>
-    <tr>
-      <td><a href="<%= admin_chapter_path(chapter) %>"> <%= chapter.title %> </a></td>
-      <td><%= link_to image_tag('delete.png'), admin_chapter_path(chapter), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <tr class="chapter-row" data-id="<%= chapter.id %>">
+      <td style="width: 875px;"><a href="<%= admin_chapter_path(chapter) %>"> <%= chapter.title %> </a></td>
+      <td class="x1"><%= link_to image_tag('delete.png'), admin_chapter_path(chapter), method: :delete, data: { confirm: 'Are you sure?' } %></td>
     </tr>
     <% end %>
+  	</tbody>
     </table>
 </section>
 <!--list-->
+  
+<script>
+	$('#chapter-list').sortable({
+      placeholder: "ui-state-highlight",
+      stop: function() {
+      	var seq = $('#chapter-list tr').map(function() { return $(this).data('id') }).get().join();
+      	
+      	$.ajax({
+      		type: 'POST',
+	      	url: '<%= sort_admin_chapters_path %>',
+	      	data: {
+		      	'sequence': seq
+	      	}
+      	});
+      		    
+      }
+    });
+    $('#chapter-list').disableSelection();
+</script>
   

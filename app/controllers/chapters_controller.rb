@@ -1,6 +1,6 @@
 class ChaptersController < ApplicationController
 	def index
-		@chapter = Chapter.all.order( :created_at => :desc ).first
+		@chapter = Chapter.all.first
 		
 		
 		respond_to do | format |
@@ -13,7 +13,7 @@ class ChaptersController < ApplicationController
 	end
 	
 	def show
-		@chapters = Chapter.all.order( :created_at => :desc )
+		@chapters = Chapter.all
 		@chapter = Chapter.find( params[ :id ] )
 		@knowledges = @chapter.knowledges.page( params[ :page ] )
 	end

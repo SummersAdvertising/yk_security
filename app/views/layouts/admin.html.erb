@@ -26,13 +26,22 @@
   <%= csrf_meta_tags %>
   
   <script>
+  	window.onload= function() {
 	  <% if !flash[:notice].nil? %>
-	  window.onload= function() { alertify['success']('<%= flash[:notice] %>', 3000); }
+	   alertify['success']('<%= flash[:notice] %>', 3000);
 	  <% end %>
 	  
 	  <% if !flash[:warning].nil? %>
-	  window.onload= function() { alertify['error']("<%= flash[:warning].html_safe %>", 3000); }
+	  alertify['error']("<%= flash[:warning].html_safe %>", 3000); 
 	  <% end %>
+
+		$('a').click(function() {
+			if( window.location.toString().match(/page=\d+/) ) { 
+				document.cookie = ( 'last_page_num=' + window.location.toString().match(/page=\d+/)[0].split('=')[1] + ';' );
+
+			}
+		})
+	}
 
   </script>
   

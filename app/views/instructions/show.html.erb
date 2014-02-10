@@ -19,7 +19,7 @@
         <% end %>
           
         </ul>
-        <div class="page"> <%= paginate @instructions %></div>
+        <div class="page"> <%= paginate @instructions, :window => 2 %></div>
         <div class="years"> 
         	<a href="<%= instruction_path(@instruction ) %>" <%= 'class="active"'.html_safe if params[ :year ].nil? %>>全部</a>
         <% @years.each do | year | %>

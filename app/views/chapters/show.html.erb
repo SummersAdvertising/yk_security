@@ -19,7 +19,7 @@
       	<li><%= link_to knowledge.title, chapter_knowledge_path( @chapter, knowledge ) %></li>
       <% end %>
       </ul>
-      <div class="page"><%= paginate @knowledges %></div>
+      <div class="page"><%= paginate @knowledges, :window => 2 %></div>
       </div>
     </div>
   </section>

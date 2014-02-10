@@ -6,5 +6,6 @@ class Chapter < ActiveRecord::Base
 	
 	validates_presence_of :title
 	
+	default_scope order( 'sort ASC, created_at DESC' )
 	
 end

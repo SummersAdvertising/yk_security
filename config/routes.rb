@@ -28,7 +28,6 @@ Yks::Application.routes.draw do
   
   	get '/'		=> 'admins#index'
 
-  
   	resources :admins
   
     resources :news
@@ -51,6 +50,11 @@ Yks::Application.routes.draw do
     
     resources :chapters do
     	resources :knowledges
+    	
+    	collection do
+    		post 'sort'
+    	end
+    	
     end
     
     post 'peditor/:id/createPhoto'					=> 'peditor#createPhoto'
