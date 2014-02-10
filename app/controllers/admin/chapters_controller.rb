@@ -67,11 +67,10 @@ class Admin::ChaptersController < AdminController
   def sort
   	
   	@sequence = params[ :sequence ].split(',')
-  	
-  	update_clause = ActiveRecord::Base.connection.raw_connection.prepare("UPDATE chapters set sort=? where id=?")
-  	
+  	connection = ActiveRecord::Base.connection
+
   	@sequence.each_with_index do | s, i |
-  		update_clause.execute( i, s )
+  		ActiveRecord::Base.connection.execute("UPDATE chapters set sort=#{i} where id=#{s}" )
   	end
   	
   	respond_to do | format |
