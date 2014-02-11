@@ -17,8 +17,7 @@ editor.video = {
 		link.attr("id", "newVideoContent").attr("placeholder", "貼上 YouTube 網址").css("width", "320px");
 
 		var table = $('<table width="100%" border="0" cellspacing="0" cellpadding="0"></table>');
-		table.append($('<tr>').append($('<td width="95%">').append(link))
-							  .append($('<td width="5%" class="send">')));
+		table.append($('<tr>').append($('<td width="100%" class="text">').append(link)));
 
 		$(".editorContent").append(editorChild.append(table));
 	},

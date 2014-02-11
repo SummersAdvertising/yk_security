@@ -52,8 +52,7 @@ editor.p = {
 		text.attr("id", "newParagraphContent").attr("placeholder", "新增段落").attr("cols", "50").attr("rows", "8");
 
 		var table = $('<table width="100%" border="0" cellspacing="0" cellpadding="0"></table>');
-		table.append($('<tr>').append($('<td width="95%">').append(text))
-							  .append($('<td width="5%" class="send">')));
+		table.append($('<tr>').append($('<td width="100%" class="text">').append(text)));
 
 		if(editor.settings.linkedp){
 			var link = $("<input>");
@@ -217,8 +216,6 @@ editor.p = {
 		paragraphContainer.append(editPanel);
 	},
 	bindControl: function(paragraphBox){
-	
-	
 		var controlPanel = $("<div>");
 		controlPanel.addClass("controlPanel tool-b tool");
 

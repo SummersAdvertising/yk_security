@@ -41,6 +41,19 @@
 
 			}
 		})
+		
+		$(window).bind('peditor-updated', function() {
+			
+			var main = $('section article');
+			
+			if ( (main.innerHeight() + 100) > $('[_height=auto]').height() ) {
+				$('[_height=auto]').height('inherit');
+			} else {
+				fullHeight();
+			}
+			
+		});
+		
 	}
 
   </script>

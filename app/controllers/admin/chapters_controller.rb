@@ -70,7 +70,7 @@ class Admin::ChaptersController < AdminController
   	connection = ActiveRecord::Base.connection
 
   	@sequence.each_with_index do | s, i |
-  		ActiveRecord::Base.connection.execute("UPDATE chapters set sort=#{i} where id=#{s}" )
+  		connection.execute("UPDATE chapters set sort=#{i} where id=#{s}" )
   	end
   	
   	respond_to do | format |

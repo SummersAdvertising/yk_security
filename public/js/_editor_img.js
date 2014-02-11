@@ -26,8 +26,8 @@ editor.img = {
 		
 		var input = $("<input>");
 		input.attr("id", editor.img.fileinputID).attr("name", editor.img.fileinputName).attr("type", "file");
-		
-		form.append(input).append($("<br>")).append($("input[name='authenticity_token']").eq(0).clone().change(function() {  }));
+
+		form.append(input).append($("<br>")).append($("input[name='authenticity_token']").clone());
 
 		if(editor.settings.linkedimg){
 			var link = $("<input>");
@@ -35,9 +35,8 @@ editor.img = {
 			form.append(link);
 		}
 
-		var table = $('<table width="100%" border="0" cellspacing="0" cellpadding="0"><tr><td width="95%"></table>');
-		table.append($('<tr>').append($('<td width="95%">').append(form))
-							  .append($('<td width="5%" class="send">')));
+		var table = $('<table width="100%" border="0" cellspacing="0" cellpadding="0"><tr><td width="95%" class="text"></table>');
+		table.append($('<tr>').append($('<td width="100%" class="text">').append(form)));
 
 		$(".editorContent").append(editorChild.append(table));
 	},
@@ -48,7 +47,29 @@ editor.img = {
 		}
 
 		if(editor.img.validate()){
-			$("#new_" + editor.img.photoModel).submit();
+		
+			     //file upload for firefox
+			       if (navigator.userAgent.indexOf("Firefox")!=-1){
+			         var fileinput = $("#" + editor.img.photoModel + "_image");
+			         var oMyForm = new FormData();
+			         oMyForm.append(fileinput.attr("name"), fileinput.prop("files")[0]);
+			         oMyForm.append("authenticity_token]", $('meta[name="csrf-token"]').attr('content'));
+			 
+			         var oReq = new XMLHttpRequest();
+			         oReq.onreadystatechange = function(){
+			           if (oReq.readyState == 4)
+			           {
+			             eval(oReq.responseText);
+			           }
+			         }
+			         oReq.overrideMimeType("multipart/form-data; charset=UTF-8");
+			         oReq.open("POST", $("#new_" + editor.img.photoModel).attr("action") + '.js', true);
+			         oReq.send(oMyForm);
+			       }
+			       else{
+			         $("#new_" + editor.img.photoModel).submit();
+			       }
+		
 			
 		}
 		$("#"+editor.img.fileinputID).val("");

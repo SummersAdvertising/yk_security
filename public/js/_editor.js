@@ -1,3 +1,4 @@
+
 var editor = {
 	settings: {
 		articleModel: "article",
@@ -11,7 +12,7 @@ var editor = {
 
 		linkedp: false,
 		linkedimg: false,
-		p_selectList: [/*"paragraphFontClass", "paragraphFontColor", "paragraphFontSize"*/],
+		p_selectList: ["paragraphFontClass", "paragraphFontColor", "paragraphFontSize"],
 		paragraphFontClass: { "內文": "part-content", "標題": "part-title" }, 
 		paragraphFontColor: { "顏色": "default", "黑色": "#000", "藍色": "#00F" }, 
 		paragraphFontSize: { "大小": "default", 14:14, 28:28 }
@@ -118,13 +119,10 @@ var editor = {
 	ajaxupdate: function(){
 		$.ajax({
 			type: "POST",
-			url: $(".edit_"+ editor.settings.articleModel).attr("action"),
-			data: $(".edit_"+ editor.settings.articleModel).serialize(),
-			success: function() {				
-				editor.alert("文章變更已儲存", "success");
-				$(window).trigger('peditor-updated');
-			}
+			url: $("form, .edit_"+ editor.settings.articleModel).attr("action"),
+			data: $("form, .edit_"+ editor.settings.articleModel).serialize()			
 		});
+		editor.alert("文章變更已儲存", "success");
 	},
 	pack: function(upload){
 		var article = new Array();
@@ -135,8 +133,11 @@ var editor = {
 		if(upload){
 			article.push(upload);
 		}
-
+		
+		
 		$("#"+editor.settings.articleModel+"_"+editor.settings.articleAttr).val(editor.filter(JSON.stringify(article), editor.parsequot));
+
+		$(editor.settings.articleSection).trigger('peditor_updated');
 
 		editor.save(editor.ajaxupdate);
 	},
@@ -171,9 +172,7 @@ var editor = {
 				case "OPTION":
 				break;
 				default:
-					if($(this).is(':not(:hidden)') ) {
-						$(this).val("");
-					}
+				$(this).val("");
 				break;
 			}
 		});
@@ -218,12 +217,11 @@ var editor = {
 		});
 	},
 	alert: function(alertMsg, type){
-		if(window["Alertify"]){
-			Alertify.log[type](alertMsg);
-		} else if (window["alertify"]) {
-			alertify.log(alertMsg, type);
-		} else{
-			//alert(alertMsg);
+		if(window["alertify"]){
+			alertify[type](alertMsg, 3000);
+		}
+		else{
+			alert(alertMsg);
 		}
 	},
 	HTMLfilter: function(text){
