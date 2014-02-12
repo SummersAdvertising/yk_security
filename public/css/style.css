@@ -48,7 +48,7 @@ article .inner{overflow:hidden}
 .left .years .active,.left .years a:hover{color:#777;border-bottom:1px solid #777}
 
 .inner .right{float:right;width:545px}
-.right img{max-width:544px;height:auto}
+.right img{max-width:544px;height:auto; margin-top: 20px;}
 .right .back{display:block;padding:0 0 0 20px;background:url(../images/sv-back.jpg) 0 7px no-repeat;color:#555;height:60px}
 .right .back:hover{color:#222}
 
