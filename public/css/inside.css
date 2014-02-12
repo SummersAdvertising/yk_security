@@ -20,13 +20,12 @@
 #office .content { background: url(/images/of-bg.png) 55px 273px no-repeat }
 #office .inner { width: 630px; margin: 70px 0 0 360px }
 
-
 /*-----------------------------------------------------------------------管制中心---*/
 
 /*-----------------------------------------------------------------------關於誼光---*/
 
-#about { background: url(/images/ab-bg.jpg) center 105px no-repeat }
-#about .inner { width: 580px; padding: 0 0 500px 0 }
+#about { background: url(/images/ab-bg.jpg) center 115px no-repeat }
+#about .inner { width: 580px; padding: 0 0 300px 0 }
 
 /*-----------------------------------------------------------------------人員招募---*/
 
@@ -161,13 +160,11 @@ bottom:0;left:0;padding:10px 0 0 10px;height:45px;color:#fff;font:900 22px 微�
 
 #encyclopedia .right{width:645px;padding:10px 0 0 0}
 #encyclopedia .right li a{color:#4f4f4f}
-#encyclopedia .right li{background:url(/images/ep-02.jpg) 0 center no-repeat;padding:5px 0 5px 20px}
+#encyclopedia .right li{background:url(/images/ep-02.jpg) 0 13px no-repeat;padding:5px 0 5px 20px}
 #encyclopedia .right li a:hover{text-decoration:underline}
 
-#encyclopedia .right .page{margin:50px 0 0 0}
-#encyclopedia .right .page a{margin:0 5px 0 0}
-
 #encyclopedia .right h3{color:#005191}
+
 /*-----------------------------------------------------------------------連絡誼光---*/
 
 #form .content{background:url(/images/fm-01.jpg) 800px 273px no-repeat}
@@ -198,8 +195,6 @@ bottom:0;left:0;padding:10px 0 0 10px;height:45px;color:#fff;font:900 22px 微�
 
 #client{background:url(/images/cl-bg.jpg) 90% bottom no-repeat}
 #client h4{color:#1d5d93;font:900 18px 微軟正黑體,Microsoft JhengHei;margin:20px 0 0 0}
-
-
 
 /*-----------------------------------------------------------------------For Peditors---*/
 #articleContent div {
