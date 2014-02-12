@@ -30,7 +30,7 @@ article nav{padding:5px 0 0 0;height:60px}
 article nav a{color:#BFBFBF;font-size:14px}
 article nav span{color:#BFBFBF;font-size:14px}
 article nav a:hover{color:#777}
-article h3{font:900 26px 微軟正黑體,Microsoft JhengHei;height:40px}
+article h3{font:900 26px 微軟正黑體,Microsoft JhengHei;}
 article .inner{overflow:hidden}
 
 .inner .left{float:left;width:335px}
