@@ -12,7 +12,7 @@
         <ul>
         <% @newses.each do | news | %>        	
           <li class="<%= 'active' if news.id == @news.id %>"> <span><%= news.created_at.strftime('%Y年%m月%d日') %></span><br>
-            <a href="<%= news_path( news ) %>"><%= news.title %></a></li>
+            <a href="<%= news_path( news, :page => params[ :page ] ) %>"><%= news.title %></a></li>
         <% end %>
         </ul>
         <div class="page"> <%= paginate @newses, :window => 2 %> </div>        

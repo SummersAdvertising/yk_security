@@ -19,7 +19,7 @@
       <%= render :partial => 'chapters/list' %>
       </div>
       <div class="right">
-     <a href="<%= chapter_path( @chapter ) %>" class="back">回到文章列表</a>
+     <a href="<%= chapter_path( @chapter, :page => params[ :page ]  ) %>" class="back">回到文章列表</a>
      <h3><%= @knowledge.title %></h3>
       <p id="articleContent" ></p>
 <a href="<%= chapter_path( @chapter ) %>" class="back">回到上一層</a>

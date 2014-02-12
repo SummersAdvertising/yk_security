@@ -16,7 +16,7 @@
       <div class="right">
       <ul>
       <% @knowledges.each do | knowledge | %>
-      	<li><%= link_to knowledge.title, chapter_knowledge_path( @chapter, knowledge ) %></li>
+      	<li><%= link_to knowledge.title, chapter_knowledge_path( @chapter, knowledge, :page => params[ :page ]  ) %></li>
       <% end %>
       </ul>
       <div class="page"><%= paginate @knowledges, :window => 2 %></div>
