@@ -60,7 +60,7 @@
     	<% i = i-1 %>
     	<% end %>
         </ul>
-        <div class="addlist"><a href="javascript: $('#items-container').children('li').eq(0).clone().attr('id', '').appendTo('#items-container').children('input').val('')">增加</a> </div>
+        <div class="addlist"><a id="addBtn" href="javascript: void(0);">增加</a> </div>
       </div>
     </section>
     <!--post-->
@@ -82,6 +82,10 @@
 
 $(document).ready(function(){
 	editor.init({ articleModel: 'service', photoUpload: '../../peditor/<%= @service.article.id %>/createPhoto',p_selectList: [] });
+
+	$('#addBtn').click(function() {
+		$('#items-container').children('li').eq(0).clone().attr('id', '').appendTo('#items-container').children('input').val('');
+	});
 
 	$("#submit").click(function(e){
 		e.preventDefault();
