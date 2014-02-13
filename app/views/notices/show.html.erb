@@ -22,7 +22,7 @@
       	<% @notices.each do | notice | %>      		
         <li class=" <%= 'active' if notice.id == @notice.id %> <%= 'fire' if notice.notice_type == 'wanted' %>">
 	        <span><%= notice.area %></span><br>
-	        <a href="<%= notice_path( notice ) %>"><%= notice.title %></a>
+	        <a href="<%= notice_path( notice, :page => params[ :page ] ) %>"><%= notice.title %></a>
         </li>
       	<% end %>
         </ul>
