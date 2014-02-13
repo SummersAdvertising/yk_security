@@ -15,7 +15,7 @@
         <ul>
         <% @instructions.each do | instruction | %>
         	<li <%= 'class="active"'.html_safe if instruction.id == @instruction.id %>> <span><%= instruction.created_at.strftime('%Y年%m月%d日') %></span><br>
-            <a href="<%= instruction_path( instruction, :year => params[ :year ]) %>"><%= instruction.title %></a></li>
+            <a href="<%= instruction_path( instruction, :year => params[ :year ], :page => params[ :page ]) %>"><%= instruction.title %></a></li>
         <% end %>
           
         </ul>
@@ -23,7 +23,7 @@
         <div class="years"> 
         	<a href="<%= instruction_path(@instruction, :page => params[ :page ] ) %>" <%= 'class="active"'.html_safe if params[ :year ].nil? %>>全部</a>
         <% @years.each do | year | %>
-        	<a href="<%= instructions_path( :year => year ) %>" <%= 'class="active"'.html_safe if year == params[ :year ] %>><%= year %> 年</a>
+        	<a href="<%= instructions_path( :year => year, :page => params[ :page ] ) %>" <%= 'class="active"'.html_safe if year == params[ :year ] %>><%= year %> 年</a>
         <% end %>
         </div>
       </div>
