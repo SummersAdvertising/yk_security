@@ -7,9 +7,16 @@
   <section class="content">
     <nav><a href="<%= root_url %>">首頁</a><span>></span><a>服務項目</a></nav>
     <div class="inner">
-    <% @services.each do | service | %>
+    <% @regular_services.each do | service | %>
     	<a href="<%= service_path( service ) %>" class="grid"><img src="<%= service.cover %>"><h4><%= service.title %></h4></a>
     <% end %>
     </div>
+    
+    <div class="inner">
+    <% @external_services.each do | service | %>
+    	<a href="<%= service_path( service ) %>" class="grid"><img src="<%= service.cover %>"><h4><%= service.title %></h4></a>
+    <% end %>
+    </div>
+    
   </section>
 </article>

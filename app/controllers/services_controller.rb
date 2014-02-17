@@ -1,6 +1,9 @@
 class ServicesController < ApplicationController
 	def index
-		@services = Service.all.order( :updated_at => :desc )
+		
+	  	@regular_services = Service.where( 'service_type <> "external"' ).order( :updated_at => :desc )
+	  	@external_services = Service.where( :service_type => 'external' ).order( :updated_at => :desc )
+		
 	end
 	
 	def show

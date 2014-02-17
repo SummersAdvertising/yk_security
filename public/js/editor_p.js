@@ -166,7 +166,7 @@ editor.p = {
 			textarea.val(editor.filter(editContent, editor.br2n, editor.HTMLparser).replace(/&nbsp;/g, ' '));
 
 		var cancel = $("<a>");
-		cancel.append("<img src='/images/cancel.png'>").append("取消");
+		cancel.append("取消");
 		cancel.click(function(){
 			editPanel.remove();
 			controlPanel.removeAttr("style");
@@ -181,7 +181,7 @@ editor.p = {
 		});
 
 		var save = $("<a>");
-		save.append("<img src='/images/check.png'>").append("完成");
+		save.append("完成");
 		save.click(function(){
 			editContent = editor.filter(textarea.val(), editor.HTMLfilter, editor.n2br);
 			if(editContent){

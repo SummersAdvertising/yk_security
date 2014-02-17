@@ -34,7 +34,7 @@ var editor = {
 		}
 		else{
 			//插入預設選單
-			var editorList = $("<ul>");
+			var editorList = $('<ul class="x3">');
 			editorList.addClass("editorList");
 
 			var sectionList = $("<div>").addClass("tab").append(editorList);
