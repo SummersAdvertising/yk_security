@@ -2,22 +2,19 @@ class ApplicationController < ActionController::Base
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.
   
-  
   protect_from_forgery with: :exception
-
-=begin  
-  after_filter :process_page_num
-  def default_url_options(options={})  
-    if !cookies[ :last_page_num ].nil?
-    	{ :page => cookies[ :last_page_num ] }
-    else
-    	{}
-    end
-  end  
   
-  def process_page_num
-  	cookies[ :last_page_num ] = nil
+  unless Rails.application.config.consider_all_requests_local
+    rescue_from Exception, with: lambda { |exception| render_error 500, exception }
+    rescue_from ActionController::RoutingError, ActionController::UnknownController, ::AbstractController::ActionNotFound, ActiveRecord::RecordNotFound, with: lambda { |exception| render_error 404, exception }
   end
-=end
+ 
+  private
+  def render_error(status, exception)
+    respond_to do |format|
+      format.html { render template: "errors/error_#{status}", layout: 'layouts/application', status: status }
+      format.all { render nothing: true, status: status }
+    end
+  end
   
 end
