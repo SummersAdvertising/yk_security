@@ -16,7 +16,7 @@ class StaticPagesController < ApplicationController
 		end
 		
 		respond_to do | format |
-			format.html { render :template => 'static_pages/' + params[ :page ] }
+			format.html { render :template => 'static_pages/' + params[ :page ] rescue redirect_to '/errors' }
 		end
 		
 	end
