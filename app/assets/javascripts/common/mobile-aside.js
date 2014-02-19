@@ -41,7 +41,7 @@ $(document).ready(function() {
   }
 });
 
-
+/*
 $(function(){	
 	var _showTab = 0;
 	var $defaultLi = $('.tab li').eq(_showTab).addClass('active');
@@ -56,3 +56,4 @@ $(function(){
 			this.blur();
 	});
 });
+*/

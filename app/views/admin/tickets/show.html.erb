@@ -21,7 +21,19 @@
     <table width="100%" border="0" cellspacing="0" cellpadding="0">
       <tr>
         <th valign="top">電話</th>
-        <td><%= @ticket.phone %></td>
+        <td>
+        <%= ( '(' + @ticket.phone_area + ') ' ) if @ticket.phone_area %>        
+        <%= @ticket.phone %>
+        <%= ( ' #' + @ticket.phone_ext) if @ticket.phone_ext %>
+        </td>
+      </tr>
+    </table>
+  </div>
+  <div class="one">
+    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <th valign="top">手機</th>
+        <td><%= @ticket.mobile %>&nbsp;</td>
       </tr>
     </table>
   </div>
