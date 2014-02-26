@@ -5,7 +5,7 @@ class Admin::NewsController < AdminController
   # GET /admin/news
   # GET /admin/news.json
   def index
-    @news = News.all.page(params[:page])
+    @news = News.order( :created_at => :desc ).page(params[:page])
   end
 
   # GET /admin/news/1
