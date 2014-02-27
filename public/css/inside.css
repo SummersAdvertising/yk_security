@@ -1,4 +1,4 @@
-
+﻿
 /*-----------------------------------------------------------------------員工表揚---*/
 
 #praise .left li{text-align:center}
@@ -145,6 +145,9 @@ bottom:0;left:0;padding:10px 0 0 10px;height:45px;color:#fff;font:900 22px 微�
 .bbh #content .form td{padding:5px 10px;border-top:1px solid #A4A4A4;border-right:1px solid #A4A4A4}
 .bbh #content .form .text{color:#bd0000}
 .bbh #content .photo{margin:50px 0 0 0;clear:both}
+
+.bbh .category{background:#2477B9!important;color:#fff!important;padding:5px 0}
+
 
 /*-----------------------------------------------------------------------保全百科---*/
 
