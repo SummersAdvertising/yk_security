@@ -33,7 +33,7 @@ Yks::Application.routes.draw do
     resources :news
     resources :instructions
     resources :prises do
-    	resources :honorees, :only => [ :show, :destroy ]
+    	resources :honorees, :only => [ :show, :edit, :update, :destroy ]
     end
     resources :notices do
     	resources :recruits, :only => [ :show ] 
