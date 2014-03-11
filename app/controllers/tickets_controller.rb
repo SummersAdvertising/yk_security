@@ -29,6 +29,9 @@ class TicketsController < ApplicationController
 
     respond_to do |format|
       if @ticket.save
+      	
+      	TicketsMailer.new_ticket( @ticket ).deliver
+      
         format.html { redirect_to new_ticket_path, notice: '感謝您的聯絡，請等候服務專員聯絡！' }
         format.json { render action: 'show', status: :created, location: @ticket }
       else
