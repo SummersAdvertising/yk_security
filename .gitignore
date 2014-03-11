@@ -32,3 +32,4 @@ config/initializers/secret_token.rb
 /config/deploy.rb
 /config/deploy/*
 
+/config/environments/*

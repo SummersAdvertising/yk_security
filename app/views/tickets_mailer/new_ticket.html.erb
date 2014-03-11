@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>誼光保全新詢問</title>
+	</head>
+	<body>	
+		<table width="100%" border="1" bordercolor="eeeeee" cellspacing="5" cellpadding="0">
+		  <tr>
+		    <th width="9%" height="30" >客戶姓名</th>
+		    <td width="24%" bgcolor="#f3f3f3" style="padding:0 0 0 10px"><%= @ticket.name %></td>
+		    <th width="9%">連絡電話</th>
+		    <td width="24%" bgcolor="#f3f3f3" style="padding:0 0 0 10px">
+		        <%= ( '(' + @ticket.phone_area + ') ' ) if @ticket.phone_area %>        
+		        <%= @ticket.phone %>
+		        <%= ( ' #' + @ticket.phone_ext) if @ticket.phone_ext %>
+	        </td>
+		    <th width="9%">電子郵件</th>
+		    <td width="25%" bgcolor="#f3f3f3" style="padding:0 0 0 10px"><%= @ticket.email %></td>
+		  </tr>
+		  <tr>
+		    <th width="9%" height="30" >公司名稱</th>
+		    <td width="24%" bgcolor="#f3f3f3" style="padding:0 0 0 10px"><%= @ticket.company %></td>
+		    <th width="9%">手機</th>
+		    <td colspan="3" bgcolor="#f3f3f3" style="padding:0 0 0 10px"><%= @ticket.mobile %></td>
+		  </tr>
+		  <tr>
+			  <th width="9%" height="30" >服務地址</th>
+			  <td bgcolor="#f3f3f3" colspan="5" style="padding:0 0 0 10px"><%= @ticket.address %></td>
+		  </tr>
+		  <tr>
+		    <th height="30">需求</th>
+		    <td colspan="5" bgcolor="#f3f3f3" style="padding:0 0 0 10px">
+		    
+        	<% @ticket.services.each do | service | %>
+        		<li><%= service %></li>
+        	<% end %>
+		  </tr>
+		</table>
+	
+	</body>
+</html>

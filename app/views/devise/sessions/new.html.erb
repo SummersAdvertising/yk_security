@@ -21,9 +21,7 @@
   <%= csrf_meta_tags %>
   
   <%= javascript_include_tag 'application' %>
-  
-  <script src="/js/auto-full-height.min.js"></script>
-  
+    
   <script>
 	  <% if !flash[:notice].nil? %>
 	  window.onload= function() { alertify['success']('<%= flash[:notice] %>', 3000); }
