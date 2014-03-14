@@ -12,7 +12,7 @@
 	    <tr>
 	      <td class="x0"><%= ticket.created_at.strftime('%Y-%m-%d') %></td>
 	      <td><a href="<%= admin_ticket_path( ticket ) %>"> <%= ticket.company %> </a></td>
-	      <td class="x0"> <%= ticket.name %></td>
+	      <td class="x0"> <a href="<%= admin_ticket_path( ticket ) %>"><%= ticket.name %></a></td>
 	      <td><%= link_to image_tag('delete.png'), admin_ticket_path( ticket ), :method => :delete, data: { confirm: "確定刪除 #{ticket.name} 的留言嗎？" } %></td>
 	    </tr>
     <% end %>
