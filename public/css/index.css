@@ -204,5 +204,7 @@ border-radius:50%;padding:40px 0 0 0;margin:0 0 10px 0}
 footer{height:255px;background:#710908;color:#fff}
 footer a{color:#fff}
 footer a:hover{color:#FFBBBA}
-footer .content{background:url(/images/footer2.png) 94% 40px no-repeat;padding-top:30px}
+footer .content{background:url(/images/footer2.png) 94% 40px no-repeat;padding-top:30px;position:relative}
 footer p{color:#fff}
+
+#sitemeter{position:absolute;right:42px;bottom:0}
