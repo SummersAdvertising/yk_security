@@ -1,4 +1,4 @@
-
+﻿
 /*-----------------------------------------------------------------------全域---*/
 
 body{font:300 15px 微軟正黑體,Microsoft JhengHei;line-height:1.7em;min-width:1024px;}
@@ -15,8 +15,8 @@ header .content > nav a{display:inline-block;margin-left: -4px;;height:100%;padd
 header .content > nav a:hover{background:#EFEFEF;box-shadow:inset 0 0 10px #bbb}
 header .content > nav a:last-child{border:none}
 
-#banner{clear:both;height:133px;border-bottom:1px solid #d6d6d6;}
-#banner .content{background:url(../images/banner.jpg) right -1px no-repeat;padding-top:35px;}
+#banner{clear:both;height:128px;border-bottom:1px solid #d6d6d6;}
+#banner .content{background:url(../images/banner.jpg) right -1px no-repeat;padding-top:35px;height:127px}
 #banner nav{height:55px}
 #banner nav a{color:#005791;display:inline-block;height:100%;font:900 14px 微軟正黑體,Microsoft JhengHei;background:url(../images/nav.png) center bottom no-repeat;padding:25px 10px 0 10px}
 #banner nav a:hover{background:url(../images/navh.png) center bottom no-repeat;color:#710908}
