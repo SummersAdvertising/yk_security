@@ -1,4 +1,4 @@
-
+﻿
 /*-----------------------------------------------------------------------全域---*/
 
 html{width: 100%;height: 100%; overflow-x: hidden;}
@@ -208,3 +208,4 @@ footer .content{background:url(/images/footer2.png) 94% 40px no-repeat;padding-t
 footer p{color:#fff}
 
 #sitemeter{position:absolute;right:42px;bottom:0}
+#sitemeter img{position:relative;top:6px}
