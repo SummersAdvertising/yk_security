@@ -7,6 +7,13 @@
 </script>
 <% end %>
 
+
+<% if !flash[ :warning ].nil? %>
+<script>
+  alertify.log('<%= flash[ :warning ] %>', 'error');
+</script>
+<% end %>
+
 <%= form_for(@ticket) do |f| %>
 
 <div id="banner" _height="none">
@@ -74,8 +81,27 @@
             </label>
             <span>如需誼光家事服務，請至<a href="http://www.ykhome.com.tw/" target="_blank">誼光家事官網</a></span>
           </tr>
+          </table>
+        </div>
+      </div>
+      <div style="overflow:hidden;margin-top:50px">
+        <div class="left">
+          <h3>驗證問題</h3>
+        </div>
+        <div class="right" style="padding:10px 0 0 0">
+          <table>
+            <tr>
+              <th><%= f.label :humanizer_answer, @ticket.humanizer_question %></th>
+              <td><%= f.text_field :humanizer_answer, :class => "text" %></td>
+            </tr>
         </table>
+    
+		
+		<%= f.hidden_field :humanizer_question_id %>
+		
         <%= f.submit '', :class => 'button' %>
+        
+        
       </div>
     </div><!--overflow:hidden-->    
   </div>
@@ -107,7 +133,7 @@
 			
 		},
 		messages: {
-			'ticket[name]': "請輸入您的名字",
+			'ticket[name]': "",
 			'ticket[phone]': {
 				required: ""
 			},

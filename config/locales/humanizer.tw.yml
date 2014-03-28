@@ -1,0 +1,35 @@
+tw:
+  humanizer:
+    validation:
+      error: 驗證失敗
+    questions:
+      - question: 二乘以二是多少?
+        answers: ["4", "四"]        
+      - question: 十二的前一個數字是多少?
+        answers: ["11", "十一"]
+      - question: 五乘以二是多少?
+        answers: ["10", "十"]
+      - question: "這個數列的下一個數字應該是？: 10, 11, 12, 13, 14, .."
+        answers: ["15", "十五"]
+      - question: "五乘以五是多少?"
+        answers: ["25", "二十五"]
+      - question: "十除以二是多少?"
+        answers: ["5", "五"]
+      - question: 星期一的下一天是?
+        answer: "星期二"
+      - question: 每年的最後一個月是幾月?
+        answer: ["十二月", "12月", "12"]
+      - question: 一個小時有幾分鐘?
+        answers: ["60", "六十"]
+      - question: 下面相反面是哪一面?
+        answer: "上面"
+      - question: 南方的反方向是?
+        answer: "北方"
+      - question: 好的相反是?
+        answer: "壞"
+      - question: 4 乘以四是多少?
+        answers: ["16", "十六"]
+      - question: 20 的下一個數字是?
+        answers: ["21", "二十一"]
+      - question: 七月的上一個月是?
+        answer: ["六月", "6月"]
