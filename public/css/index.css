@@ -1,4 +1,4 @@
-
+﻿
 /*-----------------------------------------------------------------------全域---*/
 
 html{width: 100%;height: 100%; overflow-x: hidden;}
@@ -102,6 +102,8 @@ border-radius:50%;padding:40px 0 0 0;margin:0 0 10px 0}
 #stage-3 #item-4{left:622px; top: 600px;}
 #stage-3 #item-5{left:800px; top: 600px;}
 
+#anchor-1{position:absolute;top:0;left:-128px}
+
 /*-----------------------------------------------------------------------舞台4---*/
 
 #stage-4{height:730px}
@@ -185,6 +187,8 @@ border-radius:50%;padding:40px 0 0 0;margin:0 0 10px 0}
 #stage-9 .item a{font-size:14px;color:#2c4b9c}
 #stage-9 .item a:hover{color:#5C7FD9}
 
+#anchor-2{position:absolute;top:0;left:-128px}
+
 /*-----------------------------------------------------------------------舞台10---*/
 
 #stage-10{height:611px;overflow:hidden}
@@ -208,3 +212,4 @@ footer .content{background:url(/images/footer2.png) 94% 40px no-repeat;padding-t
 footer p{color:#fff}
 
 #sitemeter{position:absolute;right:42px;bottom:0}
+#sitemeter img{position:relative;top:6px}
