@@ -73,4 +73,5 @@ gem 'kaminari'
 gem 'thin'
 gem 'quiet_assets'
 
-gem 'humanizer'
+#gem 'humanizer'
+gem "recaptcha", :require => "recaptcha/rails"

@@ -29,15 +29,21 @@ class TicketsController < ApplicationController
     @ticket = Ticket.new(ticket_params)
 
     respond_to do |format|
-      if @ticket.save
+      if verify_recaptcha && @ticket.save
       	
       	TicketsMailer.new_ticket( @ticket ).deliver
       
         format.html { redirect_to new_ticket_path, notice: '感謝您的聯絡，請等候服務專員聯絡！' }
         format.json { render action: 'show', status: :created, location: @ticket }
       else
-      
+        
       	flash[ :warning ] = @ticket.errors.messages.values.flatten.join('<br />')
+      	
+        unless verify_recaptcha
+        	flash[ :warning ] = '請輸入正確的驗證碼'
+        end
+      	
+      	
         format.html { render action: 'new' }
         format.json { render json: @ticket.errors, status: :unprocessable_entity }
       end
