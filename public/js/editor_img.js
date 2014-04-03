@@ -5,6 +5,8 @@ editor.img = {
 		editor.img.fileinputName = editor.settings.photoModel + "[" + editor.settings.photoColumn + "]";
 		editor.img.photoUpload = editor.settings.photoUpload;
 		editor.img.photoDestroy = editor.settings.photoDestroy;
+		editor.img.photoDefaultHeight = editor.settings.photoDefaultHeight ? editor.settings.photoDefaultHeight: 800;
+		editor.img.photoDefaultWidth = editor.settings.photoDefaultWidth? editor.settings.photoDefaultWidth: 800;
 	},
 	initTab: function(){
 		var li = $("<li>");
@@ -26,8 +28,24 @@ editor.img = {
 		
 		var input = $("<input>");
 		input.attr("id", editor.img.fileinputID).attr("name", editor.img.fileinputName).attr("type", "file");
+
+		var span = $('<span id="imageAttributes">');
+		/*
+		var inputWidth = $("<input>");
+		inputWidth.attr("id", 'PeditorPhotoWidth').attr('placeholder', '輸入寬度或不填使用預設').attr("name", 'photo[width]').attr("type", "text");
+		inputWidth.css('width', '20%')
 		
-		form.append(input).append($("<br>")).append($("input[name='authenticity_token']").eq(0).clone().change(function() {  }));
+		
+		var inputHeight = $("<input>");
+		inputHeight.attr("id", 'PeditorPhotoheight').attr('placeholder', '輸入高度或不填使用預設').attr("name", 'photo[height]').attr("type", "text");
+		inputHeight.css('width', '20%')
+		
+		span.append( inputWidth ).append( ' * ' ).append( inputHeight );
+		*/
+		
+		var preview = $('<div id="peditorPhotoPreview">');
+		
+		form.append(input).append(preview).append($("<br>")).append($("input[name='authenticity_token']").eq(0).clone().change(function() {  }));
 
 		if(editor.settings.linkedimg){
 			var link = $("<input>");
@@ -55,8 +73,45 @@ editor.img = {
 
 	},
 	update: function(image){
+		
+		$('#peditorPhotoPreview').children().remove();
+		$('[class^=imgareaselect]').hide()
 		editor.pack(image);
 		editor.img.show(image);
+	},
+	setup: function(image, resize_url){
+	
+		var resize_data;
+		
+		$('#peditorPhotoPreview').children().remove();
+		
+		$('#peditorPhotoPreview').append(image);
+		
+		image.imgAreaSelect({
+	        handles: true,
+	        aspectRatio: '1:1',
+	        onSelectEnd: function(img, selection) {
+	        	resize_data = selection;
+	        	console.log(selection);
+	        }
+        });
+	
+		var btn = $('<button>完成截圖</button>').click(function(event){
+			
+			event.preventDefault();
+			
+        	console.log( resize_url );
+        	$.ajax({
+	        	method: 'POST',
+	        	url: resize_url,
+	        	data: resize_data,
+	        	success: function(  ) {
+		        	console.log('complete');
+	        	}
+        	});
+		
+       });
+		$('#peditorPhotoPreview').append(btn);
 	},
 	show: function(paragraph){
 		var paragraphBox = this.output(paragraph);
@@ -220,7 +275,9 @@ editor.img = {
 
 		var save = $("<a>");
 		save.append("完成");
-		save.click(function(){
+		save.click(function(event){
+			
+		
 			if(textarea.val()){
 				imgLink.attr("href", textarea.val()).show();
 				paragraphContainer.append(imgLink);

@@ -1,11 +1,14 @@
 class Admin::PeditorController < AdminController
   #create photo
   def createPhoto
-    @photo = Photo.new(params.require(:photo).permit( :image, :name ))
+    @photo = Photo.new(params.require(:photo).permit( :image, :name, :height, :width ))
     @photo.article_id = params[:id]
-
-    respond_to do |format|
+    
+        respond_to do |format|
       if @photo.save
+      	
+      #	@photo.image.build_custom_photo
+      
         format.json { render json: @photo, status: :created, location: @photo }
         format.js
       else

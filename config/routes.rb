@@ -30,6 +30,12 @@ Yks::Application.routes.draw do
 
   	resources :admins
   
+  	resources :photos do
+  		member do
+  			post :resize
+  		end
+  	end
+  
     resources :news
     resources :instructions
     resources :prises do
