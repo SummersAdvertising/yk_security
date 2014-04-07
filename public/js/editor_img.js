@@ -26,6 +26,8 @@ editor.img = {
 		var form = $("<form>");
 		form.attr("accept-charset", "UTF-8").attr("action", editor.img.photoUpload).attr("data-remote", "true").attr("enctype", "multipart/form-data").attr("id", "new_"+editor.img.photoModel).attr("method", "post");
 		
+		var explain = $('<p>請先選擇圖片後點選加入段落</p>');
+		
 		var input = $("<input>");
 		input.attr("id", editor.img.fileinputID).attr("name", editor.img.fileinputName).attr("type", "file");
 
@@ -45,7 +47,9 @@ editor.img = {
 		
 		var preview = $('<div id="peditorPhotoPreview">');
 		
-		form.append(input).append(preview).append($("<br>")).append($("input[name='authenticity_token']").eq(0).clone().change(function() {  }));
+		$('#previewContainer').append(preview);
+		
+		form.append(explain).append(input).append($("<br>")).append($("input[name='authenticity_token']").eq(0).clone().change(function() {  }));
 
 		if(editor.settings.linkedimg){
 			var link = $("<input>");
@@ -100,18 +104,29 @@ editor.img = {
 			
 			event.preventDefault();
 			
-        	console.log( resize_url );
         	$.ajax({
 	        	method: 'POST',
 	        	url: resize_url,
 	        	data: resize_data,
-	        	success: function(  ) {
-		        	console.log('complete');
+	        	success: function(  ) {	        			
+		        	$('#peditorPhotoPreview').children().remove();
 	        	}
         	});
 		
        });
-		$('#peditorPhotoPreview').append(btn);
+		$('#peditorPhotoPreview').append('<br />').append(btn);
+		
+		var showResizeArea = function() {
+			 $.colorbox({ inline: true, href: '#previewContainer' });
+			 
+		}
+		
+		// delay for image load
+		setTimeout(showResizeArea, 500);
+	},
+	reset: function() {			
+		$('#peditorPhotoPreview').children().remove();
+		$('[class^=imgareaselect]').hide()
 	},
 	show: function(paragraph){
 		var paragraphBox = this.output(paragraph);

@@ -1,11 +1,15 @@
+<script src="/js/jquery.colorbox-min.js"></script>
+<script src="/js/jquery.colorbox-zh-TW.js"></script>
+
 <script src="/js/editor.js"></script>
 <script src="/js/editor_p.js"></script>
 <script src="/js/editor_img.js"></script>
 <script src="/js/editor_list.js"></script>
 <script src="/js/editor_video.js"></script>
-<script src="/js/jquery.imgareaselect.pack.js"></script>
+<script src="/js/jquery.imgareaselect.min.js"></script>
 
 <link rel="stylesheet" type="text/css" href="/css/imgareaselect-default.css" />
+<link rel="stylesheet" type="text/css" href="/css/colorbox.css" />
   
   
   
@@ -34,6 +38,13 @@
     </section>
     <!--text--> 
   
+    <div style="display:none">	    
+	    <div id="previewContainer">
+		    <h2>請在圖片上拖拉以完成您要的截圖範圍</h2>
+	    </div>
+    </div>
+  
+  
     <%= render :partial => 'admin/peditor/editor' %>
   <section class="button"> <a href="javascript: document.getElementsByTagName('form')[0].submit();"><img src="<%= image_path("save.png") %>">儲存</a> <a href="<%= admin_news_path(@news) %>"><img src="<%= image_path("cancel.png") %>">取消</a> </section>
   
@@ -49,7 +60,25 @@
 
 <script type="text/javascript">
 
+	var hold = false;
+	
 $(document).ready(function(){
+
+	var originalClose = $.colorbox.close;
+	$.colorbox.close = function(){
+		if (hold) {			
+		  if ( confirm( '確定放棄圖片裁切？這將會刪除您的圖片。' )) {
+		  	hold = false;
+		  	
+		  	editor.img.reset();
+		  	
+		    originalClose();
+		  } 
+		} else {
+			originalClose();
+		}
+	 }
+
 	editor.init({ articleModel: 'news', photoUpload: '../../peditor/<%= @news.article.id %>/createPhoto',p_selectList: [] });
 
 	$("#submit").click(function(e){
