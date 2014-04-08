@@ -30,49 +30,14 @@
 
 /*-----------------------------------------------------------------------人員招募---*/
 
-#recruit .left li{padding-left:30px!important}
-#recruit .left .fire{background:url(/images/rc-fire.gif) 0 center no-repeat}
-#recruit .left .active a{color:#c70000}
-#recruit .left li span{font-size:13px}
-#recruit .left li a{color:#005191}
+#recruit #tab{overflow:hidden}
+#recruit #tab li{float:left;list-style: none;margin:0 5px 0 0;height:57px}
+#recruit #tab .active{border:1px solid #06C}
+#recruit iframe{width:100%;height:900px;margin:10px 0 0 0}
 
-#recruit .right header{position:relative;height:100px}
-#recruit .right header a{position:absolute;right:0;top:30px;width:113px;height:30px;display:block;text-indent:-9999px;background:url(/images/rc-a.png)}
-#recruit .right header a:hover{background:url(/images/rc-ah.png)}
-#recruit .right header h3{font-size:35px}
-#recruit .right .fire{background:url(/images/rc-fire.gif) 2px 28px no-repeat;}
-#recruit .right .fire h3{padding:0 0 0 30px;}
-
-#recruit .right article b{color:#fa6a00;font-weight:900}
-#recruit .right article td{padding:5px 0}
-#recruit .right article .contact{background:#FFF9D8;padding:15px}
-
-#inline_content b{color:#e40505}
-#inline_content h3{color:#e40505;font:900 26px 微軟正黑體,Microsoft JhengHei}
-#inline_content table{margin:10px 0}
-#inline_content th{padding:0 15px 0 0}
-#inline_content td{padding:5px 0}
-#inline_content input.text,
-#inline_content textarea{border:3px solid #FCEDBB;border-radius:5px;width:100%;padding:5px}
-#inline_content textarea{min-height:150px}
-#inline_content .birth input.text{width:50px}
-#inline_content .button{display:block;background:url(/images/rc-b.jpg) 0 0 no-repeat;width:441px;margin:0 auto;height:41px;border:none;cursor:pointer}
-#inline_content .button:hover{background:url(/images/rc-bh.jpg) 0 0 no-repeat}
-
-input.error { border-color: red!important; }
-
-label.error { 
-width: 268px;
-height: 4px;
-text-align: right;
-margin: -30px 0 0 2px;
-overflow: hidden;
-display: block;
-position: absolute;
-color: red;
-}
-
-label.error:hover { height: inherit;}
+#recruit #boxframe{text-align:right;padding:20px 0 0 0;}
+#recruit #boxframe a{color:#26679a}
+#recruit #boxframe a:hover{text-decoration:underline}
 
 /*-----------------------------------------------------------------------教育訓練---*/
 
