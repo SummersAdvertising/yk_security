@@ -21,6 +21,8 @@ class Admin::PeditorController < AdminController
     @photo = Photo.find(params[:id])
     @photopath = "public/uploads/"+ @photo.article_id.to_s + "/" + @photo.id.to_s + "-" + @photo.name
     File.delete(@photopath) #carrierwave will handle this.
+    File.delete( "public/uploads/"+ @photo.article_id.to_s + "/" + @photo.id.to_s + "-peditor-" + @photo.name )
+    
     @photo.destroy
 
     respond_to do |format|

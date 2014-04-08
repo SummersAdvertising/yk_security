@@ -5,7 +5,7 @@ var editor = {
 		photoModel: "photo",
 		photoColumn: "image",
 		photoUpload: "uploadPhoto",
-		photoDestroy: "deletePhoto",
+		photoDestroy: "/admin/peditor/deletePhoto",
 		articleSection: "#articleContent",
 		elements: ["p", "img", "video"],
 
