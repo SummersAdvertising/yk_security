@@ -13,14 +13,6 @@
 
 ActiveRecord::Schema.define(version: 20140402100242) do
 
-  create_table "admin_chapters", force: true do |t|
-    t.string   "title"
-    t.string   "status"
-    t.integer  "sort"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "admins", force: true do |t|
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
@@ -159,6 +151,15 @@ ActiveRecord::Schema.define(version: 20140402100242) do
     t.datetime "updated_at"
     t.string   "service_type"
   end
+
+  create_table "simple_captcha_data", force: true do |t|
+    t.string   "key",        limit: 40
+    t.string   "value",      limit: 6
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "simple_captcha_data", ["key"], name: "idx_key"
 
   create_table "tickets", force: true do |t|
     t.string   "name"

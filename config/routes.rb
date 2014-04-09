@@ -26,6 +26,11 @@ Yks::Application.routes.draw do
 
   namespace :admin do  
   
+	authenticated :user do
+	  root :to => "admins#index"
+	end
+
+
   	get '/'		=> 'admins#index'
 
   	resources :admins
