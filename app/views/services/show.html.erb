@@ -4,7 +4,9 @@
 <script src="/js/editor_list.js"></script>
 <script src="/js/editor_video.js"></script>
 <script src="/js/editor_anchor.js"></script>
+
 <script src="/js/jquery.imgareaselect.pack.js"></script>
+<script src="/js/AnchorArt.js"></script>
 
 <link rel="stylesheet" type="text/css" href="/css/imgareaselect-default.css" />
 <style type="text/css">
@@ -23,8 +25,8 @@ div[data-type="anchor"]{ visibility:hidden; height: 5px; }
       <div class="left">
         <h3><%= @service.title %>服務項目</h3>
         <ul>
-        <% @service.items.each_with_index do | item, index | %>
-        	<li><a href="#<%= item %>"><%= index +1 %>. <%= item %></a></li>
+        <% @service.items.each do | item | %>
+        	<li><a href="#<%= item %>"><%= item %></a></li>
         <% end %>
         </ul>
       </div>
@@ -40,6 +42,8 @@ div[data-type="anchor"]{ visibility:hidden; height: 5px; }
 <input id="article_content" style="display:none;" type="text" value="<%= @service.article.content %>">
 <script>
 	$(document).ready(function() {	
-		editor.output();	
+		editor.output();
+
+    $(".left ul li:first").addClass("active");
 	});
 </script>

@@ -58,7 +58,7 @@ editor.anchor = {
 		paragraphBox.attr("data-type", "anchor");
 
 		var p = $("<p>");
-		p.html('<img src="/images/pin.png"/> <span data-link="' + paragraph.link + '"><a name="' + paragraph.link + '">( 錨點：' + paragraph.link + ' )</a></span>');
+		p.html('<img src="/images/pin.png"/> <span data-link="' + paragraph.link + '"><a id="' + paragraph.link + '" name="' + paragraph.link + '">( 錨點：' + paragraph.link + ' )</a></span>');
 
 		paragraphBox.append(p);
 		editor.settings.articleSection.append(paragraphBox);

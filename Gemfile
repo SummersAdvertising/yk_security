@@ -75,3 +75,6 @@ gem 'quiet_assets'
 
 #gem 'humanizer'
 gem "recaptcha", :require => "recaptcha/rails"
+
+gem 'therubyracer'
+gem 'execjs'
