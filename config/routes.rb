@@ -26,6 +26,11 @@ Yks::Application.routes.draw do
 
   namespace :admin do  
   
+	authenticated :user do
+	  root :to => "admins#index"
+	end
+
+
   	get '/'		=> 'admins#index'
 
   	resources :admins
@@ -64,7 +69,7 @@ Yks::Application.routes.draw do
     end
     
     post 'peditor/:id/createPhoto'					=> 'peditor#createPhoto'
-    post 'peditor/:id/destroyPhoto'					=> 'peditor#destroyPhoto'
+    delete 'peditor/deletePhoto/:id'					=> 'peditor#destroyPhoto'
   end
 
   devise_for :admins, :controllers => { :sessions => 'admin/sessions' }

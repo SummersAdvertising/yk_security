@@ -26,7 +26,7 @@ editor.img = {
 		var form = $("<form>");
 		form.attr("accept-charset", "UTF-8").attr("action", editor.img.photoUpload).attr("data-remote", "true").attr("enctype", "multipart/form-data").attr("id", "new_"+editor.img.photoModel).attr("method", "post");
 		
-		var explain = $('<p>請先選擇圖片後點選加入段落</p>');
+		var explain = $('<p>請先選擇圖片後點選加入內文</p>');
 		
 		var input = $("<input>");
 		input.attr("id", editor.img.fileinputID).attr("name", editor.img.fileinputName).attr("type", "file");
@@ -96,7 +96,6 @@ editor.img = {
 	        aspectRatio: '1:1',
 	        onSelectEnd: function(img, selection) {
 	        	resize_data = selection;
-	        	console.log(selection);
 	        }
         });
 	
@@ -126,7 +125,7 @@ editor.img = {
 	},
 	reset: function() {			
 		$('#peditorPhotoPreview').children().remove();
-		$('[class^=imgareaselect]').hide()
+		$('[class^=imgareaselect]').remove()
 	},
 	show: function(paragraph){
 		var paragraphBox = this.output(paragraph);
