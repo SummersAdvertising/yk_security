@@ -3,7 +3,15 @@
 <script src="/js/editor_img.js"></script>
 <script src="/js/editor_list.js"></script>
 <script src="/js/editor_video.js"></script>
+<script src="/js/editor_anchor.js"></script>
 <script src="/js/jquery.imgareaselect.pack.js"></script>
+
+<script type="text/javascript">
+$(function() {
+  $( "#items-container" ).sortable();
+  $( "#items-container" ).disableSelection();
+});
+</script>
 
 <link rel="stylesheet" type="text/css" href="/css/imgareaselect-default.css" />
 
@@ -51,6 +59,7 @@
         <ul id="items-container">
     	<% @service.items.each do | item | %>        		
           <li>
+            <span class="ui-icon"><img src="/images/list.png" /></span>
             <input name="service[items][]" value="<%= item %>" type="text"/>
           </li>
     	<% end %>
@@ -58,6 +67,7 @@
     	<% i = 3 - @service.items.size %>
     	<% until i <=0 %>    		
           <li>
+            <span class="ui-icon"><img src="/images/list.png" /></span>
             <input name="service[items][]" type="text"/>
           </li>
     	<% i = i-1 %>
@@ -88,7 +98,7 @@
 <script type="text/javascript">
 
 $(document).ready(function(){
-	editor.init({ articleModel: 'service', photoUpload: '../../peditor/<%= @service.article.id %>/createPhoto',p_selectList: [] });
+	editor.init({ articleModel: 'service', photoUpload: '../../peditor/<%= @service.article.id %>/createPhoto',p_selectList: ["paragraphFontClass"], anchor: true });
 
 	$('#addBtn').click(function() {
 		$('#items-container').children('li').eq(0).clone().attr('id', '').appendTo('#items-container').children('input').val('');

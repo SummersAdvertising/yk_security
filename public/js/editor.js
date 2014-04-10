@@ -7,7 +7,8 @@ var editor = {
 		photoUpload: "uploadPhoto",
 		photoDestroy: "deletePhoto",
 		articleSection: "#articleContent",
-		elements: ["p", "img", "video"],
+		elements: ["p", "img", "video", "anchor"],
+		anchor: false,
 
 		linkedp: false,
 		linkedimg: false,
@@ -34,7 +35,7 @@ var editor = {
 		}
 		else{
 			//插入預設選單
-			var editorList = $('<ul class="x3">');
+			var editorList = editor.settings.anchor ? $('<ul class="x4">') : $('<ul class="x3">');
 			editorList.addClass("editorList");
 
 			var sectionList = $("<div>").addClass("tab").append(editorList);

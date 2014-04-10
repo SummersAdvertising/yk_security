@@ -3,10 +3,13 @@
 <script src="/js/editor_img.js"></script>
 <script src="/js/editor_list.js"></script>
 <script src="/js/editor_video.js"></script>
+<script src="/js/editor_anchor.js"></script>
 <script src="/js/jquery.imgareaselect.pack.js"></script>
 
 <link rel="stylesheet" type="text/css" href="/css/imgareaselect-default.css" />
-
+<style type="text/css">
+div[data-type="anchor"]{ visibility:hidden; height: 5px; }
+</style>
 
 <div id="banner" _height="none">
   <section class="content">
@@ -21,7 +24,7 @@
         <h3><%= @service.title %>服務項目</h3>
         <ul>
         <% @service.items.each_with_index do | item, index | %>
-        	<li><%= index +1 %>. <%= item %></li>
+        	<li><a href="#<%= item %>"><%= index +1 %>. <%= item %></a></li>
         <% end %>
         </ul>
       </div>
