@@ -15,7 +15,10 @@ div[data-type="anchor"]{ visibility:hidden; height: 30px; }
 
 <script>
 $(function(){
-  $(".right").height($(".left").height())
+  if($(".left").height() > $(".right").height()){
+    $(".right").height($(".left").height());
+  }
+  
   var $win = $(window).scroll(function(){
     var win_scrollTop = $win.scrollTop();
     if(win_scrollTop >= 235 && win_scrollTop <= $("footer").offset().top - 500){
