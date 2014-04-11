@@ -44,13 +44,13 @@ editor.anchor = {
 			editor.alert("請選擇錨點連結", "error");
 			return;
 		}
-		if($("span[data-link='"+$("#newAnchor").val()+"']").length){
+		if($("span[data-link='"+escape($("#newAnchor").val())+"']").length){
 			editor.alert("錨點已經設置過了", "error");
 			return;
 		}
 
 		var anchor = new Object();
-		anchor.link = $("#newAnchor").val();
+		anchor.link = escape($("#newAnchor").val());
 
 		editor.anchor.show(anchor);
 		editor.save();
@@ -66,7 +66,7 @@ editor.anchor = {
 		paragraphBox.attr("data-type", "anchor");
 
 		var p = $("<p>");
-		p.html('<img src="/images/pin.png"/> <span data-link="' + paragraph.link + '"><a id="' + paragraph.link + '" name="' + paragraph.link + '">( 錨點：' + paragraph.link + ' )</a></span>');
+		p.html('<img src="/images/pin.png"/> <span data-link="' + paragraph.link + '"><a id="' + paragraph.link + '" name="' + paragraph.link + '">( 錨點：' + unescape(paragraph.link) + ' )</a></span>');
 
 		paragraphBox.append(p);
 		editor.settings.articleSection.append(paragraphBox);

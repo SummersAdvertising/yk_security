@@ -85,7 +85,7 @@ bottom:0;left:0;padding:10px 0 0 10px;height:45px;color:#fff;font:900 22px 微�
 .mnh .left{width:220px}
 .mnh .left h4{color:#0043a6;font:300 23px 微軟正黑體,Microsoft JhengHei;border-bottom:1px solid #E2E2E2;height:40px;margin:20px 0 0 0}
 .mnh .left ul{border:none;padding:10px 0!important}
-.mnh .left li a{color:#676767}
+.mnh .left li{border-bottom:1px dashed #676767!important;padding:10px!important;background:none!important}
 .mnh .left li{border-bottom:1px dashed #676767!important;padding:10px!important}
 .mnh .left li a:hover{color:#FF5A00}
 .mnh #intro{background:url(/images/mnh-03.jpg) right 850px no-repeat}
@@ -104,7 +104,7 @@ bottom:0;left:0;padding:10px 0 0 10px;height:45px;color:#fff;font:900 22px 微�
 /*叭叭房*/
 .bbh .left h4{color:#0043a6;font:300 23px 微軟正黑體,Microsoft JhengHei;border-bottom:1px dashed #a3a3a3;height:40px;margin:20px 0 0 0}
 .bbh .tab{overflow:hidden}
-.bbh .tab li{float:left;color:#676767}
+.bbh .tab li{float:left;color:#676767;background:none!important;padding:0!important}
 .bbh .tab li a{display:block;width:97px;text-align:center;color:#676767}
 .bbh .tab li a:hover{color:#a80000}
 .bbh .tab .active a{color:#a80000;font-weight:900}

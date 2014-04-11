@@ -15,9 +15,9 @@ div[data-type="anchor"]{ visibility:hidden; height: 30px; }
 
 <script>
 $(function(){
-  if($(".left").height() > $(".right").height()){
-    $(".right").height($(".left").height());
-  }
+  // if($(".left").height() > $(".right").height()){
+  //   $(".right").height($(".left").height());
+  // }
   
   var $win = $(window).scroll(function(){
     var win_scrollTop = $win.scrollTop();
@@ -47,7 +47,7 @@ $(function(){
         <h3><%= @service.title %>服務項目</h3>
         <ul>
         <% @service.items.each do | item | %>
-        	<li><a href="#<%= item %>"><%= item %></a></li>
+        	<li><a href="<%= item %>"><%= item %></a></li>
         <% end %>
         </ul>
       </div>
@@ -64,6 +64,10 @@ $(function(){
 <script>
 	$(document).ready(function() {	
 		editor.output();
+
+    $(".left ul li a").each(function(){
+      $(this).attr("href", "#"+escape($(this).attr("href")));
+    });
 
     var hash = window.location.hash;
     hash = hash.slice(8,hash.length);
