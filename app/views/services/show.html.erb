@@ -15,10 +15,10 @@ div[data-type="anchor"]{ visibility:hidden; height: 30px; }
 
 <script>
 $(function(){
+  $(".right").height($(".left").height())
   var $win = $(window).scroll(function(){
     var win_scrollTop = $win.scrollTop();
     if(win_scrollTop >= 235 && win_scrollTop <= $("footer").offset().top - 500){
-      console.log($win.scrollTop())
       $('#service .left').css({'position':'fixed',top:20,'margin-left':0});
     }
     else if(win_scrollTop < 235  ){
