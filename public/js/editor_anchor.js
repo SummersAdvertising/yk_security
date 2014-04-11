@@ -28,7 +28,15 @@ editor.anchor = {
 		$(".editorContent").append(editorChild.append(table));
 	},
 	add_options: function(select){
-		var option_arr = jQuery.map( $("#items-container li input"), function( a ) { return "<option>"+$(a).val()+"</option>"; });
+		var option_arr = jQuery.map( $("#items-container li input"), function( a ) {
+				var a_value = $(a).val(); 
+				if(a_value){
+					return "<option>" + a_value + "</option>";
+				}
+				else{
+					return "";
+				}
+			});
 		select.attr("id", "newAnchor").html(option_arr.join());
 	},
 	add: function(){

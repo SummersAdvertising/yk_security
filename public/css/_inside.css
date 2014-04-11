@@ -93,8 +93,6 @@ label.error:hover { height: inherit;}
 #news .left li a:hover{color:#c70000}
 #news .left .active a{color:#c70000}
 
-/*-----------------------------------------------------------------------服務項目---*/
-
 #service .grid{display:block;float:left;width:220px;height:175px;border:3px solid #00344F;
 margin:0 5px 50px 5px;position:relative}
 #service .grid img{width:214px;height:169px}
@@ -104,8 +102,13 @@ bottom:0;left:0;padding:10px 0 0 10px;height:45px;color:#fff;font:900 22px 微�
 #service .grid:hover h4{height:55px;}
 
 #service .left ul{border:none;padding:10px}
-#service .left ul li{border:none;padding:10px 0}
+#service .left ul li{border:none;padding:3px 0 3px 20px;background:url(/images/sv-04.gif) 0 10px no-repeat}
+#service .left ul li a:hover{color:#C70000}
+#service .left ul .active{background:url(/images/sv-04h.gif) 0 10px no-repeat}
 #service .left h3{font:900 31px 微軟正黑體,Microsoft JhengHei;color:#ff5a00}
+
+.part-title{font-size:24px;color:#005191;margin:0 0 10px 0}
+.part-content{margin:0 0 30px 0}
 
 /*迷你倉*/
 .mnh .left{width:220px}

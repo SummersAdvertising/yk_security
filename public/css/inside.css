@@ -69,9 +69,17 @@ bottom:0;left:0;padding:10px 0 0 10px;height:45px;color:#fff;font:900 22px 微�
 -webkit-transition:all ease .3s;-moz-transition:all ease .3s;text-shadow:0 -1px 0 #236B91,0 1px 0 #539FC6}
 #service .grid:hover h4{height:55px;}
 
+#service .inner {position: relative;}
+
 #service .left ul{border:none;padding:10px}
-#service .left ul li{border:none;padding:10px 0}
+#service .left ul li{border:none;padding:3px 0 3px 20px;background:url(/images/sv-04.gif) 0 10px no-repeat}
+#service .left ul li a{color:#555;}
+#service .left ul li a:hover,#service .left .active a{color:#C70000}
+#service .left ul .active{background:url(/images/sv-04h.gif) 0 10px no-repeat}
 #service .left h3{font:900 31px 微軟正黑體,Microsoft JhengHei;color:#ff5a00}
+
+.part-title{font-size:24px;color:#005191;margin:0 0 10px 0}
+.part-content{margin:0 0 30px 0}
 
 /*迷你倉*/
 .mnh .left{width:220px}

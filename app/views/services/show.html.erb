@@ -10,8 +10,26 @@
 
 <link rel="stylesheet" type="text/css" href="/css/imgareaselect-default.css" />
 <style type="text/css">
-div[data-type="anchor"]{ visibility:hidden; height: 5px; }
+div[data-type="anchor"]{ visibility:hidden; height: 30px; }
 </style>
+
+<script>
+$(function(){
+  var $win = $(window).scroll(function(){
+    var win_scrollTop = $win.scrollTop();
+    if(win_scrollTop >= 235 && win_scrollTop <= $("footer").offset().top - 500){
+      console.log($win.scrollTop())
+      $('#service .left').css({'position':'fixed',top:20,'margin-left':0});
+    }
+    else if(win_scrollTop < 235  ){
+     $('#service .left').css({'position':'relative',top:0,'margin-left':0})
+    }
+    else{ 
+      $('#service .left').attr("style", "").css({'position':'absolute',bottom:0,'margin-left':0});
+    }
+  }); 
+});
+</script>
 
 <div id="banner" _height="none">
   <section class="content">
@@ -44,6 +62,21 @@ div[data-type="anchor"]{ visibility:hidden; height: 5px; }
 	$(document).ready(function() {	
 		editor.output();
 
-    $(".left ul li:first").addClass("active");
-	});
+    var hash = window.location.hash;
+    hash = hash.slice(8,hash.length);
+    
+    var active_a = $("a[href='#"+ hash +"']");
+    
+    if(active_a.length){
+      active_a.parents("li:first").addClass("active");
+    }
+    else{
+      $(".left ul li:first").addClass("active");
+    }
+
+    $(".left ul li").click(function(){
+      $(".left ul li.active").removeClass("active");
+      $(this).addClass("active");
+    });
+  });
 </script>
