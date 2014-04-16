@@ -7,7 +7,7 @@
 
       	<%= link_to params[ :controller ] == 'instructions' ? '<img src="/images/ed-nav.png">'.html_safe : '教育訓練', instructions_path,:class => ( 'active'  if params[ :controller ] == 'instructions' ) %>
       	<%= link_to params[ :controller ] == 'prises' ? '<img src="/images/pr-nav.png">'.html_safe : '員工表揚', prises_path,:class => ( 'active'  if params[ :controller ] == 'prises' ) %>      	
-      	<%= link_to params[ :controller ] == 'notices' ? '<img src="/images/rc-nav.png">'.html_safe : '人員招募', notices_path,:class => ( 'active'  if params[ :controller ] == 'notices' ) %>      	
+      	<%= link_to params[ :page ] == 'recruit' ? '<img src="/images/rc-nav.png">'.html_safe : '人員招募', page_pages_path(:page => 'recruit') ,:class => ( 'active'  if params[ :page] == 'recruit' ) %>      	
       	<%= link_to params[ :controller ] == 'static_pages' && params[ :page ] == 'control' ? '<img src="/images/ct-nav.png">'.html_safe : '誼光管制中心', page_pages_path( :page => 'control' ),:class => ( 'active'  if params[ :controller ] == 'static_pages' && params[ :page ] == 'control') %>      	
       	
     </section>
