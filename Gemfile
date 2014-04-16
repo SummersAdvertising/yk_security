@@ -13,9 +13,9 @@ gem 'rails', '4.0.0'
 # 	gem 'sqlite3'
 # end
 
-# group :staging, :production do
+group :staging, :production do
 	gem 'mysql2'
-# end
+end
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
