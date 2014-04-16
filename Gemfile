@@ -9,13 +9,13 @@ source 'https://rubygems.org'
 gem 'rails', '4.0.0'
 
 # Use sqlite3 as the database for Active Record
-group :development, :testing do
-	gem 'sqlite3'
-end
+# group :development, :testing do
+# 	gem 'sqlite3'
+# end
 
-group :staging, :production do
+#group :staging, :production do
 	gem 'mysql2'
-end
+#end
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
@@ -75,3 +75,6 @@ gem 'quiet_assets'
 
 #gem 'humanizer'
 gem "recaptcha", :require => "recaptcha/rails"
+
+gem 'therubyracer'
+gem 'execjs'
