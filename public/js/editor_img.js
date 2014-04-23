@@ -121,7 +121,7 @@ editor.img = {
 		}
 		
 		// delay for image load
-		//setTimeout(showResizeArea, 500);
+		setTimeout(showResizeArea, 500);
 	},
 	reset: function() {			
 		$('#peditorPhotoPreview').children().remove();
