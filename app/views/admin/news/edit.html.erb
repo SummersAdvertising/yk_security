@@ -79,7 +79,7 @@ $(document).ready(function(){
 		}
 	 }
 
-	editor.init({ articleModel: 'news', photoUpload: '../../peditor/<%= @news.article.id %>/createPhoto',p_selectList: [] });
+	editor.init({ articleModel: 'news', photoUpload: '../../peditor/<%= @news.article.id %>/createPhoto',p_selectList: [], linkedp: true });
 
 	$("#submit").click(function(e){
 		e.preventDefault();

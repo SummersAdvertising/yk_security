@@ -33,7 +33,7 @@
 <script type="text/javascript">
 
 $(document).ready(function(){
-	editor.init({ articleModel: 'knowledge', photoUpload: '/admin/peditor/<%= @knowledge.article.id %>/createPhoto',p_selectList: [] });
+	editor.init({ articleModel: 'knowledge', photoUpload: '/admin/peditor/<%= @knowledge.article.id %>/createPhoto',p_selectList: [], linkedp: true });
 
 	$("#submit").click(function(e){
 		e.preventDefault();

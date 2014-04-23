@@ -55,13 +55,15 @@ editor.p = {
 		table.append($('<tr>').append($('<td width="95%">').append(text))
 							  .append($('<td width="5%" class="send">')));
 
+		$(".editorContent").append(editorChild.append(table));
+
 		if(editor.settings.linkedp){
 			var link = $("<input>");
 			link.attr("type", "text").attr("id", "newParagraphLink").attr("placeholder", "此段落連結至何處（若無請勿輸入）").attr("size", "80");
 			editorChild.append(link);
 		}
 		
-		$(".editorContent").append(editorChild.append(table));
+		
 	},
 	add: function(){
 		if(!$("#newParagraphContent").val()){
