@@ -93,6 +93,7 @@ editor.img = {
 		
 		image.imgAreaSelect({
 	        handles: true,
+	        aspectRatio: '1:1',
 	        onSelectEnd: function(img, selection) {
 	        	resize_data = selection;
 	        }
