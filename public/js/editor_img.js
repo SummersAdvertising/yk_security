@@ -88,8 +88,13 @@ editor.img = {
 		var resize_data;
 		
 		$('#peditorPhotoPreview').children().remove();
+
+		image.load(function() {
+			$(this).appendTo('#peditorPhotoPreview');
+			$.colorbox({ inline: true, href: '#previewContainer' });
+		});
 		
-		$('#peditorPhotoPreview').append(image);
+		//$('#peditorPhotoPreview').append(image);
 		
 		image.imgAreaSelect({
 	        handles: true,
@@ -120,7 +125,7 @@ editor.img = {
 		}
 		
 		// delay for image load
-		setTimeout(showResizeArea, 500);
+		//setTimeout(showResizeArea, 500);
 	},
 	reset: function() {			
 		$('#peditorPhotoPreview').children().remove();
