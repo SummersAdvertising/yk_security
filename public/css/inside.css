@@ -110,6 +110,7 @@ bottom:0;left:0;padding:10px 0 0 10px;height:45px;color:#fff;font:900 22px 微�
 .bbh .tab .active a{color:#a80000;font-weight:900}
 
 .bbh #intro p{padding:20px 0}
+.bbh #intro p span{color:#bd0000}
 
 .bbh #content {overflow:hidden}
 .bbh #content h5{color:#005191;font:300 43px 微軟正黑體,Microsoft JhengHei;float:left;padding:0 0 0 30px}
@@ -118,6 +119,7 @@ bottom:0;left:0;padding:10px 0 0 10px;height:45px;color:#fff;font:900 22px 微�
 .bbh #content .form td{padding:5px 10px;border-top:1px solid #A4A4A4;border-right:1px solid #A4A4A4}
 .bbh #content .form .text{color:#bd0000}
 .bbh #content .photo{margin:50px 0 0 0;clear:both}
+.bbh #content span{color:#bd0000}
 
 .bbh .category{background:#2477B9!important;color:#fff!important;padding:5px 0}
 
