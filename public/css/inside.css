@@ -100,6 +100,7 @@ bottom:0;left:0;padding:10px 0 0 10px;height:45px;color:#fff;font:900 22px 微�
 .mnh #content h5{font:300 46px 微軟正黑體,Microsoft JhengHei;height:75px}
 .mnh #content h6{color:#005191;font:900 22px 微軟正黑體,Microsoft JhengHei;margin:20px 0}
 .mnh #content p{padding:20px 0}
+.mnh #content p span,.mnh #content p a{color:#005191;}
 
 /*叭叭房*/
 .bbh .left h4{color:#0043a6;font:300 23px 微軟正黑體,Microsoft JhengHei;border-bottom:1px dashed #a3a3a3;height:40px;margin:20px 0 0 0}
