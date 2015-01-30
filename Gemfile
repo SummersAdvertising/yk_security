@@ -78,3 +78,4 @@ gem "recaptcha", :require => "recaptcha/rails"
 
 gem 'therubyracer'
 gem 'execjs'
+gem 'meta-tags'

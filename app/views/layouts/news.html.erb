@@ -1,0 +1,82 @@
+<!doctype html>
+<html>
+<head>
+<!--[if lt IE 9]>
+<script src="/js/html5.js"></script>
+<![endif]-->
+<meta charset="utf-8">
+<meta name="Robots" content="index,follow"/>
+<meta http-equiv="content-language" content="zh-TW" />
+<% set_meta_tags :site => '誼光保全，守護您安居樂業的生活', :reverse => true %>
+<%= display_meta_tags :og => {
+  :title => :title,
+  :site_name => '誼光保全，守護您安居樂業的生活',
+  :description => '誼光保全連續7年獲得駐衛警保全排行第1的榮譽，是銀行與金融單位指定警衛的首選，也提供社區大樓全方位的物業管理服務，服務項目包括：銀行駐衛警、百貨賣場保全、工商園區保全與管理、住家保全與管理；我們有超過4,000位訓練有素的人員，與子公司叭叭房停車場、誼光迷你倉，滿足您不同層面的需求，請立刻聯絡誼光保全 02-25073286 ',
+  :type => 'website',
+  :image => 'http://www.yks.com.tw/images/thumb.jpg'
+}
+ %>
+
+<link rel="image_src" href="http://www.yks.com.tw/images/thumb.jpg">
+<link rel="shortcut icon" href="http://www.yks.com.tw/images/favicon.ico"/>
+
+<%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+<%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+<%= csrf_meta_tags %>
+  
+<link rel="stylesheet" href="/css/reset.css">
+<link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="/css/inside.css">
+<link rel="stylesheet" href="/css/colorbox.css">
+<script type="text/javascript" src="/js/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="/js/auto-full-height.min.js"></script>
+
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-48673246-1', 'yks.com.tw');
+ga('send', 'pageview');
+
+</script>
+
+</head>
+
+<body>
+
+<header _height="none">
+  <section class="content">
+    <h1><a href="<%= root_url %>" style="display:block;width:100%;height:100%"></a></h1>
+      <nav>        
+        <a href="<%= news_index_path %>">最新消息</a>
+        <a href="<%= page_pages_path( :page => 'about' ) %>">公司簡介</a>
+        <a href="<%= services_path %>">服務項目</a>
+        <a href="<%= new_ticket_path %>">聯絡誼光</a>
+        <a href="<%= chapters_path %>">保全百科</a>
+        <a href="<%= page_pages_path( :page => 'client' ) %>">我們的客戶</a>
+        <a href="<%= page_pages_path( :page => 'enterprise' ) %>">關係企業</a>
+        <a href="<%= root_url %>">回首頁</a>
+      </nav>
+  </section>
+</header>
+
+<%= yield %>
+
+<footer _height="none">
+        <section class="content"> <img src="/images/logo.png" width="158" height="40">
+        
+        
+          <p>
+            <a href="<%= news_index_path %>">最新消息</a>  │  <a href="<%= page_pages_path( :page => 'about' ) %>">關於誼光</a>  │  <a href="<%= page_pages_path( :page => 'office' ) %>">服務據點</a>  │  <a href="<%= instructions_path %>">教育訓練</a><br>
+            <a href="<%= prises_path %>">員工表揚</a>  │  <a href="<%= page_pages_path(:page => 'recruit') %>">人員招募</a>  │  <a href="<%= services_path %>">服務項目</a>  │  <a href="<%= new_ticket_path %>">聯絡誼光</a><br>
+            <a href="<%= chapters_path %>">保全百科</a>  │  <a href="<%= page_pages_path( :page => 'client' ) %>">我們的客戶</a>  │  <a href="<%= page_pages_path( :page => 'enterprise' ) %>">關係企業</a>  │  <a href="<%= page_pages_path( :page => 'control' ) %>">誼光管制中心</a> 
+            <br>
+            <br>
+            誼光保全股份有限公司 ‧ 誼光國際公寓大廈管理維護股份有限公司<br>
+            版權所有 © 2014 YKS. All Rights Reserved. </p>
+        </section>
+      </footer>
+</body>
+</html>

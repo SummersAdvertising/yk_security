@@ -22,9 +22,15 @@
       </div>
       <div class="right">
         <header><span class="date"><%= @news.created_at.strftime('%Y年%m月%d日') %></span>
-          <h3><%= @news.title %></h3>
+          <h3><%= title @news.title %></h3>
         </header>        
         <%= image_tag(@news.cover) %>
+        <% unless @news.cover.blank? %>
+          <% set_meta_tags :og => { :image => @news.cover } %>          
+        <% end %>
+        <% unless @news.fb_meta_description.blank? %>
+          <% set_meta_tags :og => { :description => @news.fb_meta_description } %>          
+        <% end %>
         <article id="articleContent"></article>
       </div>
     </div>

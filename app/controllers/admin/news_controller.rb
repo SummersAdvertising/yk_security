@@ -1,5 +1,6 @@
 # encoding: utf-8
 class Admin::NewsController < AdminController
+  
   before_action :set_news, only: [:show, :edit, :update, :destroy]
   
   # GET /admin/news
@@ -18,6 +19,7 @@ class Admin::NewsController < AdminController
     @news = News.new
     @news.article = Article.new    
     @news.title = "未命名標題"
+    @news.fb_meta_description = "誼光保全連續7年獲得駐衛警保全排行第1的榮譽，是銀行與金融單位指定警衛的首選，也提供社區大樓全方位的物業管理服務，服務項目包括：銀行駐衛警、百貨賣場保全、工商園區保全與管理、住家保全與管理；我們有超過4,000位訓練有素的人員，與子公司叭叭房停車場、誼光迷你倉，滿足您不同層面的需求，請立刻聯絡誼光保全 02-25073286"
     @news.save
 
     respond_to do |format|
@@ -64,7 +66,7 @@ class Admin::NewsController < AdminController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def news_params
-      params.require(:news).permit(:title, :cover, :content, :status)
+      params.require(:news).permit(:title, :cover, :content, :status, :fb_meta_description)
     end
     
 end

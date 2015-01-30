@@ -5,7 +5,7 @@ class News < ActiveRecord::Base
 	belongs_to :article, :dependent => :destroy
 	
 	
-	validates_presence_of :title
+	validates_presence_of :title, :fb_meta_description
 	
 	paginates_per 20 
 	
