@@ -34,3 +34,4 @@ pickle-email-*.html
 /config/deploy/*
 
 /config/environments/*
+.DS_Store
