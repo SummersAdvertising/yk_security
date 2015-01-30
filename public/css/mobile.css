@@ -9,7 +9,7 @@
 
 #top .left h1{width:70%;text-align:center}
 
-#aside-box{position:absolute;display:none;width:150px;right:10px;top:40px;z-index:3;background:image-url("aside.png") 113px 0 no-repeat;padding:15px 0 0 0}
+#aside-box{position:absolute;display:none;width:150px;right:10px;top:40px;z-index:3;background:url(../images/aside.png) 113px 0 no-repeat;padding:15px 0 0 0}
 #aside-box a{font-size:13px;border-top:1px solid #3E4555;border-bottom:1px solid #232A3A;color:#C3CBD8;padding:12px 0 0 0;height:40px;background:#32394B;}
 #aside-box a:hover{background:#292F3D}
 

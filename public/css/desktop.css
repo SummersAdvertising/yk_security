@@ -1,23 +1,23 @@
 /*-----------------------------------------------------------------------頁首---*/
 
 #nav-ctrl,#aside-ctrl{display:none}
-#top{min-width:897px;max-width:1024px;margin:0 auto}
+#top{min-width:897px;}
 
-h1{float:left;width:40%}
+h1{float:left;padding:0 0 0 200px}
 
-aside{float:right;text-align:right;width:60%;padding:8px 0 0 0}
+aside{float:right;text-align:right;padding:8px 0 0 0}
 
 #aside-box a{border:1px solid #2B4680;border-radius:5px;background:#4B67A1;text-align:center;padding:5px 10px;height:30px;margin-left:10px;font-size:1em}
 #aside-box a:hover{background:#2B4680}
 
-/*-----------------------------------------------------------------------內容---*/
+/*-----------------------------------------------------------------------內容---
 
 #main{padding:15px;min-width:897px;max-width:1024px;margin:0 auto}
 
 article{padding:3%;width:100%;border-radius:5px;}
 article section{margin:0 0 15px 0}
 
-/*-----------------------------------------------------------------------側欄---*/
+/*-----------------------------------------------------------------------側欄---
 
 nav{position:relative;z-index:3;top:1px}
 nav li{width:12%;float:right;text-align:center;height:100px}

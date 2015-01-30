@@ -1,0 +1,204 @@
+﻿
+/*-----------------------------------------------------------------------全域---*/
+
+html{width: 100%;height: 100%;}
+body{background:#333;width: 100%;height: 100%;}
+body.pace-running{overflow-y: hidden; }
+#waiting{width: 100%;height: 100%;background-color: rgba(0, 0, 0, 0.6);position: absolute;z-index: 5;}
+#wrapper{font:300 15px 微軟正黑體,Microsoft JhengHei;line-height:1.7em;width:1280px;margin:0 auto;
+background:#fff;position:relative}
+a{font:300 15px 微軟正黑體,Microsoft JhengHei;line-height:1.7em;text-decoration:none;
+-webkit-transition:all ease .3s;-moz-transition:all ease .3s}
+.content{width:1024px;margin:0 auto;padding:0 47px}
+
+/*-----------------------------------------------------------------------頁首---*/
+
+header{position:relative;background:url(../images/id-04.jpg) center 0 no-repeat;padding:35px 0 0 0;height:194px}
+
+nav{background:url(../images/id-01.jpg) 0 0 repeat-x;height:59px;border:1px solid #B9C3CF;border-radius:10px;width:1024px;margin:0 auto;text-align:right}
+nav a{display:inline-block;padding:20px 15px 0 15px;height:100%;border-right:1px solid #EBEBEB;color:#222;font:900 14px 微軟正黑體,Microsoft JhengHei;text-shadow:0 1px 0 #fff;background:url(../images/id-01.jpg) 0 0 repeat-x;}
+nav a:hover{background:url(../images/id-01h.jpg) 0 0 repeat-x;}
+nav a:last-child{border-radius:0 10px 10px 0}
+
+h1{position:absolute;top:45px;left:150px}
+
+/*-----------------------------------------------------------------------側欄---*/
+
+aside{background:url(../images/id-03.png) 0 0 no-repeat;width:114px;height:342px;padding:65px 5px 0 5px;
+display: none;position: absolute;z-index:4}
+aside a{display:block;width:100%;border-bottom:1px solid #0D0D0D;border-top:1px solid #45484C;
+color:#fff;text-align:center;font:300 14px 微軟正黑體,Microsoft JhengHei;line-height:1.7em;padding:4px 0}
+aside a:hover{background:#45484C}
+aside a span{color:#ffd200;font-size:9px;padding:0 5px 0 0}
+aside #top{display:block;width:50px;height:45px;position:absolute;top:12px;left:33px;border:0;background:none}
+
+/*-----------------------------------------------------------------------頁身---*/
+
+.stage{position:relative}
+.level{position:absolute}
+.level-1{z-index:1}
+.level-2{z-index:2}
+.level-3{z-index:3}
+
+/*-----------------------------------------------------------------------舞台1---*/
+
+#stage-1{height:500px}
+
+/*城市*/
+#stage-1 .level-1{top:0px;left:0}
+
+/*標題*/
+#stage-1 .title{top:-20px;left:565px}
+
+/*電話*/
+#stage-1 .phone{top:305px;left:565px;background:url(../images/id-08.png) 0 0 no-repeat;width:457px;height:95px;
+padding:25px 0 0 270px}
+#stage-1 .phone a{display:block;background:url(../images/id-09.png) 0 0 no-repeat;width:169px;height:58px;}
+#stage-1 .phone a:hover{background:url(../images/id-09h.png) 0 0 no-repeat}
+
+/*人物*/
+#stage-1 .level-3{top:-60px;left:140px}
+
+/*-----------------------------------------------------------------------舞台2---*/
+
+#stage-2{height:680px;overflow:hidden}
+#stage-2 h3{font:900 36px 微軟正黑體,Microsoft JhengHei;line-height:1.7em;margin:30px 0 0 0}
+
+/*文字*/
+#stage-2 .text{left:440px;top:70px;width:666px;background:url(../images/id-11.jpg) 95% bottom no-repeat;}
+
+/*人物*/
+#stage-2 .level-3{top:0;left:0}
+
+/*-----------------------------------------------------------------------最新消息---*/
+
+#news{background:#F0F2F2;overflow:hidden;height:355px;padding:10px 0 0 0}
+#news .content{width:800px;margin:0 auto}
+#news h3{font:300 42px 微軟正黑體,Microsoft JhengHei;line-height:1.7em;color:#c0c2c2}
+#news .text{padding:0 0 0 30px}
+#news .photo img{width:280px;height:210px}
+#news span{color:#747474}
+#news h4 a{font:300 22px 微軟正黑體,Microsoft JhengHei;line-height:1.7em;}
+#news a{color:#005191}
+#news a:hover{color:#2A85CD}
+
+/*-----------------------------------------------------------------------舞台3---*/
+
+#stage-3{width:1024px;margin:0 auto;border-bottom:1px solid #9D9D9D;overflow:hidden;height:555px;text-align:center;padding:75px 0 0 0}
+#stage-3 h3{font:900 48px 微軟正黑體,Microsoft JhengHei;line-height:1.7em;}
+#stage-3 p{font:300 22px 微軟正黑體,Microsoft JhengHei;line-height:1.7em}
+
+#stage-3 .item{position:absolute;width:130px;top:250px}
+#stage-3 .item h4{width:115px;height:115px;background:#107DB9;font:900 31px 微軟正黑體,Microsoft JhengHei;color:#fff;
+border-radius:50%;padding:40px 0 0 0;margin:0 0 10px 0}
+#stage-3 #item-1{left:90px}
+#stage-3 #item-2{left:270px}
+#stage-3 #item-3{left:445px}
+#stage-3 #item-4{left:622px}
+#stage-3 #item-5{left:800px}
+
+/*-----------------------------------------------------------------------舞台4---*/
+
+#stage-4{height:730px}
+#stage-4 .title{width:645px}
+#stage-4 .title h3{font:900 48px 微軟正黑體,Microsoft JhengHei;line-height:1.7em;}
+#stage-4 .title p{font:300 22px 微軟正黑體,Microsoft JhengHei;line-height:1.7em}
+
+/*維修*/
+#stage-4 .level-1{top:190px;left:0}
+/*團隊*/
+#stage-4 .level-3{top:405px;right:165px}
+/*城市*/
+#stage-4 .level-2{top:528px;right:0px}
+
+#stage-4 .title{top:30px;right:190px}
+#stage-4 .text{top:230px;right:490px}
+#stage-4 .text h4{font:300 26px 微軟正黑體,Microsoft JhengHei;line-height:1.7em;color:#107db9;margin:20px 0 0 0}
+
+/*-----------------------------------------------------------------------榮譽榜---*/
+
+#honor{background:#FFD802;overflow:hidden;height:355px;padding:10px 0 0 0}
+#honor .content{width:800px;margin:0 auto}
+#honor h3{font:300 42px 微軟正黑體,Microsoft JhengHei;line-height:1.7em;color:#fff}
+#honor .text{padding:0 0 0 30px}
+#honor .photo img{width:175px;height:175px;border:5px solid #fff}
+#honor h4 a{font:900 22px 微軟正黑體,Microsoft JhengHei;line-height:1.7em;color:#000}
+#honor h4 a:hover{color:#555}
+
+/*-----------------------------------------------------------------------服務項目---*/
+
+#service{height:130px;background:#636767;position:relative;padding:20px 0 0 170px}
+#service img{position:absolute;bottom:-45px;left:225px;z-index:3}
+#service h2{font:900 56px 微軟正黑體,Microsoft JhengHei;line-height:1.7em;color:#fff}
+
+/*-----------------------------------------------------------------------舞台5---*/
+
+#stage-5{height:916px;background:url(../images/id-17.jpg) 0 0 no-repeat}
+
+#stage-5 h3,
+#stage-6 h3,
+#stage-7 h3,
+#stage-8 h3{font:900 62px 微軟正黑體,Microsoft JhengHei;line-height:1em;color:#0f7bb7}
+#stage-5 span,
+#stage-6 span,
+#stage-7 span,
+#stage-8 span{font:900 24px 微軟正黑體,Microsoft JhengHei;line-height:1.9em}
+
+#stage-5 .level-2{width:465px;left:210px;top:80px}
+#stage-5 .level-3{top:200px;right:185px}
+
+/*-----------------------------------------------------------------------舞台6---*/
+
+#stage-6{height:805px;background:url(../images/id-19.jpg) 0 0 no-repeat;overflow:hidden}
+#stage-6 .level-2{width:465px;left:550px;top:60px}
+#stage-6 .level-3{top:135px;left:190px}
+
+/*-----------------------------------------------------------------------舞台7---*/
+
+#stage-7{height:804px;background:url(../images/id-21.jpg) 0 0 no-repeat;overflow:hidden}
+#stage-7 .level-1{top:105px;left:185px}
+#stage-7 .level-2{top:195px;right:95px}
+#stage-7 .level-3{bottom:-8px;left:0}
+
+/*-----------------------------------------------------------------------舞台8---*/
+
+#stage-8{height:729px;background:url(../images/id-23.jpg) 0 0 no-repeat;overflow:hidden}
+#stage-8 .level-2{top:0;left:185px}
+#stage-8 .level-3{bottom:-8px;right:10px}
+
+/*-----------------------------------------------------------------------舞台9---*/
+
+#stage-9{width:1024px;margin:0 auto;border-bottom:1px solid #9D9D9D;overflow:hidden;height:405px;padding:75px 0 0 0}
+#stage-9 h3{font:900 48px 微軟正黑體,Microsoft JhengHei;line-height:1.7em;padding:0 0 0 50px}
+
+#stage-9 .item{position:absolute;width:215px;top:195px}
+#stage-9 #item-1{left:145px}
+#stage-9 #item-2{left:405px}
+#stage-9 #item-3{left:690px}
+#stage-9 .item a{font-size:14px;color:#2c4b9c}
+#stage-9 .item a:hover{color:#5C7FD9}
+
+/*-----------------------------------------------------------------------舞台10---*/
+
+#stage-10{height:611px;overflow:hidden}
+#stage-10 .level-3{right:0;bottom:0}
+#stage-10 .level-2{left:175px;top:70px}
+#stage-10 h3{font:900 48px 微軟正黑體,Microsoft JhengHei;line-height:1.7em}
+
+/*-----------------------------------------------------------------------舞台11---*/
+
+#stage-11{height:555px;overflow:hidden}
+#stage-11 .level-3{right:200px;top:120px}
+#stage-11 .level-2{left:175px;top:70px}
+#stage-11 h3{font:900 48px 微軟正黑體,Microsoft JhengHei;line-height:1.7em}
+
+/*-----------------------------------------------------------------------頁尾---*/
+
+footer{height:255px;background:#710908;color:#fff}
+footer a{color:#fff}
+footer a:hover{color:#FFBBBA}
+footer .content{background:url(../images/footer2.png) 94% 40px no-repeat;padding-top:30px}
+footer p{color:#fff}
+
+#sitemeter{position:absolute;right:42px;bottom:0}
+#sitemeter img{position:relative;top:6px}
