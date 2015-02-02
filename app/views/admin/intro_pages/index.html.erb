@@ -1,0 +1,44 @@
+<section class="hgroup">
+  <h2>intro pages index</h2>
+</section>
+<!--hgroup-->
+<section class="button"> 
+  <%= link_to new_admin_intro_page_path(), :method => :get,class: "right highlight"  do %>
+    新增介紹<img src="/images/add.png">
+  <% end %>
+</section>
+<!--button-->
+<section class="list">
+  <table width="100%" border="0" cellspacing="0" cellpadding="0">
+    <tr>
+      <th align="left">名稱</th>
+      <th align="left" class="x0 x1">編輯</th>
+      <th align="left" class="x1">刪除</th>
+    </tr>
+    <% @intro_pages.each do |intro_page| %>
+      <tr>
+        <td>
+          <%= link_to admin_intro_page_path(intro_page) do %>
+            <%= intro_page.title %>
+          <% end %>
+        </td>
+        <td class="x0">
+          <%= link_to edit_admin_intro_page_path(intro_page) do %>
+            <img src="/images/edit.png">
+          <% end %>
+        </td>
+        <td>
+          <%= link_to admin_intro_page_path(intro_page), :data => { :confirm => "將會刪除此文章，確定繼續？" }, :method => :delete, :class => "delete", title: "刪除" do %>
+            <img src="/images/delete.png">
+          <% end %>
+        </td>
+      </tr>
+    <% end %>
+
+  </table>
+</section>
+<!--list-->
+<section class="page">
+  <%= paginate @intro_pages ,:window => 2 %>
+</section>
+<!--page--> 

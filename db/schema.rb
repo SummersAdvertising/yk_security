@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150130081353) do
+ActiveRecord::Schema.define(version: 20150202084701) do
 
   create_table "admins", force: true do |t|
     t.string   "email",                  default: "", null: false
@@ -103,11 +103,33 @@ ActiveRecord::Schema.define(version: 20150130081353) do
     t.datetime "updated_at"
   end
 
+  create_table "intro_pages", force: true do |t|
+    t.string   "title"
+    t.string   "page_name"
+    t.integer  "article_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "knowledges", force: true do |t|
     t.string   "title"
     t.integer  "article_id"
     t.string   "status"
     t.integer  "chapter_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "ministorages", force: true do |t|
+    t.string   "name"
+    t.text     "intro"
+    t.string   "phone"
+    t.string   "address"
+    t.integer  "country"
+    t.integer  "city"
+    t.integer  "district"
+    t.text     "map_iframe"
+    t.integer  "article_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

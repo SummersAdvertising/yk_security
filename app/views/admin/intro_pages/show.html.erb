@@ -1,0 +1,25 @@
+<script src="/js/editor.js"></script>
+<script src="/js/editor_p.js"></script>
+<script src="/js/editor_img.js"></script>
+<script src="/js/editor_list.js"></script>
+<script src="/js/editor_video.js"></script>
+<script src="/js/jquery.imgareaselect.pack.js"></script>
+
+<link rel="stylesheet" type="text/css" href="/css/imgareaselect-default.css" />
+
+<section class="hgroup">
+  <h2><%= @intro_page.title %></h2>      
+</section>
+<!--hgroup-->
+<section class="text text-show" id="articleContent">      
+</section>
+<!--text-->
+<section class="button"> <a href="<%= edit_admin_intro_page_path(@intro_page) %>"><img src="<%= image_path("edit.png") %>">編輯</a></section>
+<!--button-->
+    
+<input id="article_content" style="display:none;" type="text" value="<%= @intro_page.article.content %>">
+<script>
+  $(document).ready(function() {  
+    editor.output();  
+  });
+</script>

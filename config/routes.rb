@@ -81,7 +81,22 @@ Yks::Application.routes.draw do
         get 'fetch_from_city' => 'babahomes#fetch_from_city'
       end
     end
+
+    resources :ministorages do
+      member do 
+        get   '/intro'       => 'ministorages#intro', as: 'intro'
+        patch  '/update_intro'       => 'ministorages#update_intro'
+
+        get 'fetch_from_country' => 'ministorages#fetch_from_country'
+        get 'fetch_from_city' => 'ministorages#fetch_from_city'
+      end
+      collection do 
+        get 'fetch_from_country' => 'ministorages#fetch_from_country'
+        get 'fetch_from_city' => 'ministorages#fetch_from_city'
+      end
+    end
     
+    resources :intro_pages
 
     post 'peditor/:id/createPhoto'					=> 'peditor#createPhoto'
     delete 'peditor/deletePhoto/:id'					=> 'peditor#destroyPhoto'

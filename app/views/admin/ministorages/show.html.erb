@@ -1,0 +1,59 @@
+<script src="/js/editor.js"></script>
+<script src="/js/editor_p.js"></script>
+<script src="/js/editor_img.js"></script>
+<script src="/js/editor_list.js"></script>
+<script src="/js/editor_video.js"></script>
+<script src="/js/jquery.imgareaselect.pack.js"></script>
+
+<link rel="stylesheet" type="text/css" href="/css/imgareaselect-default.css" />
+
+<section class="hgroup">
+  <h2>迷你倉-站點查詢</h2>   
+</section>
+<!--hgroup-->
+
+<section class="text text-show">  
+  <div>
+    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <th width="9%">名稱：</th>
+        <td width="91%"><%= @ministorage.name %></td>      
+      </tr>
+      <tr>
+        <th>描述：</th>
+        <td><%= @ministorage.intro %></td>
+      </tr>
+      <tr>
+        <th>電話：</th>
+        <td><%= @ministorage.phone %></td>
+      </tr>          
+      <tr>
+        <th>地址：</th>
+        <td><%= @ministorage.address %></td>
+      </tr>
+      <% unless @ministorage.map_iframe.blank? %>
+      <tr>
+        <th valign="top">地圖：</th>
+        <td><%= @ministorage.map_iframe.html_safe %></td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+</section>
+
+<section class="hgroup">
+  <h2>文章內文</h2>      
+</section>
+<!--hgroup-->
+<section class="text text-show" id="articleContent">      
+</section>
+<!--text-->
+<section class="button"> <a href="<%= edit_admin_ministorage_path(@ministorage) %>"><img src="<%= image_path("edit.png") %>">編輯</a> <a href="<%= admin_ministorages_path %>"><img src="<%= image_path("back.png") %>">返回</a> </section>
+<!--button-->
+    
+<input id="article_content" style="display:none;" type="text" value="<%= @ministorage.article.content %>">
+<script>
+  $(document).ready(function() {  
+    editor.output();  
+  });
+</script>

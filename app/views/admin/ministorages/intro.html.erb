@@ -1,0 +1,91 @@
+<script src="/js/jquery.colorbox-min.js"></script>
+<script src="/js/jquery.colorbox-zh-TW.js"></script>
+
+<script src="/js/editor.js"></script>
+<script src="/js/editor_p.js"></script>
+<script src="/js/editor_img.js"></script>
+<script src="/js/editor_list.js"></script>
+<script src="/js/editor_video.js"></script>
+<script src="/js/jquery.imgareaselect.min.js"></script>
+
+<link rel="stylesheet" type="text/css" href="/css/colorbox.css" />
+<link rel="stylesheet" type="text/css" href="/css/imgareaselect-default.css" />
+
+<section class="hgroup">
+  <h2>迷你倉-站點查詢</h2>
+</section>
+<!--hgroup-->
+<section class="category">
+  <ul>
+    <li><%= link_to '基本', edit_admin_ministorage_path(@ministorage) %></li>
+    <li  class="active"><%= link_to '內文', intro_admin_ministorage_path(@ministorage) %></li>
+  </ul>
+</section>
+<!--category-->   
+
+<%= form_for(@ministorage, :url => update_intro_admin_ministorage_path(@ministorage), html: { id: "patchthisministorage", method: "patch"}) do |f| %>
+  <%= f.hidden_field :name %>
+
+  <div style="display:none">      
+    <div id="previewContainer">
+      <h2>請在圖片上拖拉以完成您要的截圖範圍</h2>
+    </div>
+  </div>
+  <!--title-->
+  <%= render :partial => 'admin/peditor/editor' %>
+
+  <section class="button">
+    <a href="javascript: document.getElementById('patchthisministorage').submit();"><img src="<%= image_path("save.png") %>">儲存</a>
+    <a href="<%= admin_ministorages_path %>"><img src="<%= image_path("cancel.png") %>">取消</a>
+  </section>
+
+  <%= fields_for @ministorage.article do | a | %>
+  
+    <%= a.hidden_field :content, {:id => 'ministorage_content'} %>
+  
+  <% end %>
+  
+<% end %>
+  
+
+<script type="text/javascript">
+
+  var hold = false;
+  
+$(document).ready(function(){
+
+  var originalClose = $.colorbox.close;
+  $.colorbox.close = function(){
+    if (hold) {     
+      if ( confirm( '確定放棄圖片裁切？這將會刪除您的圖片。' )) {
+        hold = false;
+        
+        editor.img.reset();
+        
+        originalClose();
+      } 
+    } else {
+      originalClose();
+    }
+   }
+
+  editor.init({ articleModel: 'ministorage', photoUpload: '../../peditor/<%= @ministorage.article.id %>/createPhoto',p_selectList: [], linkedp: true });
+
+  $("#submit").click(function(e){
+    e.preventDefault();
+
+    if(!editor.isPostNotSent()){
+      $("#patchthisministorage").submit();
+    }
+    else{
+      editor.alert("段落編輯尚未完成。", "error");
+    }
+    
+    $('#articleContent').bind('peditor_updated', function() {
+      $('#main').height('inherit')
+    })
+    
+  });
+});
+
+</script>

@@ -1,9 +1,9 @@
 <section class="hgroup">
-  <h2>叭叭房-站點查詢</h2>
+  <h2>迷你倉-站點查詢</h2>
 </section>
 <!--hgroup-->
 <section class="button"> 
-  <%= link_to new_admin_babahome_path(), :method => :get,class: "right highlight"  do %>
+  <%= link_to new_admin_ministorage_path(), :method => :get,class: "right highlight"  do %>
     新增站點<img src="/images/add.png">
   <% end %>
 </section>
@@ -16,21 +16,21 @@
       <th align="left" class="x0 x1">編輯</th>
       <th align="left" class="x1">刪除</th>
     </tr>
-    <% @babahomes.each do |babahome| %>
+    <% @ministorages.each do |ministorage| %>
       <tr>
-        <td class="x0"><%= fetch_city_name(babahome.city) %></td>
+        <td class="x0"><%= fetch_city_name(ministorage.city) %></td>
         <td>
-          <%= link_to admin_babahome_path(babahome) do %>
-            <%= babahome.name %>
+          <%= link_to admin_ministorage_path(ministorage) do %>
+            <%= ministorage.name %>
           <% end %>
         </td>
         <td class="x0">
-          <%= link_to edit_admin_babahome_path(babahome) do %>
+          <%= link_to edit_admin_ministorage_path(ministorage) do %>
             <img src="/images/edit.png">
           <% end %>
         </td>
         <td>
-          <%= link_to admin_babahome_path(babahome), :data => { :confirm => "將會刪除此車場，確定繼續？" }, :method => :delete, :class => "delete", title: "刪除" do %>
+          <%= link_to admin_ministorage_path(ministorage), :data => { :confirm => "將會刪除此車場，確定繼續？" }, :method => :delete, :class => "delete", title: "刪除" do %>
             <img src="/images/delete.png">
           <% end %>
         </td>
@@ -41,6 +41,6 @@
 </section>
 <!--list-->
 <section class="page">
-  <%= paginate @babahomes ,:window => 2 %>
+  <%= paginate @ministorages ,:window => 2 %>
 </section>
 <!--page--> 

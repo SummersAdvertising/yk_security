@@ -1,0 +1,52 @@
+<section class="hgroup">
+  <h2>迷你倉-站點查詢</h2>
+</section>
+<!--hgroup-->
+<section class="category">
+  <ul>
+    <li class="active"><%= link_to '基本', admin_ministorage_path(@ministorage) %></li>
+    <li><%= link_to '內文', intro_admin_ministorage_path(@ministorage) %></li>
+  </ul>
+</section>
+<!--category-->   
+<section class="text text-edit">
+  <div>
+    <%= form_for @ministorage, :url => admin_ministorage_path(@ministorage), html: { id: "patchthisministorage",method: "patch"} do |f| %>
+    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <th width="7%">名稱：</th>
+        <td width="42%"><%= f.text_field :name , class: "text" %></td>
+        <td width="2%">&nbsp;</td>
+        <th width="7%">電話：</th>
+        <td width="42%"><%= f.text_field :phone , class: "text" %></td>
+      </tr>
+      <tr>
+        <th valign="top">描述：</th>
+        <td colspan="4"><%= f.text_field :intro , class: "text" %></td>
+      </tr>
+       <tr>
+        <th valign="top">地址：</th>
+        <td colspan="4">
+        <%= f.hidden_field :country , value: 1 %>         
+        <%= f.select :city, options_for_select(@cities.collect { |city|
+          [city.name, city.id] }, @ministorage.city), {}, { id: 'cities_select', style: 'width:150px' } %>
+        <%= f.select :district, options_for_select(@districts.collect { |district|
+          [district.name, district.id] }, @ministorage.district), {}, { id: 'districts_select', style: 'width:150px' } %>
+        <%= f.text_field :address ,class: "text", placeholder:"請輸入完整地址"%>
+        </td>
+      </tr>
+      <tr>
+        <th valign="top">地圖：</th>
+        <td colspan="4">
+          <%= f.text_area :map_iframe,class: "text", placeholder: "請置入<iframe>...<\/iframe>" %>
+        </td>
+      </tr>
+    </table>
+    <% end %>
+  </div>
+</section>
+<section class="button">
+  <a href="javascript: document.getElementById('patchthisministorage').submit();" class="right highlight" data-no-turbolink = true ><img src="/images/save.png">儲存</a>
+  <%= link_to image_tag("/images/back.png")+"返回", admin_ministorages_path(), class: "left" %>
+</section>
+<!--button--> 

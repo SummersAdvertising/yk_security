@@ -1,0 +1,85 @@
+<script src="/js/jquery.colorbox-min.js"></script>
+<script src="/js/jquery.colorbox-zh-TW.js"></script>
+
+<script src="/js/editor.js"></script>
+<script src="/js/editor_p.js"></script>
+<script src="/js/editor_img.js"></script>
+<script src="/js/editor_list.js"></script>
+<script src="/js/editor_video.js"></script>
+<script src="/js/jquery.imgareaselect.min.js"></script>
+
+<link rel="stylesheet" type="text/css" href="/css/colorbox.css" />
+<link rel="stylesheet" type="text/css" href="/css/imgareaselect-default.css" />
+
+<section class="hgroup">
+  <h2><%= @intro_page.title %></h2>
+</section>
+<!--hgroup-->
+
+<%= form_for [:admin, @intro_page], html: { id: "patchthisintro_page" } do |f| %>
+  <%= f.hidden_field :title , class: "text" %>
+
+  <div style="display:none">      
+    <div id="previewContainer">
+      <h2>請在圖片上拖拉以完成您要的截圖範圍</h2>
+    </div>
+  </div>
+  <!--title-->
+  <%= render :partial => 'admin/peditor/editor' %>
+
+  <section class="button">
+    <a href="javascript: document.getElementById('patchthisintro_page').submit();" class="right highlight" data-no-turbolink = true ><img src="/images/save.png">儲存</a>
+    <%= link_to image_tag("/images/back.png")+"返回", admin_intro_page_path(@intro_page), class: "left" %>
+  </section>
+
+  <%= fields_for @intro_page.article do | a | %>
+  
+    <%= a.hidden_field :content, {:id => 'intro_page_content'} %>
+  
+  <% end %>
+
+
+<% end %>
+
+<!--button--> 
+<script type="text/javascript">
+
+  var hold = false;
+  
+$(document).ready(function(){
+
+  var originalClose = $.colorbox.close;
+  $.colorbox.close = function(){
+    if (hold) {     
+      if ( confirm( '確定放棄圖片裁切？這將會刪除您的圖片。' )) {
+        hold = false;
+        
+        editor.img.reset();
+        
+        originalClose();
+      } 
+    } else {
+      originalClose();
+    }
+   }
+
+  editor.init({ articleModel: 'intro_page', photoUpload: '../../peditor/<%= @intro_page.article.id %>/createPhoto',p_selectList: [], linkedp: true });
+
+  $("#submit").click(function(e){
+    e.preventDefault();
+
+    if(!editor.isPostNotSent()){
+      $("#patchthisintro_page").submit();
+    }
+    else{
+      editor.alert("段落編輯尚未完成。", "error");
+    }
+    
+    $('#articleContent').bind('peditor_updated', function() {
+      $('#main').height('inherit')
+    })
+    
+  });
+});
+
+</script>

@@ -1,0 +1,53 @@
+<section class="hgroup">
+  <h2>迷你倉-站點查詢</h2>
+</section>
+<!--hgroup-->
+<section class="category">
+  <ul>
+    <li class="active"><a href="bbh-site-edit1.html">基本</a></li>
+    <li><a href="bbh-site-edit2.html">內文</a></li>
+  </ul>
+</section>
+<!--category-->   
+<section class="text text-edit">
+  <div>
+    <%= form_for @ministorage, :url => admin_ministorages_path(@ministorage), html: { id: "create_this_ministorage",method: "post"} do |f| %>
+    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <th width="7%">名稱：</th>
+        <td width="42%"><%= f.text_field :name , class: "text" %></td>
+        <td width="2%">&nbsp;</td>
+        <th width="7%">電話：</th>
+        <td width="42%"><%= f.text_field :phone , class: "text" %></td>
+      </tr>
+      <tr>
+        <th valign="top">描述：</th>
+        <td colspan="4"><%= f.text_field :intro , class: "text" %></td>
+      </tr>
+       <tr>
+        <th valign="top">地址：</th>
+        <td colspan="4">
+        <%= f.select :country, options_for_select(@countries.collect { |country|
+        [country.name, country.id] }, 1), {}, { id: 'countries_select', style: "width:14%;display:none;" } %>
+        <%= f.select :city, options_for_select(@cities.collect { |city|
+          [city.name, city.id] }, 1), {}, { id: 'cities_select', style: "width:14%" } %>
+        <%= f.select :district, options_for_select(@districts.collect { |district|
+          [district.name, district.id] }, 0), {}, { id: 'districts_select' , style: "width:14%"} %>
+        <%= f.text_field :address ,class: "text", placeholder:"請輸入完整地址"%>
+        </td>
+      </tr>
+      <tr>
+        <th valign="top">地圖：</th>
+        <td colspan="4">
+          <%= f.text_area :map_iframe,class: "text", placeholder: "請置入<iframe>...<\/iframe>" %>
+        </td>
+      </tr>
+    </table>
+    <% end %>
+  </div>
+</section>
+<section class="button">
+  <a href="javascript: document.getElementById('create_this_ministorage').submit();" class="right highlight" data-no-turbolink = true ><img src="/images/save.png">儲存</a>
+  <%= link_to image_tag("/images/back.png")+"返回", admin_ministorages_path(), class: "left" %>
+</section>
+<!--button--> 
