@@ -68,6 +68,21 @@ Yks::Application.routes.draw do
     	
     end
     
+    resources :babahomes do 
+      member do 
+        get   '/intro'       => 'babahomes#intro', as: 'intro'
+        patch  '/update_intro'       => 'babahomes#update_intro'
+
+        get 'fetch_from_country' => 'babahomes#fetch_from_country'
+        get 'fetch_from_city' => 'babahomes#fetch_from_city'
+      end
+      collection do 
+        get 'fetch_from_country' => 'babahomes#fetch_from_country'
+        get 'fetch_from_city' => 'babahomes#fetch_from_city'
+      end
+    end
+    
+
     post 'peditor/:id/createPhoto'					=> 'peditor#createPhoto'
     delete 'peditor/deletePhoto/:id'					=> 'peditor#destroyPhoto'
   end

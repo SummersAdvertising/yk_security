@@ -70,7 +70,7 @@ editor.list = {
 		this.bindControl(paragraphBox);
 	},
 	output: function(paragraph){
-		var paragraphBox = $("<div>");
+		var paragraphBox = $("<div class='part'>");
 		paragraphBox.attr("data-type", "list");
 
 		var ulContainer = $("<ul></ul>");

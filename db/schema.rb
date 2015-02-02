@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150130055236) do
+ActiveRecord::Schema.define(version: 20150130081353) do
 
   create_table "admins", force: true do |t|
     t.string   "email",                  default: "", null: false
@@ -39,6 +39,20 @@ ActiveRecord::Schema.define(version: 20150130055236) do
     t.datetime "updated_at"
   end
 
+  create_table "babahomes", force: true do |t|
+    t.string   "name"
+    t.text     "intro"
+    t.string   "phone"
+    t.string   "address"
+    t.integer  "country"
+    t.integer  "city"
+    t.integer  "district"
+    t.text     "map_iframe"
+    t.integer  "article_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "chapters", force: true do |t|
     t.string   "title"
     t.string   "status"
@@ -46,6 +60,30 @@ ActiveRecord::Schema.define(version: 20150130055236) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "cities", force: true do |t|
+    t.string   "name"
+    t.integer  "country_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "cities", ["country_id"], name: "index_cities_on_country_id"
+
+  create_table "countries", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "districts", force: true do |t|
+    t.string   "name"
+    t.integer  "city_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "districts", ["city_id"], name: "index_districts_on_city_id"
 
   create_table "honorees", force: true do |t|
     t.string   "name"

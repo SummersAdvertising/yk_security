@@ -102,7 +102,7 @@ editor.p = {
 		this.bindControl(paragraphBox);
 	},
 	output: function(paragraph){
-		var paragraphBox = $("<div data-type ='p'>");
+		var paragraphBox = $("<div class='part' data-type ='p'>");
 		//paragraphBox.attr("data-type", "p");
 
 		paragraph.content = editor.filter(paragraph.content, editor.n2br);

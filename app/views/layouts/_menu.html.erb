@@ -7,6 +7,7 @@
       <li <%= 'class="active"'.html_safe if params[:controller] == 'admin/services' %>><a href="<%= admin_services_path %>" id="nav-5">服務項目</a></li>
       <li <%= 'class="active"'.html_safe if params[:controller] == 'admin/instructions' %>><a href="<%= admin_instructions_path %>" id="nav-6">教育訓練</a></li>
       <li <%= 'class="active"'.html_safe if params[:controller] == 'admin/chapters' || params[:controller] == 'admin/knowledges' %>><a href="<%= admin_chapters_path %>" id="nav-7">保全百科</a></li>
+      <li <%= 'class="active"'.html_safe if params[:controller] == 'admin/babahomes' %>><a href="<%= admin_babahomes_path %>" id="nav-7">叭叭房</a></li>
       <li <%= 'class="active"'.html_safe if params[:controller] == 'admin/admins' %>><a href="<%= admin_admins_path %>" id="nav-8">使用者管理</a></li>
     </ul>
   </nav>
