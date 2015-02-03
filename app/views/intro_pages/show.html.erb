@@ -1,0 +1,34 @@
+<script src="/js/editor.js"></script>
+<script src="/js/editor_p.js"></script>
+<script src="/js/editor_img.js"></script>
+<script src="/js/editor_list.js"></script>
+<script src="/js/editor_video.js"></script>
+<script src="/js/jquery.imgareaselect.pack.js"></script>
+
+<link rel="stylesheet" type="text/css" href="/css/imgareaselect-default.css" />
+
+<% if params[:page].in? ['babahome_services', 'babahome_cards'] %>
+  <%= link_to "服務介紹", intro_intros_path('babahome_services') %><br>
+  <%= link_to "站點查詢", babahomes_path %><br>
+  <%= link_to "信用卡優惠", intro_intros_path('babahome_cards') %><br>
+<% end %>
+
+<% if params[:page].in? ['ministorage_services'] %>
+  <%= link_to "服務介紹", intro_intros_path('ministorage_services') %><br>
+  <%= link_to "站點查詢", ministorages_path %><br>
+<% end %>
+
+<section class="hgroup">
+  <h2></h2>      
+</section>
+<!--hgroup-->
+<section class="text text-show" id="articleContent">      
+</section>
+<!--text-->
+    
+<input id="article_content" style="display:none;" type="text" value="<%= @intro.article.content %>">
+<script>
+  $(document).ready(function() {  
+    editor.output();  
+  });
+</script>

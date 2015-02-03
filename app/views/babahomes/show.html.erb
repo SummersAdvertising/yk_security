@@ -1,0 +1,60 @@
+babahome show
+= LINK<br>
+<%= link_to "服務介紹", intro_intros_path('babahome_services') %><br>
+<%= link_to "站點查詢", babahomes_path %><br>
+<%= link_to "信用卡優惠", intro_intros_path('babahome_cards') %><br>
+= RIGHT<br>
+<script src="/js/editor.js"></script>
+<script src="/js/editor_p.js"></script>
+<script src="/js/editor_img.js"></script>
+<script src="/js/editor_list.js"></script>
+<script src="/js/editor_video.js"></script>
+<script src="/js/jquery.imgareaselect.pack.js"></script>
+
+<link rel="stylesheet" type="text/css" href="/css/imgareaselect-default.css" />
+
+<section class="hgroup">
+  <h2>叭叭房-站點查詢</h2>      
+</section>
+<!--hgroup-->
+
+<section class="text text-show">  
+  <div>
+    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <th width="9%">名稱：</th>
+        <td width="91%"><%= @babahome.name %></td>      
+      </tr>
+      <tr>
+        <th>描述：</th>
+        <td><%= @babahome.intro %></td>
+      </tr>
+      <tr>
+        <th>電話：</th>
+        <td><%= @babahome.phone %></td>
+      </tr>          
+      <tr>
+        <th>地址：</th>
+        <td><%= @babahome.address %></td>
+      </tr>
+      <% unless @babahome.map_iframe.blank? %>
+      <tr>
+        <th valign="top">地圖：</th>
+        <td><%= @babahome.map_iframe.html_safe %></td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+</section>
+
+<section class="text text-show" id="articleContent">      
+</section>
+<!--text-->
+
+    
+<input id="article_content" style="display:none;" type="text" value="<%= @babahome.article.content %>">
+<script>
+  $(document).ready(function() {  
+    editor.output();  
+  });
+</script>

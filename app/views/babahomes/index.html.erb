@@ -1,0 +1,27 @@
+babahome index<br>
+= LINK<br>
+<%= link_to "服務介紹", intro_intros_path('babahome_services') %><br>
+<%= link_to "站點查詢", babahomes_path %><br>
+<%= link_to "信用卡優惠", intro_intros_path('babahome_cards') %><br>
+= RIGHT<br>
+<section class="list">
+  <table width="100%" border="0" cellspacing="0" cellpadding="0">
+    <tr>
+      <th align="left" class="x0 x2">地區</th>
+      <th align="left">站點</th>
+    </tr>
+    
+    <% @babahomes.each do |babahome| %>
+      <tr>
+        <td class="x0"><%= fetch_city_name(babahome.city) %></td>
+        <td>
+          <%= link_to babahome_path(babahome) do %>
+            <%= babahome.name %>
+          <% end %>
+        </td>
+      </tr>
+    <% end %>
+
+  </table>
+</section>
+<!--list-->

@@ -1,0 +1,26 @@
+ministorage index<br>
+= LINK<br>
+<%= link_to "服務介紹", intro_intros_path('ministorage_services') %><br>
+<%= link_to "站點查詢", ministorages_path %><br>
+= RIGHT<br>
+<section class="list">
+  <table width="100%" border="0" cellspacing="0" cellpadding="0">
+    <tr>
+      <th align="left" class="x0 x2">地區</th>
+      <th align="left">站點</th>
+    </tr>
+    
+    <% @ministorages.each do |ministorage| %>
+      <tr>
+        <td class="x0"><%= fetch_city_name(ministorage.city) %></td>
+        <td>
+          <%= link_to ministorage_path(ministorage) do %>
+            <%= ministorage.name %>
+          <% end %>
+        </td>
+      </tr>
+    <% end %>
+
+  </table>
+</section>
+<!--list-->

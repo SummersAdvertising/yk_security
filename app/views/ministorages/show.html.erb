@@ -1,0 +1,59 @@
+ministorage show
+= LINK<br>
+<%= link_to "服務介紹", intro_intros_path('ministorage_services') %><br>
+<%= link_to "站點查詢", ministorages_path %><br>
+= RIGHT<br>
+<script src="/js/editor.js"></script>
+<script src="/js/editor_p.js"></script>
+<script src="/js/editor_img.js"></script>
+<script src="/js/editor_list.js"></script>
+<script src="/js/editor_video.js"></script>
+<script src="/js/jquery.imgareaselect.pack.js"></script>
+
+<link rel="stylesheet" type="text/css" href="/css/imgareaselect-default.css" />
+
+<section class="hgroup">
+  <h2>迷你倉-站點查詢</h2>      
+</section>
+<!--hgroup-->
+
+<section class="text text-show">  
+  <div>
+    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <th width="9%">名稱：</th>
+        <td width="91%"><%= @ministorage.name %></td>      
+      </tr>
+      <tr>
+        <th>描述：</th>
+        <td><%= @ministorage.intro %></td>
+      </tr>
+      <tr>
+        <th>電話：</th>
+        <td><%= @ministorage.phone %></td>
+      </tr>          
+      <tr>
+        <th>地址：</th>
+        <td><%= @ministorage.address %></td>
+      </tr>
+      <% unless @ministorage.map_iframe.blank? %>
+      <tr>
+        <th valign="top">地圖：</th>
+        <td><%= @ministorage.map_iframe.html_safe %></td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+</section>
+
+<section class="text text-show" id="articleContent">      
+</section>
+<!--text-->
+
+    
+<input id="article_content" style="display:none;" type="text" value="<%= @ministorage.article.content %>">
+<script>
+  $(document).ready(function() {  
+    editor.output();  
+  });
+</script>

@@ -2,7 +2,16 @@ Yks::Application.routes.draw do
  
  
   resources :news, :only => [ :index, :show ]
- 
+  
+  resources :babahomes, :only => [ :index, :show ]
+  resources :ministorages, :only => [ :index, :show ]
+
+  resources :intros, :controller => :intro_pages, :only => [ :show ] do 
+    collection do
+      get ':page', :action => :show, :as => :intro
+    end
+  end
+
   resources :services, :only => [ :index, :show ]
  
   resources :chapters, :only => [ :index, :show ] do
@@ -95,7 +104,7 @@ Yks::Application.routes.draw do
         get 'fetch_from_city' => 'ministorages#fetch_from_city'
       end
     end
-    
+
     resources :intro_pages
 
     post 'peditor/:id/createPhoto'					=> 'peditor#createPhoto'
