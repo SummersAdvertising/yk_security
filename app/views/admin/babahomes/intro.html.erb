@@ -69,8 +69,8 @@ $(document).ready(function(){
     }
    }
 
-  editor.init({ articleModel: 'babahome', photoUpload: '../../peditor/<%= @babahome.article.id %>/createPhoto',p_selectList: [], linkedp: true });
-
+  editor.init({ articleModel: 'babahome', photoUpload: '../../peditor/<%= @babahome.article.id %>/createPhoto',p_selectList: ["paragraphFontClass"], linkedp: true });
+  /*"paragraphFontClass", "paragraphFontColor", "paragraphFontSize"*/
   $("#submit").click(function(e){
     e.preventDefault();
 

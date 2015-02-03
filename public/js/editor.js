@@ -16,6 +16,13 @@ var editor = {
 		paragraphFontClass: { "內文": "part-content", "標題": "part-title" }, 
 		paragraphFontColor: { "顏色": "default", "黑色": "#000", "藍色": "#00F" }, 
 		paragraphFontSize: { "大小": "default", 14:14, 28:28 }
+
+		// 藍大標 藍色字 30pt Regular
+		// 黑小標 黑色字 20pt Bold
+		// 藍小標 藍色字 18pt Bold
+		// 紅字 紅色字 18pt Regular
+		// 黃底 黑字黃色底 18pt Regular
+		
 	},
 	init: function(settings){
 		editor.setEditor(settings);
