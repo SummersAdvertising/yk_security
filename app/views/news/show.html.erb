@@ -1,12 +1,3 @@
-<script src="/js/editor.js"></script>
-<script src="/js/editor_p.js"></script>
-<script src="/js/editor_img.js"></script>
-<script src="/js/editor_list.js"></script>
-<script src="/js/editor_video.js"></script>
-<script src="/js/jquery.imgareaselect.pack.js"></script>
-
-<link rel="stylesheet" type="text/css" href="/css/imgareaselect-default.css" />
-
 <article _height="auto" id="news">
   <section class="content">
     <nav><a href="<%= root_url %>">首頁</a><span>></span><a>最新消息</a></nav>
@@ -31,16 +22,8 @@
         <% unless @news.fb_meta_description.blank? %>
           <% set_meta_tags :og => { :description => @news.fb_meta_description } %>          
         <% end %>
-        <article id="articleContent"></article>
+        <article id="articleContent"><%= @news.parse_peditor %></article>
       </div>
     </div>
   </section>
 </article>
-
-
-<input id="article_content" style="display:none;" type="text" value="<%= @news.article.content %>">
-<script>
-	$(document).ready(function() {	
-		editor.output();	
-	});
-</script>

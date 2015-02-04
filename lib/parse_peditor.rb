@@ -5,26 +5,30 @@ module ParsePeditor
 
   def parse_peditor
 
-    article = JSON.parse(self.article.content)
-    #then iterate
-    content_tag(:section, self.article.content ,class: 'text text-show',id: 'articleContent') do 
-      
-      article.each do | peditor_part |
-        case peditor_part['type']
-          when 'p'
-            concat( parse_peditor_p(peditor_part) )
-          when 'img'
-            concat parse_peditor_img(peditor_part)
-          when 'list'
-            concat parse_peditor_list(peditor_part)
-          when 'video'
-            concat parse_peditor_video(peditor_part)
-          else
-        end # end case 
-      end # end each
+    unless self.article.content.blank?
+      article = JSON.parse(self.article.content)
+      #then iterate
+      content_tag(:section, self.article.content ,class: 'text text-show',id: 'articleContent') do 
+        
+        article.each do | peditor_part |
+          case peditor_part['type']
+            when 'p'
+              concat( parse_peditor_p(peditor_part) )
+            when 'img'
+              concat parse_peditor_img(peditor_part)
+            when 'list'
+              concat parse_peditor_list(peditor_part)
+            when 'video'
+              concat parse_peditor_video(peditor_part)
+            else
+          end # end case 
+        end # end each
 
+      end
+    else
+      
     end
-    
+
   end
 
   def parse_peditor_p(peditor_part)
