@@ -1,3 +1,15 @@
+<style type="text/css">
+ul.peditor_list_disc {
+  list-style-type: disc;
+  }
+ul.peditor_list_circle{
+  list-style-type: circle;
+  }
+ul.peditor_list_customize{
+  list-style-type: none;
+}
+</style>
+
 <script src="/js/jquery.colorbox-min.js"></script>
 <script src="/js/jquery.colorbox-zh-TW.js"></script>
 
@@ -69,7 +81,7 @@ $(document).ready(function(){
     }
    }
 
-  editor.init({ articleModel: 'babahome', photoUpload: '../../peditor/<%= @babahome.article.id %>/createPhoto',p_selectList: ["paragraphFontClass"], linkedp: true });
+  editor.init({ articleModel: 'babahome', photoUpload: '../../peditor/<%= @babahome.article.id %>/createPhoto',elements: ["p", "img", "video", "anchor", "list"],p_selectList: ["paragraphFontClass"], linkedp: true });
   /*"paragraphFontClass", "paragraphFontColor", "paragraphFontSize"*/
   $("#submit").click(function(e){
     e.preventDefault();

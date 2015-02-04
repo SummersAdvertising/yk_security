@@ -1,0 +1,14 @@
+<% if babahomes.length > 0 %>
+<h1>BABAHOME 站點搜尋結果</h1>
+      <% babahomes.each do |babahome|%>
+        <div class="searchShow">
+          <%= link_to babahome.name , babahome_path(babahome), { class: 'siteName', target: '_blank' }%>
+            <h2 class="address"><%= babahome.address %></h2>
+            <h2 class="phone"><%= babahome.phone %></h2>
+        </div>
+      <% end %>
+<% else %>
+<h1>BABAHOME 站點搜尋結果</h1>
+  <!-- <h3>利用此條件 查無站點 請重新查詢</h3> -->
+  <h3>條件：<%= @target_city_name if @target_city_name %>, <%= @target_district_name if @target_district_name %> 查無站點 請重新查詢</h3>
+<% end %>

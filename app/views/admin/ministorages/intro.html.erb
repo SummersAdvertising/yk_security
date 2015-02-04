@@ -69,7 +69,7 @@ $(document).ready(function(){
     }
    }
 
-  editor.init({ articleModel: 'ministorage', photoUpload: '../../peditor/<%= @ministorage.article.id %>/createPhoto',p_selectList: [], linkedp: true });
+  editor.init({ articleModel: 'ministorage', photoUpload: '../../peditor/<%= @ministorage.article.id %>/createPhoto',elements: ["p", "img", "video", "anchor", "list"],p_selectList: ["paragraphFontClass"], linkedp: true });
 
   $("#submit").click(function(e){
     e.preventDefault();
