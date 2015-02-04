@@ -1,5 +1,6 @@
 #encoding: utf-8
 class Ministorage < ActiveRecord::Base
+  include ParsePeditor 
   
   belongs_to :article, :dependent => :destroy
   

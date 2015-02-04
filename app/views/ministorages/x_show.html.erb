@@ -3,6 +3,15 @@ ministorage show
 <%= link_to "服務介紹", intro_intros_path('ministorage_services') %><br>
 <%= link_to "站點查詢", ministorages_path %><br>
 = RIGHT<br>
+<script src="/js/editor.js"></script>
+<script src="/js/editor_p.js"></script>
+<script src="/js/editor_img.js"></script>
+<script src="/js/editor_list.js"></script>
+<script src="/js/editor_video.js"></script>
+<script src="/js/jquery.imgareaselect.pack.js"></script>
+
+<link rel="stylesheet" type="text/css" href="/css/imgareaselect-default.css" />
+
 <section class="hgroup">
   <h2>迷你倉-站點查詢</h2>      
 </section>
@@ -37,4 +46,14 @@ ministorage show
   </div>
 </section>
 
-<%= @ministorage.parse_peditor %>
+<section class="text text-show" id="articleContent">      
+</section>
+<!--text-->
+
+    
+<input id="article_content" style="display:none;" type="text" value="<%= @ministorage.article.content %>">
+<script>
+  $(document).ready(function() {  
+    editor.output();  
+  });
+</script>

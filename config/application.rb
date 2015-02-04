@@ -9,6 +9,7 @@ Bundler.require(:default, Rails.env)
 module Yks
   class Application < Rails::Application
   
+  config.autoload_paths += %W(#{config.root}/lib)
   	
 	config.generators do | g |
 		g.orm							:active_record

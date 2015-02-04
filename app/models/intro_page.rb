@@ -1,5 +1,6 @@
 #encoding: utf-8
 class IntroPage < ActiveRecord::Base
+  include ParsePeditor 
 
   belongs_to :article, :dependent => :destroy
 

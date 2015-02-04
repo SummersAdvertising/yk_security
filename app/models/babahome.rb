@@ -1,6 +1,7 @@
 #encoding: utf-8
 class Babahome < ActiveRecord::Base
-
+  include ParsePeditor 
+  
   belongs_to :article, :dependent => :destroy
   
   default_scope { order('city ASC, district ASC') }

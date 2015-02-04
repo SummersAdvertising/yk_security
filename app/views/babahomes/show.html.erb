@@ -4,15 +4,6 @@ babahome show
 <%= link_to "站點查詢", babahomes_path %><br>
 <%= link_to "信用卡優惠", intro_intros_path('babahome_cards') %><br>
 = RIGHT<br>
-<script src="/js/editor.js"></script>
-<script src="/js/editor_p.js"></script>
-<script src="/js/editor_img.js"></script>
-<script src="/js/editor_list.js"></script>
-<script src="/js/editor_video.js"></script>
-<script src="/js/jquery.imgareaselect.pack.js"></script>
-
-<link rel="stylesheet" type="text/css" href="/css/imgareaselect-default.css" />
-
 <section class="hgroup">
   <h2>叭叭房-站點查詢</h2>      
 </section>
@@ -47,14 +38,4 @@ babahome show
   </div>
 </section>
 
-<section class="text text-show" id="articleContent">      
-</section>
-<!--text-->
-
-    
-<input id="article_content" style="display:none;" type="text" value="<%= @babahome.article.content %>">
-<script>
-  $(document).ready(function() {  
-    editor.output();  
-  });
-</script>
+<%= @babahome.parse_peditor %>
