@@ -1,5 +1,5 @@
 class News < ActiveRecord::Base
-  include ParsePeditor
+  include PeditorParser
 	mount_uploader :cover, NewsUploader
 	
 	belongs_to :article, :dependent => :destroy

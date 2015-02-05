@@ -1,6 +1,6 @@
 #encoding: utf-8
 class Babahome < ActiveRecord::Base
-  include ParsePeditor 
+  include PeditorParser 
   
   belongs_to :article, :dependent => :destroy
   
