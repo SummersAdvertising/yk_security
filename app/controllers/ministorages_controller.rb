@@ -8,8 +8,8 @@ class MinistoragesController < ApplicationController
     
     @countries = Country.all #use it when country selectable
     @cities = City.where(id: all_ministorage_cities )
-    @districts = District.where("city_id = ?", all_ministorage_cities.first)
-
+    @districts = District.where(city_id: all_ministorage_cities.first)
+    
     @q = Ministorage.search(params[:q])
   end
 
@@ -48,7 +48,9 @@ class MinistoragesController < ApplicationController
 
   def fetch_from_city 
     
-    @districts = District.where("city_id = ?", params[:city_id])
+    all_target_districts = Ministorage.where(city: params[:city_id]).pluck(:district)
+
+    @districts = District.where(id: all_target_districts)
     respond_to do |format|
       format.js
     end    

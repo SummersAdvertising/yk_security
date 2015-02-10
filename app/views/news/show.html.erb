@@ -11,11 +11,11 @@
         </ul>
         <div class="page"> <%= paginate @newses, :window => 2 %> </div>        
       </div>
-      <div class="right">
-        <header><span class="date"><%= @news.created_at.strftime('%Y年%m月%d日') %></span>
-          <h3><%= title @news.title %></h3>
+      <div itemscope itemtype='http://schema.org/Article' class="right">
+        <header><span class="date" itemprop='datePublished'><%= @news.created_at.strftime('%Y年%m月%d日') %></span>
+          <h3 itemprop='about'><%= title @news.title %></h3>
         </header>        
-        <%= image_tag(@news.cover) %>
+        <%= image_tag(@news.cover, itemprop: 'image') %>
         <% unless @news.cover.blank? %>
           <% set_meta_tags :og => { :image => @news.cover } %>          
         <% end %>

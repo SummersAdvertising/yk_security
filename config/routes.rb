@@ -6,20 +6,22 @@ Yks::Application.routes.draw do
   resources :babahomes, only: [:index, :show] do 
     collection do 
       post 'search', action: 'search'
+      get 'fetch_from_country' => 'babahomes#fetch_from_country'
+      get 'fetch_from_city' => 'babahomes#fetch_from_city'
     end
   end
 
-  get 'fetch_from_country' => 'babahomes#fetch_from_country'
-  get 'fetch_from_city' => 'babahomes#fetch_from_city'
+  
 
   resources :ministorages, only: [:index, :show] do 
     collection do 
       post 'search', action: 'search'
+      get 'fetch_from_country' => 'ministorages#fetch_from_country'
+      get 'fetch_from_city' => 'ministorages#fetch_from_city'
     end
   end
 
-  get 'fetch_from_country' => 'ministorages#fetch_from_country'
-  get 'fetch_from_city' => 'ministorages#fetch_from_city'
+  
 
   resources :intros, :controller => :intro_pages, :only => [ :show ] do 
     collection do

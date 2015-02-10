@@ -1,31 +1,31 @@
 ministorage show
 = LINK<br>
 <%= link_to "服務介紹", intro_intros_path('ministorage_services') %><br>
-<%= link_to "站點查詢", ministorages_path %><br>
+<%= link_to "站點查詢", ministorages_path, class: 'active'  %><br>
 = RIGHT<br>
 <section class="hgroup">
   <h2>迷你倉-站點查詢</h2>      
 </section>
 <!--hgroup-->
 
-<section class="text text-show">  
+<section class="text text-show" itemscope itemtype='http://schema.org/Place'>  
   <div>
     <table width="100%" border="0" cellspacing="0" cellpadding="0">
       <tr>
         <th width="9%">名稱：</th>
-        <td width="91%"><%= @ministorage.name %></td>      
+        <td width="91%" itemprop='name'><%= @ministorage.name %></td>      
       </tr>
       <tr>
         <th>描述：</th>
-        <td><%= @ministorage.intro %></td>
+        <td itemprop='description'><%= @ministorage.intro %></td>
       </tr>
       <tr>
         <th>電話：</th>
-        <td><%= @ministorage.phone %></td>
+        <td itemprop='telephone'><%= @ministorage.phone %></td>
       </tr>          
       <tr>
         <th>地址：</th>
-        <td><%= @ministorage.address %></td>
+        <td itemprop='address'><%= @ministorage.address %></td>
       </tr>
       <% unless @ministorage.map_iframe.blank? %>
       <tr>
@@ -36,5 +36,6 @@ ministorage show
     </table>
   </div>
 </section>
-
+<article id="articleContent" itemscope itemtype='http://schema.org/Article' >
 <%= @ministorage.parse_peditor %>
+</article>

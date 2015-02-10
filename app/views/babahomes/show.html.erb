@@ -1,7 +1,7 @@
 babahome show
 = LINK<br>
 <%= link_to "服務介紹", intro_intros_path('babahome_services') %><br>
-<%= link_to "站點查詢", babahomes_path %><br>
+<%= link_to "站點查詢", babahomes_path, class: 'active' %><br>
 <%= link_to "信用卡優惠", intro_intros_path('babahome_cards') %><br>
 = RIGHT<br>
 <section class="hgroup">
@@ -37,5 +37,6 @@ babahome show
     </table>
   </div>
 </section>
-
+<article id="articleContent" itemscope itemtype='http://schema.org/Article' >
 <%= @babahome.parse_peditor %>
+</article>

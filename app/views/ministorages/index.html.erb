@@ -1,8 +1,9 @@
 <% javascript 'ministorages' %>
+
 ministorage index<br>
 = LINK<br>
 <%= link_to "服務介紹", intro_intros_path('ministorage_services') %><br>
-<%= link_to "站點查詢", ministorages_path %><br>
+<%= link_to "站點查詢", ministorages_path, class: 'active' %><br>
 = RIGHT<br>
 <%= search_form_for @q, url: search_ministorages_path, class: "form-inline quick-search-form" , method: :post, remote: true do |f| %>
             

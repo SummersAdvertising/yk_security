@@ -5,10 +5,10 @@ class BabahomesController < ApplicationController
 
   def index
     all_babahome_cities = Babahome.pluck(:city)
-    
+
     @countries = Country.all #use it when country selectable
     @cities = City.where(id: all_babahome_cities )
-    @districts = District.where("city_id = ?", all_babahome_cities.first)
+    @districts = District.where(city_id: all_babahome_cities.first)
 
     @q = Babahome.search(params[:q])
   end
@@ -47,8 +47,9 @@ class BabahomesController < ApplicationController
   end
 
   def fetch_from_city 
-    
-    @districts = District.where("city_id = ?", params[:city_id])
+    all_target_districts = Babahome.where(city: params[:city_id]).pluck(:district)
+
+    @districts = District.where(id: all_target_districts)
     respond_to do |format|
       format.js
     end    
