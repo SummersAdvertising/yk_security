@@ -1,0 +1,10 @@
+html{background:#324b99;}
+
+h1{width:100%;text-align:center;margin:0 0 35px 0;}
+
+.login{color:#fff;width:400px;margin:200px auto 0 auto;}
+.login td{padding:10px 0;}
+.login td input{width:100%;padding:10px;border-radius: 5px;border:none;}
+
+.login a{margin:35px 0 0 310px;display:inline-block;padding:10px 30px;border-radius:5px;
+	background:url(../images/list.jpg) 0 0 repeat-x #DEDEDE;color:#999;text-shadow:0 1px 0 #fff;font:300 13px verdana}

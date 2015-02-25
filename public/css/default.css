@@ -6,18 +6,18 @@ a{font:300 1em "微軟正黑體";text-decoration:none;color:#555;-webkit-transit
 
 /*-----------------------------------------------------------------------é é¦–---*/
 
-header{background:#710908;border-bottom:1px solid #420C0B;height:50px;min-width:1015px}
+header{background:#324b99;border-bottom:1px solid #1f337e;height:50px;min-width:1015px}
 
 #top{padding:0 15px 0 15px;overflow:hidden;height:49px;}
 #top a{color:#fff}
 
 #nav-ctrl,#aside-ctrl{display:none}
 aside{float:right}
-#aside-box{overflow:hidden;border-left:1px solid #510707;border-right:1px solid #972120}
+#aside-box{overflow:hidden;border-left:1px solid #1f337e;border-right:1px solid #435ec3}
 #aside-box a{display:inline-block;height:49px;float:left;padding:15px 20px 0 20px;
-border-right:1px solid #510707;border-left:1px solid #972120;font-size:.85em}
+border-right:1px solid #1f337e;border-left:1px solid #435ec3;font-size:.85em}
 #aside-box a img{margin:0 10px 0 0;position:relative;top:3px}
-#aside-box a:hover{background:#510707}
+#aside-box a:hover{background:#1f337e}
 
 h1{float:left;margin:0 0 0 35px;padding:15px 0 0 0}
 
@@ -193,17 +193,6 @@ footer{display:none;font:300 13px "Times New Roman", Times, serif;text-shadow:0 
 footer a{font:300 13px "Times New Roman", Times, serif;text-shadow:0 1px 0 #fff}
 
 /*-----------------------------------------------------------------------ç™»å…¥---*/
-
-.login-main{display:table;width:100%;height:100%}
-#vert{display:table-cell; vertical-align:middle;width:100%;height:100%}
-
-.login{margin:0 auto;width:400px}
-.login li{background:#fff;border:1px solid #E3E1D5;border-radius:5px;color:#aaa;margin:0 0 15px 0;padding:10px 5px}
-
-.login li th{width:50px;font:300 13px "verdana"}
-.login li input{width:100%;border:none;padding:0 10px;font:300 14px "verdana"}
-
-.entrance a{width:100%;height:42px;padding:13px 0 0 0;}
 
 .title-30n{font:900 30px 微軟正黑體;color:#0068b7;line-height:1.9em;}
 .title-20b{font:900 20px 微軟正黑體;color:#000;line-height:1.9em;}
