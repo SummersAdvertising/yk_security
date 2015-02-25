@@ -15,7 +15,7 @@ class IntroPagesController < ApplicationController
       end
 
     else
-      redirect_to '/errors'
+      #redirect_to '/errors'
     end
 
   end

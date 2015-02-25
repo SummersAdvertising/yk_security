@@ -81,7 +81,7 @@ bottom:0;left:0;padding:10px 0 0 10px;height:45px;color:#fff;font:900 22px 微�
 .part-title{font-size:24px;color:#005191;margin:0 0 10px 0}
 .part-content{margin:0 0 30px 0}
 
-/*迷你倉*/
+/*迷你倉
 .mnh .left{width:220px}
 .mnh .left h4{color:#0043a6;font:300 23px 微軟正黑體,Microsoft JhengHei;border-bottom:1px solid #E2E2E2;height:40px;margin:20px 0 0 0}
 .mnh .left ul{border:none;padding:10px 0!important}
@@ -102,7 +102,7 @@ bottom:0;left:0;padding:10px 0 0 10px;height:45px;color:#fff;font:900 22px 微�
 .mnh #content p{padding:20px 0}
 .mnh #content p span,.mnh #content p a{color:#005191;}
 
-/*叭叭房*/
+/*叭叭房
 .bbh .left h4{color:#0043a6;font:300 23px 微軟正黑體,Microsoft JhengHei;border-bottom:1px dashed #a3a3a3;height:40px;margin:20px 0 0 0}
 .bbh .tab{overflow:hidden}
 .bbh .tab li{float:left;color:#676767;background:none!important;padding:0!important}
@@ -126,9 +126,6 @@ bottom:0;left:0;padding:10px 0 0 10px;height:45px;color:#fff;font:900 22px 微�
 
 
 /*-----------------------------------------------------------------------保全百科---*/
-
-
-.eccp-lv1{}
 
 #encyclopedia .left{width:230px}
 #encyclopedia .left ul{border:none;padding:0}
@@ -176,7 +173,7 @@ bottom:0;left:0;padding:10px 0 0 10px;height:45px;color:#fff;font:900 22px 微�
 #client{background:url(/images/cl-bg.jpg) 90% bottom no-repeat}
 #client h4{color:#1d5d93;font:900 18px 微軟正黑體,Microsoft JhengHei;margin:20px 0 0 0}
 
-/*-----------------------------------------------------------------------For Peditors---*/
+/*-----------------------------------------------------------------------For Peditors---
 
 #articleContent div {margin: 12px auto}
 
@@ -195,3 +192,40 @@ bottom:0;left:0;padding:10px 0 0 10px;height:45px;color:#fff;font:900 22px 微�
 #bbh-box .form .text{color:#bd0000}
 #bbh-box .photo{clear:both;margin:250px 0 0 0}
 
+/*-----------------------------------------------------------------------叭叭房---*/
+
+.main{overflow:hidden;padding:50px 0;min-height:680px;}
+.main nav{float:left;width:200px;}
+.main nav a{color:#a0a0a0;font:300 18px 微軟正黑體;display:block;border-bottom:1px dashed #a2a2a2;
+padding:15px 0;}
+.main nav a:last-child{border-bottom:none;}
+.main nav a:hover,.main nav .active{color:#a84200}
+.main nav .active{background:url(../images/nav2.jpg) right center no-repeat;}
+.main article{float:right;width:680px;}
+.main article img{margin:20px 0;}
+
+.title-30n{font:900 30px 微軟正黑體;color:#0068b7;line-height:1.9em;}
+.title-20b{font:900 20px 微軟正黑體;color:#000;line-height:1.9em;}
+.title-18n{font:900 16px 微軟正黑體;color:#0068b7;line-height:1.9em;}
+.text-18r{font:300 16px 微軟正黑體;color:#ff0000;line-height:1.9em;}
+.text-18y{font:300 16px 微軟正黑體;color:#000;background:#fff79a;line-height:1.9em;}
+.text-18b{font:300 16px 微軟正黑體;color:#000;line-height:1.9em;}
+
+/*-----------------------------------------------------------------------站點查詢---*/
+
+#search{margin:0 0 25px 0;}
+#search th{font-size:18px;}
+#search td{padding:0 5px;}
+#search select,#search input{width:100%;font-size:14px;height:30px;border-radius:5px}
+#search select{background:#efefef;border:1px solid #171717;}
+#search input{background:#626262;color:#fff;border:none;letter-spacing:5px;cursor: pointer;}
+#search input:hover{background:#555;}
+
+#result table{border:1px solid #b3b3b3;border-right:none;}
+#result th{color:#fff;border-right:1px solid #b3b3b3;padding:3px 0;}
+.mns-result th{background:#f15a24}
+.bbh-result th{background:#0071bd}
+#result td{padding:5px 10px;border-right:1px solid #b3b3b3;}
+#result tr:nth-child(2n){background:#f2f2f2;}
+#result a{color:#0666b3;text-decoration: underline;}
+#result a:hover{color:#2b8ed8;};

@@ -1,32 +1,32 @@
 <% javascript 'babahomes' %>
 
-babahome index<br>
-= LINK<br>
-<%= link_to "服務介紹", intro_intros_path('babahome_services') %><br>
-<%= link_to "站點查詢", babahomes_path, class: 'active' %><br>
-<%= link_to "信用卡優惠", intro_intros_path('babahome_cards') %><br>
-= RIGHT<br>
-<%= search_form_for @q, url: search_babahomes_path, class: "form-inline quick-search-form" , method: :post, remote: true do |f| %>
-            
-  <div class='form-group' style='display:none;'>
-    <%= f.select :country_eq, options_from_collection_for_select(@countries ,
-        "id", "name" ) , id: 'q_country_eq', class: "form-control" %>
-  </div>
-  
-  <div class='btn-group dropdown-toggle'>
-    <%= f.select :city_eq, options_from_collection_for_select(@cities ,
-        "id", "name" ) , id: 'q_city_eq' %>
-  </div>
-  
-  <div class='btn-group dropdown-toggle'>
-    <%= f.select :district_eq, options_from_collection_for_select(@districts ,
-        "id", "name" ) ,{:prompt => '-- 請選擇 --'}, id: 'q_district_eq' %>
-  </div>
-  
-  <%= f.submit('搜尋' , id: "quick-search", class: "btn") %>
-
-<% end %>
-<br>
-<div id="spot02">
-  <div id="result"></div>
+<div class="main">
+  <section class="content">
+    <nav>
+      <%= link_to "服務介紹", intro_intros_path('babahome_services') %>
+      <%= link_to "站點查詢", babahomes_path, class: 'active' %>
+      <%= link_to "信用卡優惠", intro_intros_path('babahome_cards') %>
+    </nav>
+    <article>
+      <div id="search">
+      <%= search_form_for @q, url: search_babahomes_path, class: "form-inline quick-search-form" , method: :post, remote: true do |f| %>      
+        <table width="100%" cellpadding="0" cellspacing="0">
+          <tr>
+            <th width="15%">搜尋區域：</th>
+            <!--td><%= f.select :country_eq, options_from_collection_for_select(@countries ,
+            "id", "name" ) , id: 'q_country_eq', class: "form-control" %></td-->
+            <td width="35%"><%= f.select :city_eq, options_from_collection_for_select(@cities ,
+          "id", "name" ) , id: 'q_city_eq' %></td>
+            <td width="35%"><%= f.select :district_eq, options_from_collection_for_select(@districts ,
+          "id", "name" ) ,{:prompt => '-- 請選擇 --'}, id: 'q_district_eq' %></td>
+            <td width="15%"><%= f.submit('搜尋' , id: "quick-search", class: "btn") %></td>
+          </tr>
+        </table>
+      <% end %>
+      </div><!--search-->      
+      <div id="result">
+        
+      </div>      
+    </article>
+  </section>
 </div>

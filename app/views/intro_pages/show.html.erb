@@ -1,14 +1,27 @@
-<% if params[:page].in? ['babahome_services', 'babahome_cards'] %>
-  <%= link_to "服務介紹", intro_intros_path('babahome_services'), class: params[:page] == 'babahome_services'? 'active' : '' %><br>
-  <%= link_to "站點查詢", babahomes_path, class: controller_name == 'babahomes'? 'active' : '' %><br>
-  <%= link_to "信用卡優惠", intro_intros_path('babahome_cards'), class: params[:page] == 'babahome_cards'? 'active' : '' %><br>
-<% end %>
+<div class="main">
 
-<% if params[:page].in? ['ministorage_services'] %>
-  <%= link_to "服務介紹", intro_intros_path('ministorage_services'), class: params[:page] == 'ministorage_services'? 'active' : '' %><br>
-  <%= link_to "站點查詢", ministorages_path, class: controller_name == 'ministorages'? 'active' : '' %><br>
-<% end %>
+	<section class="content">
 
-<article id="articleContent" itemscope itemtype='http://schema.org/Article' >
-  <%= @intro.parse_peditor %>
-</article>
+		<% if params[:page].in? ['babahome_services', 'babahome_cards'] %>
+		<nav>
+		  <%= link_to "服務介紹", intro_intros_path('babahome_services'), class: params[:page] == 'babahome_services'? 'active' : '' %>
+		  <%= link_to "站點查詢", babahomes_path, class: controller_name == 'babahomes'? 'active' : '' %>
+		  <%= link_to "信用卡優惠", intro_intros_path('babahome_cards'), class: params[:page] == 'babahome_cards'? 'active' : '' %>
+		</nav>
+		<% end %>
+
+		<% if params[:page].in? ['ministorage_services'] %>
+		<nav>
+		  <%= link_to "服務介紹", intro_intros_path('ministorage_services'), class: params[:page] == 'ministorage_services'? 'active' : '' %>
+		  <%= link_to "站點查詢", ministorages_path, class: controller_name == 'ministorages'? 'active' : '' %>
+		</nav>
+		<% end %>
+
+		<article id="articleContent" itemscope itemtype='http://schema.org/Article' >
+		  <%= @intro.parse_peditor %>
+		</article>
+
+	</section>
+
+</div>
+

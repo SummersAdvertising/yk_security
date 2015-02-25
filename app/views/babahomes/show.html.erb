@@ -1,42 +1,20 @@
-babahome show
-= LINK<br>
-<%= link_to "服務介紹", intro_intros_path('babahome_services') %><br>
-<%= link_to "站點查詢", babahomes_path, class: 'active' %><br>
-<%= link_to "信用卡優惠", intro_intros_path('babahome_cards') %><br>
-= RIGHT<br>
-<section class="hgroup">
-  <h2>叭叭房-站點查詢</h2>      
-</section>
-<!--hgroup-->
-
-<section class="text text-show">  
-  <div>
-    <table width="100%" border="0" cellspacing="0" cellpadding="0">
-      <tr>
-        <th width="9%">名稱：</th>
-        <td width="91%"><%= @babahome.name %></td>      
-      </tr>
-      <tr>
-        <th>描述：</th>
-        <td><%= @babahome.intro %></td>
-      </tr>
-      <tr>
-        <th>電話：</th>
-        <td><%= @babahome.phone %></td>
-      </tr>          
-      <tr>
-        <th>地址：</th>
-        <td><%= @babahome.address %></td>
-      </tr>
+<div class="main">
+  <section class="content">
+    <nav>
+      <%= link_to "服務介紹", intro_intros_path('babahome_services') %>
+      <%= link_to "站點查詢", babahomes_path, class: 'active' %>
+      <%= link_to "信用卡優惠", intro_intros_path('babahome_cards') %>
+    </nav>
+    <article>
+      <p class="title-30n"><%= @babahome.name %></p>
+      地址：<%= @babahome.address %><br>
+      電話：<%= @babahome.phone %><br>      
+      <br>
+      <%= @babahome.parse_peditor %>
+      <br>
       <% unless @babahome.map_iframe.blank? %>
-      <tr>
-        <th valign="top">地圖：</th>
-        <td><%= @babahome.map_iframe.html_safe %></td>
-      </tr>
+        <%= @babahome.map_iframe.html_safe %>
       <% end %>
-    </table>
-  </div>
-</section>
-<article id="articleContent" itemscope itemtype='http://schema.org/Article' >
-<%= @babahome.parse_peditor %>
-</article>
+    </article>
+  </section>
+</div>

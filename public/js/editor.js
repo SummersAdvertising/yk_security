@@ -13,7 +13,7 @@ var editor = {
 		linkedp: false,
 		linkedimg: false,
 		p_selectList: [/*"paragraphFontClass", "paragraphFontColor", "paragraphFontSize"*/],
-		paragraphFontClass: { "藍大標": "title-30n", "黑小標": "title-20b", "藍小標":"title-18n", "紅字":"text-18r","黃底":"text-18y" }, 
+		paragraphFontClass: { "藍大標": "title-30n", "黑小標": "title-20b", "藍小標":"title-18n", "紅字":"text-18r","黃底":"text-18y","內文":"text-18b" }, 
 		paragraphFontColor: { "顏色": "default", "黑色": "#000", "藍色": "#00F" }, 
 		paragraphFontSize: { "大小": "default", 14:14, 28:28 }
 
@@ -22,6 +22,7 @@ var editor = {
 		// 藍小標 藍色字 18pt Bold class="title-18n"
 		// 紅字 紅色字 18pt Regular class="text-18r"
 		// 黃底 黑字黃色底 18pt Regular  class="text-18y"
+		// 內文 18pt Regular class="text-18b"
 		
 	},
 	init: function(settings){

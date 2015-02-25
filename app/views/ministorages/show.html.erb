@@ -1,41 +1,19 @@
-ministorage show
-= LINK<br>
-<%= link_to "服務介紹", intro_intros_path('ministorage_services') %><br>
-<%= link_to "站點查詢", ministorages_path, class: 'active'  %><br>
-= RIGHT<br>
-<section class="hgroup">
-  <h2>迷你倉-站點查詢</h2>      
-</section>
-<!--hgroup-->
-
-<section class="text text-show" itemscope itemtype='http://schema.org/Place'>  
-  <div>
-    <table width="100%" border="0" cellspacing="0" cellpadding="0">
-      <tr>
-        <th width="9%">名稱：</th>
-        <td width="91%" itemprop='name'><%= @ministorage.name %></td>      
-      </tr>
-      <tr>
-        <th>描述：</th>
-        <td itemprop='description'><%= @ministorage.intro %></td>
-      </tr>
-      <tr>
-        <th>電話：</th>
-        <td itemprop='telephone'><%= @ministorage.phone %></td>
-      </tr>          
-      <tr>
-        <th>地址：</th>
-        <td itemprop='address'><%= @ministorage.address %></td>
-      </tr>
+<div class="main">
+  <section class="content">
+    <nav>
+      <%= link_to "服務介紹", intro_intros_path('ministorage_services') %>
+      <%= link_to "站點查詢", ministorages_path, class: 'active'  %>
+    </nav>
+    <article>
+      <p class="title-30n"><%= @ministorage.name %></p>
+      地址：<%= @ministorage.address %><br>
+      電話：<%= @ministorage.phone %><br>      
+      <br>
+      <%= @ministorage.parse_peditor %>
+      <br>
       <% unless @ministorage.map_iframe.blank? %>
-      <tr>
-        <th valign="top">地圖：</th>
-        <td><%= @ministorage.map_iframe.html_safe %></td>
-      </tr>
+        <%= @ministorage.map_iframe.html_safe %>
       <% end %>
-    </table>
-  </div>
-</section>
-<article id="articleContent" itemscope itemtype='http://schema.org/Article' >
-<%= @ministorage.parse_peditor %>
-</article>
+    </article>
+  </section>
+</div>
