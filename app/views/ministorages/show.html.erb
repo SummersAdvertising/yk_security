@@ -1,4 +1,8 @@
-<div class="main">
+<style>
+.title-20b{margin-top:15px;}
+.title-18n{margin-top:10px;}
+</style>
+<div class="main"  _height="auto">
   <section class="content">
     <nav>
       <%= link_to "服務介紹", intro_intros_path('ministorage_services') %>
@@ -6,8 +10,8 @@
     </nav>
     <article>
       <p class="title-30n"><%= @ministorage.name %></p>
-      地址：<%= @ministorage.address %><br>
-      電話：<%= @ministorage.phone %><br>      
+       <span class="title-20b">地址：</span><%= @ministorage.address %><br>
+       <span class="title-20b">電話：</span><%= @ministorage.phone %><br>      
       <br>
       <%= @ministorage.parse_peditor %>
       <br>

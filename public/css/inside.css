@@ -204,11 +204,13 @@ padding:15px 0;}
 .main article{float:right;width:680px;}
 .main article img{margin:20px 0;}
 
+.main h3{color:#ccc;}
+
 .title-30n{font:900 30px 微軟正黑體;color:#0068b7;line-height:1.9em;}
 .title-20b{font:900 20px 微軟正黑體;color:#000;line-height:1.9em;}
 .title-18n{font:900 16px 微軟正黑體;color:#0068b7;line-height:1.9em;}
 .text-18r{font:300 16px 微軟正黑體;color:#ff0000;line-height:1.9em;}
-.text-18y{font:300 16px 微軟正黑體;color:#000;background:#fff79a;line-height:1.9em;}
+.text-18y{font:300 16px 微軟正黑體;color:#000;background:#fff79a;line-height:1.9em;display:inline;}
 .text-18b{font:300 16px 微軟正黑體;color:#000;line-height:1.9em;}
 
 /*-----------------------------------------------------------------------站點查詢---*/
@@ -216,9 +218,9 @@ padding:15px 0;}
 #search{margin:0 0 25px 0;}
 #search th{font-size:18px;}
 #search td{padding:0 5px;}
-#search select,#search input{width:100%;font-size:14px;height:30px;border-radius:5px}
+#search select,#search input{width:100%;font:300 14px 微軟正黑體,Microsoft JhengHei;height:30px;border-radius:5px}
 #search select{background:#efefef;border:1px solid #171717;}
-#search input{background:#626262;color:#fff;border:none;letter-spacing:5px;cursor: pointer;}
+#search input{background:#626262;color:#fff;border:none;letter-spacing:5px;cursor: pointer}
 #search input:hover{background:#555;}
 
 #result table{border:1px solid #b3b3b3;border-right:none;}
