@@ -1,0 +1,1 @@
+//= require ./ministorages.js.coffee
