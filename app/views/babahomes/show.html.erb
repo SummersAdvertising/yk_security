@@ -1,4 +1,7 @@
-<div class="main">
+<style>
+.title-20b{margin-top:15px;}
+</style>
+<div class="main"  _height="auto">
   <section class="content">
     <nav>
       <%= link_to "服務介紹", intro_intros_path('babahome_services') %>
@@ -7,8 +10,8 @@
     </nav>
     <article>
       <p class="title-30n"><%= @babahome.name %></p>
-      地址：<%= @babahome.address %><br>
-      電話：<%= @babahome.phone %><br>      
+      <span class="title-20b">地址：</span><%= @babahome.address %><br>
+      <span class="title-20b">電話：</span><%= @babahome.phone %><br>      
       <br>
       <%= @babahome.parse_peditor %>
       <br>
