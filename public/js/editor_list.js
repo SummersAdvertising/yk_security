@@ -18,7 +18,7 @@ editor.list = {
 		var initRows = 3;
 		// available class
 		var StyleClassArray = ['peditor_list_disc','peditor_list_circle','peditor_list_customize'];
-		var StyleNameArray = ['實心圓點','空心圓點','其他'];
+		var StyleNameArray = ['實心圓點','數字編號','其他'];
 		
 		var container = $('<ul id="newListContent" class="none"></ul>');
 		$(container).attr('class',StyleClassArray[0])

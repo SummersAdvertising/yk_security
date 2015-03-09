@@ -194,9 +194,9 @@ footer a{font:300 13px "Times New Roman", Times, serif;text-shadow:0 1px 0 #fff}
 
 /*-----------------------------------------------------------------------ç™»å…¥---*/
 
-.title-30n{font:900 30px 微軟正黑體;color:#0068b7;line-height:1.9em;}
-.title-20b{font:900 20px 微軟正黑體;color:#000;line-height:1.9em;}
-.title-18n{font:900 16px 微軟正黑體;color:#0068b7;line-height:1.9em;}
+.title-30n{font:300 30px 微軟正黑體;color:#0068b7;line-height:1.9em;}
+.title-20b{font:900 18px 微軟正黑體;color:#000;line-height:1.9em;}
+.title-18n{font:900 20px 微軟正黑體;color:#0068b7;line-height:1.9em;}
 .text-18r{font:300 16px 微軟正黑體;color:#ff0000;line-height:1.9em;}
-.text-18y{font:300 16px 微軟正黑體;color:#000;background:#fff79a;line-height:1.9em;}
+.text-18y{font:300 16px 微軟正黑體;color:#000;background:#fff79a;line-height:1.9em;display:inline;}
 .text-18b{font:300 16px 微軟正黑體;color:#000;line-height:1.9em;}
