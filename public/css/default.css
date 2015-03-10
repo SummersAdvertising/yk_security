@@ -90,6 +90,10 @@ border-radius:5px;width:202px;margin:0 auto}
 .list .x2{width:12%}
 .list .x1{width:6%}
 
+
+ul.peditor_list_disc{list-style: disc; padding-left: 20px;}
+ul.peditor_list_circle{list-style: decimal; padding-left: 30px;}
+ul.peditor_list_customize{list-style: none; padding-left: 20px;}
 /*-----------------------------------------------------------------------æŒ‰éˆ•---*/
 
 .button{overflow:hidden}
