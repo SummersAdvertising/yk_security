@@ -1,4 +1,6 @@
-
+// available class
+var StyleClassArray = ['peditor_list_disc','peditor_list_circle','peditor_list_customize'];
+var StyleNameArray = ['實心圓點','數字編號','其他'];
 editor.list = {
 	initTab: function(){
 		var li = $("<li>");
@@ -16,9 +18,6 @@ editor.list = {
 		editorChild.addClass("editorChild");
 		 	
 		var initRows = 3;
-		// available class
-		var StyleClassArray = ['peditor_list_disc','peditor_list_circle','peditor_list_customize'];
-		var StyleNameArray = ['實心圓點','數字編號','其他'];
 		
 		var container = $('<ul id="newListContent" class="none"></ul>');
 		$(container).attr('class',StyleClassArray[0])
@@ -89,8 +88,12 @@ editor.list = {
 		editor.resetChild();
 
 		editor.save();
+
 		$("#newListContent > li[value=0]").removeAttr('value');
-		
+		var currType = $('#style_dropdown').val();
+		//change list type
+		var typeIndex = $.inArray(currType, StyleClassArray);
+		$('#newListContent').attr('class', StyleClassArray[typeIndex]);
 		//document.getElementById("newListContent").style.listStyleType = "none !important";
 	},
 	show: function(paragraph){	
