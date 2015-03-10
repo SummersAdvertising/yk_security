@@ -21,8 +21,8 @@
         <% end %>
         <% unless @news.fb_meta_description.blank? %>
           <% set_meta_tags :og => { :description => @news.fb_meta_description } %>          
-          <% set_meta_tags :og => { :url => news_url(@news) } %>          
         <% end %>
+        <% set_meta_tags :og => { :url => news_url(@news) } %>
         <article id="articleContent"><%= @news.parse_peditor %></article>
       </div>
     </div>
