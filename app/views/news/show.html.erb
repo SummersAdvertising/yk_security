@@ -17,10 +17,11 @@
         </header>        
         <%= image_tag(@news.cover, itemprop: 'image') %>
         <% unless @news.cover.blank? %>
-          <% set_meta_tags :og => { :image => @news.cover } %>          
+          <% set_meta_tags :og => { :image => image_url(@news.cover) } %>          
         <% end %>
         <% unless @news.fb_meta_description.blank? %>
           <% set_meta_tags :og => { :description => @news.fb_meta_description } %>          
+          <% set_meta_tags :og => { :url => news_url(@news) } %>          
         <% end %>
         <article id="articleContent"><%= @news.parse_peditor %></article>
       </div>
