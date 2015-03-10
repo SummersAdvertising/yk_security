@@ -89,8 +89,8 @@ editor.list = {
 		editor.resetChild();
 
 		editor.save();
+		$("#newListContent > li[value=0]").removeAttr('value');
 		
-
 		//document.getElementById("newListContent").style.listStyleType = "none !important";
 	},
 	show: function(paragraph){	
