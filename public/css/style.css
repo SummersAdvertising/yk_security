@@ -90,10 +90,11 @@ header .content > nav>ul>li:last-child{border:none}
 	#banner nav a{display: none;}
 	#banner .active{padding:0;display: block;}
 	
-	#subMenu{overflow: hidden;margin:0 auto 100px auto;}
-	#subMenu #banner{border:none;height:auto;}
-	#subMenu #banner .content{background:none;}
-	#subMenu #banner nav{height:186px;width:278px;margin:0 auto;border-top:1px solid #a3abae;border-bottom:1px solid #a3abae;border-left:1px solid #dfeff8;border-right:1px solid #dfeff8;}
+	#subMenu,#subMenu2{overflow: hidden;margin:0 auto 100px auto;}
+	#subMenu #banner,#subMenu2{border:none;height:auto;}
+	#subMenu #banner .content,#subMenu2 .content{background:none;}
+	#subMenu #banner nav,#subMenu2 nav{height:186px;width:278px;margin:0 auto;border-top:1px solid #a3abae;border-bottom:1px solid #a3abae;border-left:1px solid #dfeff8;border-right:1px solid #dfeff8;}
+	
 	#subMenu #banner nav a{display: block;background:url(../images/introMenu.png);background-size:277px auto;position:static;width:92px;height:92px;padding:0;float:left;text-indent:-9999px;border:none;}
 	#subMenu #banner nav a:nth-child(1){background-position: 0 0;}
 	#subMenu #banner nav a:nth-child(2){background-position: -92px 0;}
@@ -105,10 +106,6 @@ header .content > nav>ul>li:last-child{border:none}
 	#subMenu #banner .active img{display:none;}
 	#subMenu #banner nav a.active{background-image:url(../images/introMenu_.png);}
 
-	#subMenu2{overflow: hidden;margin:0 auto 100px auto;}
-	#subMenu2{border:none;height:auto;}
-	#subMenu2 .content{background:none;}
-	#subMenu2 nav{height:186px;width:277px;margin:0 auto;border-top:1px solid #a3abae;border-bottom:1px solid #a3abae;}
 	#subMenu2 nav a{display: block;background:url(../images/serviceMenu.png);background-size:277px auto;position:static;width:92px;height:92px;padding:0;float:left;text-indent:-9999px;border:none;}
 	#subMenu2 nav a:nth-child(1){background-position: 0 0;}
 	#subMenu2 nav a:nth-child(2){background-position: -92px 0;}
@@ -117,7 +114,6 @@ header .content > nav>ul>li:last-child{border:none}
 	#subMenu2 nav a:nth-child(5){background-position: -92px -92px;}
 	#subMenu2 nav a:nth-child(6){background-position: -184px -92px;}
 	#subMenu2 nav a:hover{background-image:url(../images/serviceMenu.png);}
-	#subMenu2 .active img{display:none;}
 	#subMenu2 nav a.active{background-image:url(../images/serviceMenu_.png);}
 }
 /*-----------------------------------------------------------------------頁身---*/
