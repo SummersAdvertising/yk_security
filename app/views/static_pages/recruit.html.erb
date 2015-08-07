@@ -2,6 +2,57 @@
 <%= render :partial => 'layouts/intro_menu' %>
 
 <article _height="auto" id="recruit">
+  <section class="content">
+    <nav><a href="index.html">首頁</a><span>></span><a>人員招募</a></nav>
+    <div class="inner">
+      <!--******************************* tab-->
+      <ul id="tab" class="hidden-xs">
+        <li><a href="#box-1"><img src="/images/rc-01.jpg"></a></li>
+        <li><a href="#box-2"><img src="/images/rc-02.jpg"></a></li>
+        <li><a href="#box-3"><img src="/images/rc-03.jpg"></a></li>
+        <li><a href="#box-4"><img src="/images/rc-04.jpg"></a></li>
+        <li><a href="#box-5"><img src="/images/rc-05.jpg"></a></li>
+      </ul>
+
+      <!--******************************* boxframe-->
+      <div id="boxframe" class="hidden-xs">
+        <div id="box-1" class="box"><a href="http://www.104.com.tw/jobbank/custjob/index.php?r=cust&j=5e70436c38363f205a323c1d1d1d1d5f2443a363189j01&jobsource=checkc" target="_blank">在新視窗開啟 ></a>
+        <iframe frameborder="0" allowtransparency="true" src="http://www.104.com.tw/jobbank/custjob/index.php?r=cust&j=5e70436c38363f205a323c1d1d1d1d5f2443a363189j01&jobsource=checkc"> </iframe></div>
+        <div id="box-2" class="box"><a href="http://www.yes123.com.tw/admin/job_refer_comp_info.asp?p_id=48018_89441178" target="_blank">在新視窗開啟 ></a>
+        <iframe frameborder="0" allowtransparency="true" src="http://www.yes123.com.tw/admin/job_refer_comp_info.asp?p_id=48018_89441178 "> </iframe></div>
+        <div id="box-3" class="box"><a href="http://www.518.com.tw/誼光保全股份有限公司-company-25175.html" target="_blank">在新視窗開啟 ></a>
+        <iframe frameborder="0" allowtransparency="true" src="http://www.518.com.tw/誼光保全股份有限公司-company-25175.html"> </iframe></div>
+        <div id="box-4" class="box"><a href="http://www.1111.com.tw/%E8%AA%BC%E5%85%89%E4%BF%9D%E5%85%A8%E8%82%A1%E4%BB%BD%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8-%E6%89%BE%E5%B7%A5%E4%BD%9C%E6%A9%9F%E6%9C%83-35970553.htm" target="_blank">在新視窗開啟 ></a>
+          <iframe frameborder="0" allowtransparency="true" src="http://www.1111.com.tw/%E8%AA%BC%E5%85%89%E4%BF%9D%E5%85%A8%E8%82%A1%E4%BB%BD%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8-%E6%89%BE%E5%B7%A5%E4%BD%9C%E6%A9%9F%E6%9C%83-35970553.htm"> </iframe></div>
+        <div id="box-5" class="box"><a href="http://www.taiwanjobs.gov.tw/Internet/jobwanted/company_desc.aspx?EMPLOYER_ID=17744&BRANCH_ID=" target="_blank">在新視窗開啟 ></a>
+        <iframe frameborder="0" allowtransparency="true" src="http://www.taiwanjobs.gov.tw/Internet/jobwanted/company_desc.aspx?EMPLOYER_ID=17744&BRANCH_ID="> </iframe></div>
+      </div>
+      
+      <!--******************************* mobile show-->
+      <ul id="tab-m" class="visible-xs-block">
+          <li>
+            <a href="http://www.104.com.tw/jobbank/custjob/index.php?r=cust&j=5e70436c38363f205a323c1d1d1d1d5f2443a363189j01&jobsource=checkc" target="_blank"><img src="/images/rc-01.jpg"></a>
+          </li>
+          <li>
+            <a href="http://www.yes123.com.tw/admin/job_refer_comp_info.asp?p_id=48018_89441178" target="_blank"><img src="/images/rc-02.jpg"></a>
+          </li>
+          <li>
+            <a href="http://www.518.com.tw/誼光保全股份有限公司-company-25175.html" target="_blank"><img src="/images/rc-03.jpg"></a>
+          </li>
+          <li>
+            <a href="http://www.1111.com.tw/%E8%AA%BC%E5%85%89%E4%BF%9D%E5%85%A8%E8%82%A1%E4%BB%BD%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8-%E6%89%BE%E5%B7%A5%E4%BD%9C%E6%A9%9F%E6%9C%83-35970553.htm" target="_blank"><img src="/images/rc-04.jpg"></a>
+          </li>
+          <li>
+            <a href="http://www.taiwanjobs.gov.tw/Internet/jobwanted/company_desc.aspx?EMPLOYER_ID=17744&BRANCH_ID=" target="_blank"><img src="/images/rc-05.jpg"></a>
+          </li>
+      </ul>
+    </div>
+  </section>
+</article>
+
+<div id="subMenu" class="visible-xs-block">
+  <%= render :partial => 'layouts/intro_menu' %>
+</div>
 
 <script>
 $(function(){ 
@@ -19,30 +70,3 @@ $(function(){
   });
 });
 </script>
-
-
-  <section class="content">
-    <nav><a href="index.html">首頁</a><span>></span><a>人員招募</a></nav>
-    <div class="inner">
-      <div id="tab">
-        <li><a href="#box-1"><img src="/images/rc-01.jpg"></a></li>
-        <li><a href="#box-2"><img src="/images/rc-02.jpg"></a></li>
-        <li><a href="#box-3"><img src="/images/rc-03.jpg"></a></li>
-        <li><a href="#box-4"><img src="/images/rc-04.jpg"></a></li>
-        <li><a href="#box-5"><img src="/images/rc-05.jpg"></a></li>
-      </div>
-      <div id="boxframe">
-        <div id="box-1" class="box"><a href="http://www.104.com.tw/jobbank/custjob/index.php?r=cust&j=5e70436c38363f205a323c1d1d1d1d5f2443a363189j01&jobsource=checkc" target="_blank">在新視窗開啟 ></a>
-        <iframe frameborder="0" allowtransparency="true" src="http://www.104.com.tw/jobbank/custjob/index.php?r=cust&j=5e70436c38363f205a323c1d1d1d1d5f2443a363189j01&jobsource=checkc"> </iframe></div>
-        <div id="box-2" class="box"><a href="http://www.yes123.com.tw/admin/job_refer_comp_info.asp?p_id=48018_89441178 " target="_blank">在新視窗開啟 ></a>
-        <iframe frameborder="0" allowtransparency="true" src="http://www.yes123.com.tw/admin/job_refer_comp_info.asp?p_id=48018_89441178 "> </iframe></div>
-        <div id="box-3" class="box"><a href="http://www.518.com.tw/誼光保全股份有限公司-company-25175.html" target="_blank">在新視窗開啟 ></a>
-        <iframe frameborder="0" allowtransparency="true" src="http://www.518.com.tw/誼光保全股份有限公司-company-25175.html"> </iframe></div>
-        <div id="box-4" class="box"><a href="http://www.1111.com.tw/%E8%AA%BC%E5%85%89%E4%BF%9D%E5%85%A8%E8%82%A1%E4%BB%BD%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8-%E6%89%BE%E5%B7%A5%E4%BD%9C%E6%A9%9F%E6%9C%83-35970553.htm" target="_blank">在新視窗開啟 ></a>
-          <iframe frameborder="0" allowtransparency="true" src="http://www.1111.com.tw/%E8%AA%BC%E5%85%89%E4%BF%9D%E5%85%A8%E8%82%A1%E4%BB%BD%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8-%E6%89%BE%E5%B7%A5%E4%BD%9C%E6%A9%9F%E6%9C%83-35970553.htm"> </iframe></div>
-        <div id="box-5" class="box"><a href="http://www.taiwanjobs.gov.tw/Internet/jobwanted/company_desc.aspx?EMPLOYER_ID=17744&BRANCH_ID=" target="_blank">在新視窗開啟 ></a>
-        <iframe frameborder="0" allowtransparency="true" src="http://www.taiwanjobs.gov.tw/Internet/jobwanted/company_desc.aspx?EMPLOYER_ID=17744&BRANCH_ID="> </iframe></div>
-      </div>
-    </div>
-  </section>
-</article>

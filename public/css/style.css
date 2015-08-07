@@ -1,28 +1,125 @@
 ﻿
 /*-----------------------------------------------------------------------全域---*/
 
-body{font:300 15px 微軟正黑體,Microsoft JhengHei;line-height:1.7em;min-width:1024px;}
-a{font:300 15px 微軟正黑體,Microsoft JhengHei;line-height:1.7em;text-decoration:none;
--webkit-transition:all ease .3s;-moz-transition:all ease .3s;}
-.content{width:1024px;margin:0 auto;padding:0 47px}
+html{height:100%;}
+body{font:400 15px/1.7em 微軟正黑體,Microsoft JhengHei;height:100%;}
+a,a:hover,a:focus{font:400 15px/1.7em 微軟正黑體,Microsoft JhengHei;text-decoration:none;
+-webkit-transition:all ease .3s;-moz-transition:all ease .3s;outline:none;}
+.content{max-width:1024px;margin:0 auto;padding:0 47px}
+.video-container {position: relative;padding-bottom: 56.25%;padding-top: 30px;height: 0;overflow: hidden;}
+.video-container iframe,.video-container object,.video-container embed {position: absolute;top: 0;eft: 0;width: 100%;height: 100%;}
 
+@media (max-width: 1024px){
+	.content{padding:0 15px}
+}
+@media (max-width: 899px){
+	img{max-width:100%;width: 100%;}
+}
 /*-----------------------------------------------------------------------頁首---*/
 
 body > header{height:60px;background:url(../images/top.jpg) 0 0 repeat-x}
 header h1{float:left;width:171px;height:60px;background:url(../images/h1.png) center center no-repeat}
 header .content > nav{height:60px;float:right}
-header .content > nav a{display:inline-block;margin-left: -4px;;height:100%;padding:20px 10px 0 10px;border-right:1px solid #C9C9C9;text-shadow:0 1px 0 #FBFBFB;color:#000;font:900 14px 微軟正黑體,Microsoft JhengHei}
-header .content > nav a:hover{background:#EFEFEF;box-shadow:inset 0 0 10px #bbb}
-header .content > nav a:last-child{border:none}
+header .content > nav>ul>li{display:inline-block;height:60px;border-right:1px solid #C9C9C9;}
+header .content > nav>ul>li>a{display:inline-block;margin-left: -4px;;height:100%;padding:20px 10px 0 10px;text-shadow:0 1px 0 #FBFBFB;color:#000;font:900 14px 微軟正黑體,Microsoft JhengHei;}
+header .content > nav>ul>li>a:hover{background:#EFEFEF;box-shadow:inset 0 0 10px #bbb}
+header .content > nav>ul>li:last-child{border:none}
+#dropmenu{display: none;}
+
+@media (max-width: 899px){
+	body > header{width:100%;position: absolute;left:0;top:0;background:none;z-index: 1000;}
+	header .content {position: absolute;left:-100%;top:0;padding:0;background:url(../images/menu_bg.jpg) 64% bottom no-repeat;z-index:1000;width:100%;padding-bottom:170px;height:100%;}
+	header h1{float:none;background-image:url(../images/logo.png);position: absolute;right:15px;top:40px;}
+	header .content > nav{width:100%;float:none;height:auto;margin-top: 100px}
+	header .content > nav>ul>li{display: block;border-right:none;height:52px;border-bottom: 1px solid #006c9e;border-top: 1px solid #51bfff;
+		box-shadow: inset 0 -1px 0 0 #074061;
+		-moz-box-shadow: inset 0 -1px 0 0 #074061;
+		-webkit-box-shadow: inset 0 -1px 0 0 #074061;}
+	header .content > nav>ul>li:first-child{border-top:none;}
+	header .content > nav>ul>li:last-child{border-top: 1px solid #51bfff;
+		box-shadow: none;-
+		moz-box-shadow: none;
+		-webkit-box-shadow: none;}
+	header .content > nav>ul>li:nth-child(2){height:auto;min-height: 52px;}
+	header .content > nav>ul>li>a{padding:0 20px;color:#FFF;width:100%;margin:0;font:400 1.05em/50px 微軟正黑體,Microsoft JhengHei;text-shadow:none;height:49px;}
+	header .content > nav>ul>li.active>a,
+	header .content > nav>ul>li>a:hover,
+	header .content > nav>ul>li>a:focus{background:none;border-left:4px solid #00e5ee;color:#fff000;
+		box-shadow: none;
+		moz-box-shadow: none;
+		-webkit-box-shadow: none;
+	  background: -webkit-linear-gradient(0deg, #00a3ee 10%, #008dd9 90%);
+    background:    -moz-linear-gradient(0deg, #00a3ee 10%, #008dd9 90%);
+    background:     -ms-linear-gradient(0deg, #00a3ee 10%, #008dd9 90%);
+    background:      -o-linear-gradient(0deg, #00a3ee 10%, #008dd9 90%);
+    background:         linear-gradient(0deg, #00a3ee 10%, #008dd9 90%);}
+	#dropmenu{padding: 12px 0;display: none;background:#74b3e8;border-top:2px solid #006c9e;
+		box-shadow:inset 0 1px 0 0 #a7ffff;
+		-moz-box-shadow:inset 0 1px 0 0 #a7ffff;
+		-webkit-box-shadow:inset  0 1px 0 0 #a7ffff;}
+	#dropmenu ul{width:300px;margin:0 auto;}
+	#dropmenu hr{border:none;border-bottom: 1px solid #5988ae;margin:15px 0;
+		box-shadow: 0 1px 0 0 #85beeb;
+		-moz-box-shadow: 0 1px 0 0 #85beeb;
+		-webkit-box-shadow:  0 1px 0 0 #85beeb;}
+	#dropmenu li{display: inline-block;padding:0 6px 0 15px;line-height: 1em;}
+	#dropmenu li::before{content:"";display: inline-block;float:left;height:24px;width:2px;background:#042b3c;
+		box-shadow: 1px 0px 2px 0px #87d5ff;
+		-moz-box-shadow: 1px 0px 2px 0px #87d5ff;
+		-webkit-box-shadow: 1px 0px 2px 0px #87d5ff;}
+	#dropmenu li a{display: inline-block;padding-left:10px;color:#740f11;font:400 1.05em/1.6 微軟正黑體,Microsoft JhengHei;}
+	#dropmenu li.active a,
+	#dropmenu li a:hover,
+	#dropmenu li a:focus{color:#fff000;}
+	#navbar-toggle{width:38px;height:38px;position: absolute;top:0px;left:20px;z-index:1002;background:#58ccc9;border:none;}
+	#navbar-toggle span{display: block;margin:4px auto;width:18px;height:2px;background:#FFF;border-radius:4px;}
+}
+/*-----------------------------------------------------------------------首圖---*/
 
 #banner{clear:both;height:128px;border-bottom:1px solid #d6d6d6;}
-#banner .content{background:url(../images/banner.jpg) right -1px no-repeat;padding-top:35px;height:127px}
+#banner .content{background:url(../images/banner.jpg) right -1px no-repeat;padding-top:35px;height:100%}
 #banner nav{height:55px}
 #banner nav a{color:#005791;display:inline-block;height:100%;font:900 14px 微軟正黑體,Microsoft JhengHei;background:url(../images/nav.png) center bottom no-repeat;padding:25px 10px 0 10px}
 #banner nav a:hover{background:url(../images/navh.png) center bottom no-repeat;color:#710908}
 #banner .active{background:none;padding:0 5px;position:relative;top:20px;}
 #banner .active:hover{background:none;}
 
+@media (max-width: 899px){
+	#banner{height:110px;}
+	#banner img{height:40px;width: auto;}
+	#banner nav a{display: none;}
+	#banner .active{padding:0;display: block;}
+	
+	#subMenu{overflow: hidden;margin:0 auto 100px auto;}
+	#subMenu #banner{border:none;height:auto;}
+	#subMenu #banner .content{background:none;}
+	#subMenu #banner nav{height:186px;width:278px;margin:0 auto;border-top:1px solid #a3abae;border-bottom:1px solid #a3abae;border-left:1px solid #dfeff8;border-right:1px solid #dfeff8;}
+	#subMenu #banner nav a{display: block;background:url(../images/introMenu.png);background-size:277px auto;position:static;width:92px;height:92px;padding:0;float:left;text-indent:-9999px;border:none;}
+	#subMenu #banner nav a:nth-child(1){background-position: 0 0;}
+	#subMenu #banner nav a:nth-child(2){background-position: -92px 0;}
+	#subMenu #banner nav a:nth-child(3){background-position: -184px 0;}
+	#subMenu #banner nav a:nth-child(4){background-position: 0 -92px;}
+	#subMenu #banner nav a:nth-child(5){background-position: -92px -92px;}
+	#subMenu #banner nav a:nth-child(6){background-position: -184px -92px;}
+	#subMenu #banner nav a:hover{background-image:url(../images/introMenu.png);}
+	#subMenu #banner .active img{display:none;}
+	#subMenu #banner nav a.active{background-image:url(../images/introMenu_.png);}
+
+	#subMenu2{overflow: hidden;margin:0 auto 100px auto;}
+	#subMenu2{border:none;height:auto;}
+	#subMenu2 .content{background:none;}
+	#subMenu2 nav{height:186px;width:277px;margin:0 auto;border-top:1px solid #a3abae;border-bottom:1px solid #a3abae;}
+	#subMenu2 nav a{display: block;background:url(../images/serviceMenu.png);background-size:277px auto;position:static;width:92px;height:92px;padding:0;float:left;text-indent:-9999px;border:none;}
+	#subMenu2 nav a:nth-child(1){background-position: 0 0;}
+	#subMenu2 nav a:nth-child(2){background-position: -92px 0;}
+	#subMenu2 nav a:nth-child(3){background-position: -184px 0;}
+	#subMenu2 nav a:nth-child(4){background-position: 0 -92px;}
+	#subMenu2 nav a:nth-child(5){background-position: -92px -92px;}
+	#subMenu2 nav a:nth-child(6){background-position: -184px -92px;}
+	#subMenu2 nav a:hover{background-image:url(../images/serviceMenu.png);}
+	#subMenu2 .active img{display:none;}
+	#subMenu2 nav a.active{background-image:url(../images/serviceMenu_.png);}
+}
 /*-----------------------------------------------------------------------頁身---*/
 
 article .content{padding-bottom:60px}
@@ -33,15 +130,15 @@ article nav a:hover{color:#777}
 article h3{font:900 26px 微軟正黑體,Microsoft JhengHei;}
 article .inner{overflow:hidden}
 
-.inner .left{float:left;width:335px}
+.left{padding:0;float:left;}
 .left ul{padding:0 15px;border:1px solid #C0C0C0}
 .left li{border-bottom:1px dotted #A3A3A3;padding:15px 0}
 .left li:last-child{border:none}
 
-.page{font:300 12px verdana;margin:10px 0 5px 0}
+.page{font:400 12px verdana;margin:10px 0 5px 0;}
 .page nav{overflow:hidden}
 .page a:first-child{border-left:1px solid #C0C0C0}
-.page a{border:1px solid #C0C0C0;border-left:none;font:300 12px verdana;text-shadow:0 1px 0 #fff;
+.page a{border:1px solid #C0C0C0;border-left:none;font:400 12px verdana;text-shadow:0 1px 0 #fff;
 display:inline-block;float:left;background:url(../images/id-01.jpg) 0 -8px repeat-x;
 color:#555;padding:6px 10px 0 10px;height:30px}
 .page a:hover{background:#fff;color:#005191}
@@ -51,18 +148,37 @@ color:#555;padding:6px 10px 0 10px;height:30px}
 .page .first a,.page .last a{color:#ccc}
 
 .left .years{text-align:right}
-.left .years a{color:#bbb;font:300 13px arial;margin:0 0 0 10px;display:inline-block;padding:0 0 2px 5px}
+.left .years a{color:#bbb;font:400 13px arial;margin:0 0 0 10px;display:inline-block;padding:0 0 2px 5px}
 .left .years .active,.left .years a:hover{color:#777;border-bottom:1px solid #777}
 
-.inner .right{float:right;width:545px}
+.right{padding:0;float:left;}
 .right img{max-width:544px;height:auto; margin-top: 20px;}
 .right .back{display:block;padding:0 0 0 20px;background:url(../images/sv-back.jpg) 0 7px no-repeat;color:#555;height:60px}
 .right .back:hover{color:#222}
 
+@media (max-width: 899px){
+	article nav{display: none;}
+	article .inner{padding:10px 0;}
+	article h3{font:900 2em 微軟正黑體,Microsoft JhengHei;padding-top: 20px;}
+
+	.left.col-sm-5{padding:0;}
+
+	.page{text-align: center;margin-top: 40px}
+	.page nav{display: inline-block;}
+}
 /*-----------------------------------------------------------------------頁尾---*/
 
 body > footer{height:255px;background:#710908;color:#fff}
 body > footer a{color:#fff}
-body > footer a:hover{color:#FFBBBA}
+body > footer a:hover,a:focus{color:#FFBBBA}
 body > footer .content{background:url(../images/footer2.png) 94% 40px no-repeat;padding-top:30px}
 body > footer p{color:#fff}
+body > footer .tel{display: block;width:280px;height:60px;position:absolute;left:15px;top:40px;cursor:default;}
+
+@media (max-width: 899px){
+	body > footer{background:#710908;color:#fff;height:auto;}
+	body > footer .content{background:url(/images/footer2.png) 15px 40px no-repeat;padding:160px 15px 40px 15px;position:relative}
+	body > footer img{width: auto;}
+	body > footer p{color:#fff;}
+	body > footer .block{display: block;}
+}

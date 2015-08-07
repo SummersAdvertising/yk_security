@@ -7,7 +7,9 @@
       <div class="left">
         <ul>
         <% @prises.each do | prise | %>
-        	<li <%= 'class="active"'.html_safe if prise.id == @prise.id %> ><a href="<%= prise_path(prise, :year => params[ :year ]) %>"><%= prise.title %></a></li>
+        	<li <%= 'class="active"'.html_safe if prise.id == @prise.id %> >
+            <a href="<%= prise_path(prise, :year => params[ :year ], :page => params[ :page ]) %>"><%= prise.title %></a>
+          </li>
         <% end %>
           
         </ul>
@@ -25,18 +27,35 @@
           <h3><%= @prise.title %></h3>
         </header>
         <article>
-          	<% @prise.honorees.each do | honoree | %>          		
-	          <table width="100%" border="0" cellspacing="0" cellpadding="0">
-	            <tr>
-	              <th width="34%" valign="top"><img src="<%= honoree.cover %>"></th>
-	              <td width="66%" valign="top"><span><%= honoree.area %></span><br>
-	                <b><%= honoree.name %></b><br>
-	                <p><%= honoree.content.gsub("\n", '<br />').html_safe %></p></td>
-	            </tr>
-	          </table>
-          	<% end %>
-          </article>
+        	<% @prise.honorees.each do | honoree | %>          		
+          <div class="row">
+            <div class="col-sm-4"><img src="<%= honoree.cover %>"></div>
+            <div class="col-sm-8">
+                <span><%= honoree.area %></span><br>
+                <b><%= honoree.name %></b><br>
+                <p><%= honoree.content.gsub("\n", '<br />').html_safe %></p>
+            </div>
+          </div>
+        	<% end %>
+        </article>
       </div>
     </div>
   </section>
 </article>
+
+<div id="subMenu" class="visible-xs-block">
+  <%= render :partial => 'layouts/intro_menu' %>
+</div>
+
+<script>
+/* 防止 youtube 顯示最前*/
+$(function(){
+     $("iframe").each(function(){
+      $(this).parent('div').addClass('video-container');
+      var ifr_source = $(this).attr('src');
+      var wmode = "wmode=opaque";
+      if(ifr_source.indexOf('?') != -1) $(this).attr('src',ifr_source+'&'+wmode);
+      else $(this).attr('src',ifr_source+'?'+wmode);
+     });
+});
+</script>

@@ -1,3 +1,9 @@
+<div id="banner" _height="none">
+  <section class="content">
+    <nav><a class="active"><img src="/images/nw-nav.png"></a></nav>
+  </section>
+</div>
+
 <article _height="auto" id="news">
   <section class="content">
     <nav><a href="<%= root_url %>">首頁</a><span>></span><a>最新消息</a></nav>
@@ -5,8 +11,10 @@
       <div class="left">
         <ul>
         <% @newses.each do | news | %>        	
-          <li class="<%= 'active' if news.id == @news.id %>"> <span><%= news.created_at.strftime('%Y年%m月%d日') %></span><br>
-            <a href="<%= news_path( news, :page => params[ :page ] ) %>"><%= news.title %></a></li>
+          <li class="<%= 'active' if news.id == @news.id %>">
+            <span><%= news.created_at.strftime('%Y年%m月%d日') %></span><br>
+            <a href="<%= news_path( news, :page => params[ :page ] ) %>"><%= news.title %></a>
+          </li>
         <% end %>
         </ul>
         <div class="page"> <%= paginate @newses, :window => 2 %> </div>        
@@ -33,3 +41,16 @@
     </div>
   </section>
 </article>
+
+<script>
+/* 防止 youtube 顯示最前*/
+$(function(){
+     $("iframe").each(function(){
+      $(this).parent('div').addClass('video-container');
+      var ifr_source = $(this).attr('src');
+      var wmode = "wmode=opaque";
+      if(ifr_source.indexOf('?') != -1) $(this).attr('src',ifr_source+'&'+wmode);
+      else $(this).attr('src',ifr_source+'?'+wmode);
+     });
+});
+</script>

@@ -1,9 +1,8 @@
 <!doctype html>
 <html>
 <head>
-<!--[if lt IE 9]>
-<script src="/js/html5.js"></script>
-<![endif]-->
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <meta charset="utf-8">
 <meta name="Robots" content="index,follow"/>
 <meta http-equiv="content-language" content="zh-TW" />
@@ -24,13 +23,21 @@
 <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
 <%= csrf_meta_tags %>
   
+<link rel="stylesheet" href="/css/bootstrap.min.css">
 <link rel="stylesheet" href="/css/reset.css">
 <link rel="stylesheet" href="/css/style.css">
 <link rel="stylesheet" href="/css/inside.css">
 <link rel="stylesheet" href="/css/colorbox.css">
+<!--[if lt IE 9]>
+<script src="/js/html5.js"></script>
+<link rel="stylesheet" href="/css/ie8.css">
+<![endif]-->
+
 <script type="text/javascript" src="/js/jquery-1.10.2.min.js"></script>
 <script type="text/javascript" src="/js/auto-full-height.min.js"></script>
-<script src="/js/lock.js"></script>
+<script src="/js/global.js"></script>
+<!--script src="/js/lock.js"></script-->
+
 <script>
 (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
 (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -41,6 +48,7 @@ ga('create', 'UA-48673246-1', 'yks.com.tw');
 ga('send', 'pageview');
 
 </script>
+
 <div id="fb-root"></div>
 <script>(function(d, s, id) {
   var js, fjs = d.getElementsByTagName(s)[0];
@@ -53,38 +61,84 @@ ga('send', 'pageview');
 </head>
 
 <body>
-
 <header _height="none">
   <section class="content">
     <h1><a href="<%= root_url %>" style="display:block;width:100%;height:100%"></a></h1>
-      <nav>        
-        <a href="<%= news_index_path %>">最新消息</a>
-        <a href="<%= page_pages_path( :page => 'about' ) %>">公司簡介</a>
-        <a href="<%= services_path %>">服務項目</a>
-        <a href="<%= new_ticket_path %>">聯絡誼光</a>
-        <a href="<%= chapters_path %>">保全百科</a>
-        <a href="<%= page_pages_path( :page => 'client' ) %>">我們的客戶</a>
-        <a href="<%= page_pages_path( :page => 'enterprise' ) %>">關係企業</a>
-        <a href="<%= root_url %>">回首頁</a>
-      </nav>
+    <nav id="mainMenu">        
+        <ul>
+          <li class="active"><a href="<%= news_index_path %>">最新消息</a></li>
+          <li>
+            <a href="<%= page_pages_path( :page => 'about' ) %>">公司簡介</a>
+            <div id="dropmenu">
+              <ul>
+                <li><a href="<%= page_pages_path( :page => 'about' ) %>">關於誼光</a></li>
+                <li><a href="<%= page_pages_path( :page => 'office' ) %>">服務據點</a></li>
+                <li><a href="<%= instructions_path %>">教育訓練</a></li>
+                <hr>
+                <li><a href="<%= prises_path %>">員工表揚</a></li>
+                <li><a href="<%= page_pages_path(:page => 'recruit') %>">人員招募</a></li>
+                <li><a href="<%= page_pages_path( :page => 'control' ) %>">管制中心</a> </li>
+              </ul>
+            </div>
+          </li>
+          <li><a href="<%= services_path %>">服務項目</a></li>
+          <li><a href="<%= new_ticket_path %>">聯絡誼光</a></li>
+          <li><a href="<%= chapters_path %>">保全百科</a></li>
+          <li><a href="<%= page_pages_path( :page => 'client' ) %>">我們的客戶</a></li>
+          <li><a href="<%= page_pages_path( :page => 'enterprise' ) %>">關係企業</a></li>
+          <li><a href="<%= root_url %>">回首頁</a></li>
+        </ul>
+    </nav>
   </section>
+  <button type="button" id="navbar-toggle" class="visible-xs-block">
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+  </button>
 </header>
 
 <%= yield %>
 
 <footer _height="none">
-        <section class="content"> <img src="/images/logo.png" width="158" height="40">
-        
-        
-          <p>
-            <a href="<%= news_index_path %>">最新消息</a>  │  <a href="<%= page_pages_path( :page => 'about' ) %>">關於誼光</a>  │  <a href="<%= page_pages_path( :page => 'office' ) %>">服務據點</a>  │  <a href="<%= instructions_path %>">教育訓練</a><br>
-            <a href="<%= prises_path %>">員工表揚</a>  │  <a href="<%= page_pages_path(:page => 'recruit') %>">人員招募</a>  │  <a href="<%= services_path %>">服務項目</a>  │  <a href="<%= new_ticket_path %>">聯絡誼光</a><br>
-            <a href="<%= chapters_path %>">保全百科</a>  │  <a href="<%= page_pages_path( :page => 'client' ) %>">我們的客戶</a>  │  <a href="<%= page_pages_path( :page => 'enterprise' ) %>">關係企業</a>  │  <a href="<%= page_pages_path( :page => 'control' ) %>">誼光管制中心</a> 
-            <br>
-            <br>
-            誼光保全股份有限公司 ‧ 誼光國際公寓大廈管理維護股份有限公司<br>
-            版權所有 © 2014 YKS. All Rights Reserved. </p>
-        </section>
-      </footer>
+  <section class="content">
+    <a class="tel" href="tel:0225073286"></a>
+    <img src="/images/logo.png" width="158" height="40">
+    <p>
+      <span class="hidden-xs">
+      <a href="<%= news_index_path %>">最新消息</a>  │  <a href="<%= page_pages_path( :page => 'about' ) %>">關於誼光</a>  │  <a href="<%= page_pages_path( :page => 'office' ) %>">服務據點</a>  │  <a href="<%= instructions_path %>">教育訓練</a><br>
+      <a href="<%= prises_path %>">員工表揚</a>  │  <a href="<%= page_pages_path(:page => 'recruit') %>">人員招募</a>  │  <a href="<%= services_path %>">服務項目</a>  │  <a href="<%= new_ticket_path %>">聯絡誼光</a><br>
+      <a href="<%= chapters_path %>">保全百科</a>  │  <a href="<%= page_pages_path( :page => 'client' ) %>">我們的客戶</a>  │  <a href="<%= page_pages_path( :page => 'enterprise' ) %>">關係企業</a>  │  <a href="<%= page_pages_path( :page => 'control' ) %>">誼光管制中心</a> 
+      </span>
+      <br class="hidden-xs">
+      <br class="hidden-xs">
+      <span class="block">誼光保全股份有限公司 ‧ </span>誼光國際公寓大廈管理維護股份有限公司<br>
+      版權所有 <span class="block">© 2015 YKS. All Rights Reserved.</span> 
+    </p>
+  </section>
+</footer>
+
+<!--[if lt IE 8]>
+<div id="hintBg">
+  <div id="hintText">
+    <h2>請更新您的瀏覽器</h2>
+    <p>
+    本網站提供 IE8 以上 / Chrome / Firefox 瀏覽器瀏覽，<br>
+    我們建議您更新您的瀏覽器，以便完整體驗網站效果。<br><br>
+    
+    請選擇以下瀏覽器下載：<br><br>
+    <a class="browser" href="http://windows.microsoft.com/zh-tw/internet-explorer/download-ie" title="前往下載最新版的 Internet Explorer" target="_blank">
+      <img src="images/browser_ie.png" alt="Internet Explorer">
+    </a>&nbsp;&nbsp;&nbsp;
+    <a class="browser" href="https://www.google.com.tw/chrome/browser/desktop/index.html" title="前往下載 Chrome" target="_blank">
+      <img src="images/browser_chrome.png" alt="Chrome">
+    </a>&nbsp;&nbsp;&nbsp;
+    <a class="browser" href="http://mozilla.com.tw/firefox/new/" title="前往下載 Firefox" target="_blank">
+      <img src="images/browser_firefox.png" alt="Firefox">
+    </a>
+    <a id="noChange" href="javascript:;">我不想更換瀏覽器</a>
+    </p>
+  </div>
+</div>
+<![endif]-->
 </body>
 </html>

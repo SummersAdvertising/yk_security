@@ -43,6 +43,7 @@ $(function(){
   <section class="content">
     <nav><a href="<%= root_url %>">首頁</a><span>></span><a href="<%= services_path %>">服務項目</a><span>></span><a><%= @service.title %></a></nav>
     <div class="inner">
+      <h3 class="visible-xs-block"><%= @service.title %>服務項目</h3>
       <div class="left">
         <h3><%= @service.title %>服務項目</h3>
         <ul>
@@ -52,13 +53,25 @@ $(function(){
         </ul>
       </div>
       <div class="right">
-      <a href="<%= services_path %>"  class="back">回到上一層</a>
+      <a href="<%= services_path %>" class="back hidden-xs">回到上一層</a>
        <p id="articleContent"></p>
       </div>
     </div>
   </section>
 </article>
 
+<div id="subMenu2" class="visible-xs-block">
+ <section class="content">
+      <nav>
+        <%= link_to '安全警衛', service_path(1), :class => ( 'active'  if params[ :id ] == '1') %>
+        <%= link_to '設備維護', service_path(2), :class => ( 'active'  if params[ :id ] == '2') %>
+        <%= link_to '行政庶務', service_path(3), :class => ( 'active'  if params[ :id ] == '3') %>
+        <%= link_to '清潔美化', service_path(4), :class => ( 'active'  if params[ :id ] == '4') %>
+        <%= link_to '叭叭房', service_path(5), :class => ( 'active'  if params[ :controller ] == 'babahomes') %>
+        <%= link_to '迷你倉', service_path(6), :class => ( 'active'  if params[ :controller ] == 'ministorages') %>
+      </nav>  
+  </section>
+</div>
 
 <input id="article_content" style="display:none;" type="text" value="<%= @service.article.content %>">
 <script>
@@ -86,4 +99,16 @@ $(function(){
       $(this).addClass("active");
     });
   });
+</script>
+
+<script>
+/* 防止 youtube 顯示最前*/
+$(function(){
+     $("iframe").each(function(){
+      var ifr_source = $(this).attr('src');
+      var wmode = "wmode=opaque";
+      if(ifr_source.indexOf('?') != -1) $(this).attr('src',ifr_source+'&'+wmode);
+      else $(this).attr('src',ifr_source+'?'+wmode);
+     });
+});
 </script>
