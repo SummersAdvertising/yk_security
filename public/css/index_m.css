@@ -9,6 +9,7 @@ body{background:#333;width: 100%;height: 100%;font:400 15px/1.7em 微軟正黑�
 a,a:hover,a:focus{font:400 15px/1.7em 微軟正黑體,Microsoft JhengHei;text-decoration:none;-webkit-transition:all ease .3s;-moz-transition:all ease .3s;outline:none;}
 .content{margin:0 auto;padding:0 10px;}
 img{max-width:100%;width: 100%;}
+.level{overflow: hidden;}
 
 /*-----------------------------------------------------------------------頁首---*/
 
@@ -76,7 +77,7 @@ aside#menu{display: none;}
 
 /*-----------------------------------------------------------------------計數器---*/
 
-#sitemeter{position:absolute;right:15px;color:#e91a22;left:auto;top:10px;display:block;z-index:900;width:42%;text-align: right;}
+#sitemeter{position:absolute;right:15px;color:#e91a22;left:auto;top:10px;display:block;z-index:900;width:42%;font-weight:700;text-align: right;}
 #sitemeter img{width:52px;}
 
 /*-----------------------------------------------------------------------舞台1---*/
@@ -102,7 +103,8 @@ aside#menu{display: none;}
 #news .slider{max-width: 480px;margin: 0 auto;}
 #news .bx-controls-direction{display: none;}
 #news .bx-wrapper .bx-viewport{height: 480px!important;}
-#news .col-sm-5{height: 200px;overflow: hidden;background:#FFF;padding:0;display:table-cell;vertical-align:middle;}
+#news .col-sm-5{height: 200px;overflow: hidden;background:#FFF;padding:0;position:relative;}
+#news .col-sm-5 img{position:absolute;top:50%;transform:translateY(-50%);-moz-transform:translateY(-50%);-webkit-transform:translateY(-50%);-o-transform:translateY(-50%);-ms-transform:translateY(-50%);}
 #news .col-sm-7{padding-top: 20px;height:300px;}
 #news .col-sm-7 h4 a{font-size: 1.3em;}
 
@@ -114,8 +116,13 @@ aside#menu{display: none;}
 #stage-3 h3{font:700 1.85em/1.3em 微軟正黑體,Microsoft JhengHei;}
 #stage-3>p{padding: 20px 0 30px 0;}
 #stage-3 .item{width:50%;float: left;padding:10px 15px;}
-#stage-3 .item h4{width:115px;height:115px;background:#107DB9;font:900 31px 微軟正黑體,Microsoft JhengHei;color:#fff;
+#stage-3 .item h4{width:115px;height:115px;font:900 31px 微軟正黑體,Microsoft JhengHei;color:#fff;
 border-radius:50%;padding:40px 0 0 0;margin:0 0 10px 0}
+#stage-3 #item-1 h4{background:url(../images/id-icon01.png) center center/cover no-repeat;}
+#stage-3 #item-2 h4{background:url(../images/id-icon02.png) center center/cover no-repeat;}
+#stage-3 #item-3 h4{background:url(../images/id-icon03.png) center center/cover no-repeat;}
+#stage-3 #item-4 h4{background:url(../images/id-icon04.png) center center/cover no-repeat;}
+#stage-3 #item-5 h4{background:url(../images/id-icon05.png) center center/cover no-repeat;}
 #stage-3 #item-5{clear:both;}
 
 /*-----------------------------------------------------------------------舞台4---*/

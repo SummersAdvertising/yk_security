@@ -61,12 +61,12 @@ $(document).ready(function(){
 	
 	/* ------------------------------------------------ link-mobile */
 	if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
-		$('body>footer .tel, #stage-1 .tel, #office a').click(function(){
+		$('body>footer .tel, #stage-1 .tel, #office .tel').click(function(){
 			return true;
 		});
 	}
 	else{
-		$('body>footer .tel, #stage-1 .tel, #office a').click(function(){
+		$('body>footer .tel, #stage-1 .tel, #office .tel').click(function(){
 			return false;
 		});
 	}

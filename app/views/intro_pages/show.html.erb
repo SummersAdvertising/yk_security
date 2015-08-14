@@ -28,3 +28,28 @@
 
 </div>
 
+<div id="subMenu2" class="visible-xs-block">
+ <section class="content">
+      <nav>
+        <%= link_to '安全警衛', service_path(1), :class => ( 'active'  if params[ :id ] == '1') %>
+        <%= link_to '設備維護', service_path(2), :class => ( 'active'  if params[ :id ] == '2') %>
+        <%= link_to '行政庶務', service_path(3), :class => ( 'active'  if params[ :id ] == '3') %>
+        <%= link_to '清潔美化', service_path(4), :class => ( 'active'  if params[ :id ] == '4') %>
+        <%= link_to '叭叭房', service_path(5), :class => ( 'active'  if params[ :controller ] == 'babahomes') %>
+        <%= link_to '迷你倉', service_path(6), :class => ( 'active'  if params[ :controller ] == 'ministorages') %>
+      </nav>  
+  </section>
+</div>
+
+<script>
+/* 防止 youtube 顯示最前*/
+$(function(){
+     $("iframe").each(function(){
+      $(this).parent('div').addClass('video-container');
+      var ifr_source = $(this).attr('src');
+      var wmode = "wmode=opaque";
+      if(ifr_source.indexOf('?') != -1) $(this).attr('src',ifr_source+'&'+wmode);
+      else $(this).attr('src',ifr_source+'?'+wmode);
+     });
+});
+</script>

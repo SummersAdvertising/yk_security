@@ -29,11 +29,13 @@
 }
 /*-----------------------------------------------------------------------服務據點---*/
 
-#office .grid { float: left; height: 60px; width: 180px; margin: 15px; font-size: 12px; line-height: 1.7em; color: #555 }
-#office .grid a,#office .grid a:hover, #office .grid a:focus{color:#000;font-size: 12px;cursor: default;}
+#office .grid { float: left; height: 60px; width: 220px; margin: 15px; font-size: 12px; line-height: 1.7em; color: #555 }
+#office .tel,#office .tel:hover, #office .grid .tel:focus{color:#000;font-size: 12px;cursor: default;}
 #office .grid b { font-size: 14px; color: #000 }
-#office .content { background: url(/images/of-bg.png) 55px bottom no-repeat }
-#office .inner { width: 630px; margin: 70px 0 0 360px }
+#office .content { background: url(/images/of-bg.png) 0 bottom no-repeat }
+#office .inner { width: 750px; margin: 70px 0 0 280px }
+#office address{position: relative;display: inline-block;}
+#office .map{display:inline-block;vertical-align:middle;margin-left:4px;width:15px;height:15px;background:url(../images/arrow.png) center center no-repeat;}
 
 @media (max-width: 1080px){
 	#office .content{padding:0;background-position: -10% bottom}
@@ -42,8 +44,9 @@
 @media (max-width: 899px){
 	#office .content{background:none;font-size:1em;}
 	#office .grid{float:none;}
-	#office .grid a,#office .grid a:hover, #office .grid a:focus{color:#000;font-size: 1em;cursor: pointer;}
+	#office .tel,#office .tel:hover, #office .grid .tel:focus{color:#000;font-size: 1em;cursor: pointer;}
 	#office .inner {padding:20px 0; }
+	#office .map{display: block;position: absolute;left:0;top:0;background:none;width:100%;}
 }
 /*-----------------------------------------------------------------------管制中心---*/
 
@@ -427,13 +430,12 @@ padding:15px 0;}
 #result a:hover{color:#2b8ed8;}
 
 @media (max-width: 899px){
-	#search th{display: block;width:100%!important;clear:both;}
+	#search th{display: block;width:100%\9;float:left\9;clear:both;}
 	#search td{width:50%!important;display: block;float:left;padding:10px 0;}
 	#search td:nth-child(2){padding-right: 10px;}
 	#search td:last-child{display: block;width:100%!important;clear:both;}
 	
-	#result tr{}
 	#result th{display:none;}
 	#result th:first-child{display:block;}
-	#result td{display:block;padding:4px 10px;}
+	#result td{display:block;width:100%\9;float:left\9;padding:4px 10px;}
 }

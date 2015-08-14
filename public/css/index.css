@@ -120,8 +120,15 @@ padding:25px 0 0 270px}
 
 #stage-3 .row{margin:0 auto;position:relative;max-width:900px;}
 #stage-3 .item{position:absolute;width:130px;top:250px}
-#stage-3 .item h4{width:115px;height:115px;background:#107DB9;font:900 31px 微軟正黑體,Microsoft JhengHei;color:#fff;
+#stage-3 .item h4{width:115px;height:115px;font:900 31px 微軟正黑體,Microsoft JhengHei;color:#fff;
 border-radius:50%;padding:40px 0 0 0;margin:0 0 10px 0}
+
+#stage-3 #item-1 h4{background:url(../images/id-icon01.png) center center no-repeat;background-size: cover;}
+#stage-3 #item-2 h4{background:url(../images/id-icon02.png) center center no-repeat;background-size: cover;}
+#stage-3 #item-3 h4{background:url(../images/id-icon03.png) center center no-repeat;background-size: cover;}
+#stage-3 #item-4 h4{background:url(../images/id-icon04.png) center center no-repeat;background-size: cover;}
+#stage-3 #item-5 h4{background:url(../images/id-icon05.png) center center no-repeat;background-size: cover;}
+
 #stage-3 #item-1{left:3%; top: 300px;}
 #stage-3 #item-2{left:23%; top: 300px;}
 #stage-3 #item-3{left:43%; top: 300px;}

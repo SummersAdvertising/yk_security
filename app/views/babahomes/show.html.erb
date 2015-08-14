@@ -38,7 +38,7 @@
 <script>
 /* 防止 youtube 顯示最前*/
 $(function(){
-     $(".embed-responsive-item").each(function(){
+     $("iframe").each(function(){
       $(this).parent('div').addClass('video-container');
       var ifr_source = $(this).attr('src');
       var wmode = "wmode=opaque";
