@@ -275,7 +275,7 @@ bottom:0;left:0;padding:10px 0 0 10px;height:45px;color:#fff;font:900 22px 微�
 #form .right>table td{padding:10px 0;position: relative;}
 #form .right label{font:400 15px 微軟正黑體,Microsoft JhengHei;}
 #form #form2 label{display: block;padding-bottom: 30px;}
-#form .right .text{width:100%;border:5px solid #FCEDBB;border-radius:5px;line-height: 24px;}
+#form .right .text{width:100%;border:5px solid #FCEDBB;border-radius:5px;padding:2px 6px;line-height: 24px;}
 #form .right .text.phone1,#form .right .text.phone3{width:13%;}
 #form .right .text.phone2{width:54%;}
 #form .right span.phone4{display:inline-block;width:8%;padding:0;text-align: center;}
@@ -302,7 +302,7 @@ bottom:0;left:0;padding:10px 0 0 10px;height:45px;color:#fff;font:900 22px 微�
 	#form .right label{font-size:.8em;}
 	#form #form2 label{padding-bottom: 20px;}
 	#form .right>table{max-width:100%;}
-	#form .right>table>tbody>tr>th{width:10%;text-align:right;padding:0 8px 0 0;}
+	#form .right>table>tbody>tr>th{width:10%;text-align:right;padding:4px 8px 0 0;vertical-align: top;}
 	#form .right>table>tbody>tr>td{width:90%;padding:3px 0;}
 	#form .right .text{border:3px solid #FCEDBB;border-radius:3px;}
 	#form .right em{font-size: .8em;position: static;display: block;text-align: right;padding-bottom: 10px;}
@@ -430,7 +430,7 @@ padding:15px 0;}
 #result a:hover{color:#2b8ed8;}
 
 @media (max-width: 899px){
-	#search th{display: block;width:100%\9;float:left\9;clear:both;}
+	#search th{display: block;width:100%;width:100%\9;float:left\9;clear:both;}
 	#search td{width:50%!important;display: block;float:left;padding:10px 0;}
 	#search td:nth-child(2){padding-right: 10px;}
 	#search td:last-child{display: block;width:100%!important;clear:both;}
