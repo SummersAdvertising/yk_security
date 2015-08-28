@@ -1,6 +1,10 @@
+$(window).ready(function(){
+	$('html,body').css({height:'100%',overflow:'hidden'});
+});
 $(window).load(function(){
 	/* ------------------------------------------------ loading */
 	$('#waiting').remove();
+	$('html,body').css({height:'auto',overflow:'auto'});
 
 
 	/* ------------------------------------------------ bxSlider */
@@ -65,7 +69,8 @@ $(window).load(function(){
 			top: $(document).height(),
 			right: '0px',
 			opacity: 1,
-			'z-index':'999'
+			'z-index':'999',
+			display: 'block'
 		});
 	}
 	function menu_mobile(){

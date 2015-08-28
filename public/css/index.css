@@ -1,7 +1,7 @@
 ﻿
 /*-----------------------------------------------------------------------全域---*/
 
-html{width: 100%;height: 100%; overflow-x: hidden;}
+html{width: 100%;height: 100%; /*overflow-x: hidden;*/}
 body.pace-running{overflow-y: hidden; }
 body{background:#333;width: 100%;height: 100%;}
 #waiting{width: 100%;height: 100%;background:url(/images/ajax-loader.gif) center center no-repeat rgba(0, 0, 0, 0.6);position: absolute;z-index: 5;}
@@ -45,7 +45,7 @@ aside #top{display:block;width:50px;height:45px;position:absolute;top:12px;left:
 }
 /*-----------------------------------------------------------------------頁身---*/
 
-.stage{position:relative}
+.stage{position:relative;}
 .level{position:absolute}
 .level-1{z-index:1}
 .level-2{z-index:2}
@@ -56,7 +56,7 @@ aside #top{display:block;width:50px;height:45px;position:absolute;top:12px;left:
 #stage-1{padding-top:40%}
 
 /*城市*/
-#stage-1 .level-1{top:0px;left:0px}
+#stage-1 .level-1{top:0px;left:0px;max-width: 100%;}
 
 /*標題*/
 #stage-1 .title{top:-20px;left:45%}
