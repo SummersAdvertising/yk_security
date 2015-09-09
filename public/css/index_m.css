@@ -1,7 +1,7 @@
 
 /*-----------------------------------------------------------------------全域---*/
 
-html{width: 100%;height: 100%; overflow-x: hidden;}
+html{width: 100%;height: 100%;}
 body.pace-running{overflow-y: hidden; }
 body{background:#333;width: 100%;height: 100%;font:400 15px/1.7em 微軟正黑體,Microsoft JhengHei;}
 #waiting{width: 100%;height: 100%;background:url(/images/ajax-loader.gif) center center no-repeat rgba(0, 0, 0, 0.6);position: absolute;z-index: 1200;}
@@ -10,7 +10,7 @@ a,a:hover,a:focus{font:400 15px/1.7em 微軟正黑體,Microsoft JhengHei;text-de
 .content{margin:0 auto;padding:0 10px;}
 img{max-width:100%;width: 100%;}
 .level{overflow: hidden;}
-
+#topBtn{position:fixed;bottom:5px;right:5px;z-index:900;display:block;width:47px;height:47px;background: url(/images/top.png) rgba(221,65,63,.43) center center/cover no-repeat;}
 /*-----------------------------------------------------------------------頁首---*/
 
 body > header{height:60px;background:url(../images/top.jpg) 0 0 repeat-x}
@@ -187,6 +187,7 @@ hr{border:none;border-bottom:1px solid #9D9D9D;max-width: 1024px;margin:0 auto;}
 #stage-10 .level-2{padding:0 15px;}
 #stage-10 .level-3{overflow: hidden;margin-top:-100px;}
 #stage-10 .level-3 img{max-width: none;width:130%;margin-left: 3%;}
+#stage-10 ul{list-style-type:disc;padding-left: 20px; }
 
 /*-----------------------------------------------------------------------舞台11---*/
 #stage-11{position: relative;padding:80px 0 140px 0;}

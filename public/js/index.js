@@ -19,6 +19,7 @@ $(window).load(function(){
 
 
 	/* ------------------------------------------------ parallax */
+	parallax_PC();
 	function parallax_PC(){
 	  $('div#stage-1 .level-1').parallax({ "start": 0, "stop":430, "stop_point": 230 });
 	  $('div#stage-1 .level-3').parallax({ "start": 0, "stop":350, "stop_point": -200 });
@@ -108,7 +109,7 @@ $(window).load(function(){
 		}else{
 			menu_PC();
 			if(parallaxToggle == 0){
-				parallax_PC();
+
 				parallaxToggle = 1;
 			}
 		}

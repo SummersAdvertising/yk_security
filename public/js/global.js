@@ -71,6 +71,23 @@ $(document).ready(function(){
 		});
 	}
 
+	/* ------------------------------------------------ 回頂端*/
+	var checkScroll = 0;
+	$('#topBtn').css({opacity:0});
+	var scrollY = $(window).scroll(function(){
+		if(scrollY.scrollTop() > 0 && checkScroll == 0){
+			$('#topBtn').stop(true,true).animate({opacity:1},600);
+			checkScroll = 1;	
+		}
+		if(scrollY.scrollTop() == 0){
+			$('#topBtn').stop(true,true).animate({opacity:0},400);
+			checkScroll = 0;
+		}
+    });
+	$('#topBtn').click(function(){
+		$('html, body').animate({scrollTop: 0}, 600);
+		return false;
+	});
 
 	/* ------------------------------------------------ ie8 */
 	$('#noChange').click(function(){

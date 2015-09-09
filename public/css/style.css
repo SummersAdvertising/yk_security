@@ -15,6 +15,7 @@ button,input,.btn,.btn:focus,.btn:active,.btn:active:active{outline:none;}
 }
 @media (max-width: 899px){
 	img{max-width:100%;}
+	#topBtn{position:fixed;bottom:5px;right:5px;z-index:900;display:block;width:47px;height:47px;background: url(/images/top.png) rgba(221,65,63,.43) center center/cover no-repeat;}
 }
 /*-----------------------------------------------------------------------頁首---*/
 
