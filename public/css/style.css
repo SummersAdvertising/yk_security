@@ -14,7 +14,7 @@ button,input,.btn,.btn:focus,.btn:active,.btn:active:active{outline:none;}
 	.content{padding:0 15px}
 }
 @media (max-width: 899px){
-	img{max-width:100%;width: 100%;}
+	img{max-width:100%;}
 }
 /*-----------------------------------------------------------------------頁首---*/
 
