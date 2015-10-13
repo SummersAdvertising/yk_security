@@ -18,7 +18,7 @@ $(function(){
   // if($(".left").height() > $(".right").height()){
   //   $(".right").height($(".left").height());
   // }
-  
+
   var $win = $(window).scroll(function(){
     var win_scrollTop = $win.scrollTop();
     if(win_scrollTop >= 235 && win_scrollTop <= $("footer").offset().top - 500){
@@ -27,10 +27,10 @@ $(function(){
     else if(win_scrollTop < 235  ){
      $('#service .left').css({'position':'relative',top:0,'margin-left':0})
     }
-    else{ 
+    else{
       $('#service .left').attr("style", "").css({'position':'absolute',bottom:0,'margin-left':0});
     }
-  }); 
+  });
 });
 </script>
 
@@ -69,13 +69,13 @@ $(function(){
         <%= link_to '清潔美化', service_path(7), :class => ( 'active'  if params[ :id ] == '7') %>
         <%= link_to '叭叭房', service_path(12), :class => ( 'active'  if params[ :controller ] == 'babahomes') %>
         <%= link_to '迷你倉', service_path(11), :class => ( 'active'  if params[ :controller ] == 'ministorages') %>
-      </nav>  
+      </nav>
   </section>
 </div>
 
 <input id="article_content" style="display:none;" type="text" value="<%= @service.article.content %>">
 <script>
-	$(document).ready(function() {	
+	$(document).ready(function() {
 		editor.output();
 
     $(".left ul li a").each(function(){
@@ -84,9 +84,9 @@ $(function(){
 
     var hash = window.location.hash;
     hash = hash.slice(8,hash.length);
-    
+
     var active_a = $("a[href='#"+ hash +"']");
-    
+
     if(active_a.length){
       active_a.parents("li:first").addClass("active");
     }

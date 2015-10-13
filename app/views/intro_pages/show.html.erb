@@ -35,9 +35,9 @@
         <%= link_to '設備維護', service_path(10), :class => ( 'active'  if params[ :id ] == '10') %>
         <%= link_to '行政庶務', service_path(8), :class => ( 'active'  if params[ :id ] == '8') %>
         <%= link_to '清潔美化', service_path(7), :class => ( 'active'  if params[ :id ] == '7') %>
-        <%= link_to '叭叭房', service_path(12), :class => ( 'active'  if params[ :controller ] == 'babahomes') %>
-        <%= link_to '迷你倉', service_path(11), :class => ( 'active'  if params[ :controller ] == 'ministorages') %>
-      </nav>  
+        <%= link_to '叭叭房', service_path(12), :class => ( 'active'  if params[ :page ] == 'babahome_services' || params[ :page] == "babahome_cards") %>
+        <%= link_to '迷你倉', service_path(11), :class => ( 'active'  if params[ :page ] == 'ministorage_services') %>
+      </nav>
   </section>
 </div>
 
