@@ -28,8 +28,8 @@
 	#praise .left .years{text-align:center;margin-top: -20px}
 }
 /*-----------------------------------------------------------------------服務據點---*/
-
-#office .grid { float: left; height: 60px; width: 220px; margin: 15px; font-size: 12px; line-height: 1.7em; color: #555 }
+#office .column{float:left;}
+#office .grid { height: 60px; width: 220px; margin: 15px; font-size: 12px; line-height: 1.7em; color: #555 }
 #office .tel,#office .tel:hover, #office .grid .tel:focus{color:#000;font-size: 12px;cursor: default;}
 #office .grid b { font-size: 14px; color: #000 }
 #office .content { background: url(/images/of-bg.png) 0 bottom no-repeat }
@@ -38,12 +38,16 @@
 #office .map{display:inline-block;vertical-align:middle;margin-left:4px;width:15px;height:15px;background:url(../images/arrow.png) center center no-repeat;}
 
 @media (max-width: 1080px){
-	#office .content{padding:0;background-position: -10% bottom}
-	#office .inner { width:100%;margin:0;padding:40px 0 0 28%; }
+	#office .content{padding:0 0 40px 20px;background-position: -15% bottom}
+	#office .inner { width:100%;margin:0;padding:40px 0 0 24%; }
+}
+@media (max-width: 1003px){
+	#office .content{background:none;}
+	#office .inner { padding:40px 40px 0 40px; }
 }
 @media (max-width: 899px){
-	#office .content{background:none;font-size:1em;}
-	#office .grid{float:none;}
+	#office .content{background:none;font-size:1em;padding:0;}
+	#office .column{float:none;}
 	#office .tel,#office .tel:hover, #office .grid .tel:focus{color:#000;font-size: 1em;cursor: pointer;}
 	#office .inner {padding:20px 0; }
 	#office .map{display: block;position: absolute;left:0;top:0;background:none;width:100%;}
