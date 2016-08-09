@@ -64,10 +64,10 @@ $(window).load(function(){
 		_diffY = 200, _diffX = 0,	// 距離右及下方邊距
 		_moveSpeed = 1200;	// 移動的速度
  
+
 	// 先把 #menu 移動到定點
 	function menu_PC(){
 		$ad.css({
-			top: $(document).height(),
 			right: '0px',
 			opacity: 1,
 			'z-index':'999',
@@ -80,12 +80,14 @@ $(window).load(function(){
 		});
 	}
  
+  var heightWindow = $(window).height();
 	// 幫網頁加上 scroll 及 resize 事件
 	$win.bind('scroll resize', function(){
 		var $this = $(this);
+		_height = $ad.height(),
 		// 控制 #abgne_float_ad 的移動
 		$ad.stop().animate({
-			top: $this.scrollTop() + $this.height() - _height - _diffY,
+			top: $this.scrollTop() + heightWindow - _height - _diffY,
 			right: '0px'
 		}, _moveSpeed);
 	}).scroll();	// 觸發一次 scroll()
@@ -93,26 +95,53 @@ $(window).load(function(){
 
 	/* ------------------------------------------------ all */
 	var parallaxToggle = 0;
+	var menuToggle = 0;
 	var widthWindow = $(window).width();
 	if(widthWindow < 883){
-		menu_mobile();
+			menu_mobile();
 	}else{
-		parallax_PC();
-		menu_PC();
+			parallax_PC();
+			menu_PC();
+			menuToggle = 1;
 	}
 
 	/*when resize*/
 	$(window).resize(function(){
 		widthWindow = $(window).width();
+		heightWindow = $(window).height();
 		if(widthWindow < 883){
-			menu_mobile();
+			if(menuToggle == 1){
+				menu_mobile();
+				menuToggle = 0;
+			}
 		}else{
-			menu_PC();
+			if(menuToggle == 0){
+				menu_PC();
+				menuToggle = 1;
+			}
 			if(parallaxToggle == 0){
-
 				parallaxToggle = 1;
 			}
 		}
 	});
 
+	/* ------------------------------------------------ lightbox*/
+	$('.watchBtn').click(function(){
+		$('body').addClass('open');
+		$('#caseVideo').addClass('open');
+		$('#videoBg').stop(true,true).fadeIn(300);
+		$('#videoContent').stop(true,true).delay(200).fadeIn(600);
+		$('#videoText').find('iframe').attr('src',$(this).attr('href'));
+		return false;
+	});
+	
+	$('#videoClose, #videoBg').click(function(){
+		$('#videoContent').stop(true,true).fadeOut(500,function(){
+			$('#caseVideo').removeClass('open');
+			$('#videoText').find('iframe').attr('src','');
+		});
+		$('#videoBg').stop(true,true).delay(200).fadeOut(500);
+		$('body').removeClass('open');
+		return false;
+	});
 });

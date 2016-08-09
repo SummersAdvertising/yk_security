@@ -4,7 +4,7 @@
 html{width: 100%;height: 100%;overflow-x: hidden;}
 body.pace-running{ }
 body{background:#333;width: 100%;height: 100%;}
-#waiting{width: 100%;height: 100%;background:url(/images/ajax-loader.gif) center center no-repeat rgba(0, 0, 0, 0.6);position: absolute;z-index: 5;}
+#waiting{width: 100%;height: 100%;background:url(/images/ajax-loader.gif) center center no-repeat rgba(0, 0, 0, 0.6);position: absolute;z-index: 1000;}
 #wrapper{font:400 15px/1.7em 微軟正黑體,Microsoft JhengHei;width: 100%;max-width:1280px;min-width:900px;margin:0 auto;
 background:#fff;position:relative}
 a,a:hover,a:focus{font:400 15px/1.7em 微軟正黑體,Microsoft JhengHei;text-decoration:none;
@@ -29,13 +29,13 @@ h1{position:absolute;top:10px;left:45px;z-index:5;}
 
 /*-----------------------------------------------------------------------側欄---*/
 
-aside{background:url(/images/id-03.png) 0 0 no-repeat;width:114px;height:342px;padding:65px 5px 0 5px;
+aside{border-radius:6px;background:url(/images/id-03.png) 0 0/contain repeat-x;width:150px;padding:65px 5px 0 5px;
 display: none;position: absolute;z-index:4}
 aside a{display:block;width:100%;border-bottom:1px solid #0D0D0D;border-top:1px solid #45484C;
 color:#fff;text-align:center;font:400 14px/1.7em 微軟正黑體,Microsoft JhengHei;padding:4px 0}
 aside a:hover,aside a:focus{background:#45484C;color:#fff;t}
 aside a span{color:#ffd200;font-size:9px;padding:0 5px 0 0}
-aside #top{display:block;width:50px;height:45px;position:absolute;top:12px;left:33px;border:0;background:none}
+aside #top{display:block;background:url(/images/id-03-top.png) 0 0 no-repeat;width:46px;height:42px;position:absolute;top:12px;left:50%;margin-left:-23px;border:0;}
 
 /*-----------------------------------------------------------------------計數器---*/
 
@@ -63,8 +63,8 @@ aside #top{display:block;width:50px;height:45px;position:absolute;top:12px;left:
 #stage-1 .title{top:-20px;left:45%}
 
 /*電話*/
-#stage-1 .phone{bottom:20%;left:45%;background:url(/images/id-08.png) 0 0 no-repeat;width:457px;height:95px;
-padding:25px 0 0 270px}
+#stage-1 .phone{bottom:7%;left:10%;background:url(/images/id-08.png) 0 0 no-repeat;width:457px;height:95px;
+padding:25px 0 0 270px;z-index: 9;}
 #stage-1 .phone .tel{cursor:default;}
 #stage-1 .phone a{text-indent:-9999px;display:block;background:url(/images/id-09.png) 0 0 no-repeat;width:169px;height:58px;}
 #stage-1 .phone a:hover{background:url(/images/id-09h.png) 0 0 no-repeat}
@@ -73,11 +73,18 @@ padding:25px 0 0 270px}
 #stage-1 .level-3{top:0px;left:10%}
 #stage-1 .level-3 img{max-width: none;}
 
+/*影片*/
+#stage-1 .level-4{position: absolute;bottom: 7%;left:50%;width: 35%;z-index: 10;}
+#stage-1 .level-4 img{width: 100%;}
 @media (max-width: 1280px){
 	#stage-1 .level-3{left:5%}
+	#stage-1 .phone{left:7%;bottom:0;}
+	#stage-1 .level-4{bottom: 0;}
 }
 @media (max-width: 1120px){
 	#stage-1 .level-3{left:auto;right:60%}
+	#stage-1 .phone{left:2%;bottom:-15%;}
+	#stage-1 .level-4{bottom:-15%;left:54%;}
 }
 /*-----------------------------------------------------------------------舞台2---*/
 

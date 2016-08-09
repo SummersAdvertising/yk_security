@@ -77,20 +77,21 @@ aside#menu{display: none;}
 
 /*-----------------------------------------------------------------------計數器---*/
 
-#sitemeter{position:absolute;right:15px;color:#e91a22;left:auto;top:10px;display:block;z-index:900;width:42%;font-weight:700;text-align: right;white-space: nowrap;}
+#sitemeter{position:absolute;right:15px;color:#e91a22;left:auto;top:10px;display:block;z-index:900;font-weight:700;text-align: right;white-space: nowrap;}
 #sitemeter img{width:52px;}
 
 /*-----------------------------------------------------------------------舞台1---*/
 #stage-1{position:relative;}
 #stage-1 .level-1{background:url(/images/id-04.jpg) 65% 0 no-repeat;padding-top:45%;}
-#stage-1 .title {padding:0 15px;}
-#stage-1 .title h1{font-size: 1.9em;color: #0076B8;max-width:285px;white-space: nowrap;}
+#stage-1 .title {padding:0 15px 90px 15px;}
+#stage-1 .title h1{font-size: 1.9em;color: #0076B8;max-width:285px;}
 #stage-1 .title h2{font-size: 1em;font-weight:700;color: #000;text-align: right;max-width:285px;padding-top:8px;}
 #stage-1 .level-3{position: absolute;top:20%!important;left:3%;width:54%;}
-#stage-1 .phone{position: absolute;padding:8px;background:url(/images/id-08_m.png) center center/contain repeat-x;border-radius:3px;width:40%;min-width:132px;top:15%;right:15px;}
+#stage-1 .phone{position: absolute;bottom:0;right:0;z-index:10;width:100%;padding:8px;background:url(/images/id-08_m.png) center center/contain repeat-x;border-radius:3px;}
 #stage-1 .phone h3{font-size:.8em;white-space: nowrap;padding-left:20px;background:url(/images/id-08_m_2.png) left center/contain no-repeat;}
 #stage-1 .phone .tel{color:#000;font:700 1.23em/1.7em Arial;white-space: nowrap;cursor:default;}
 #stage-1 .phone .contact{display:block;text-align:center;font-size:.9em;padding:2px 0;color:#FFF;background:#D50117;border-radius:4px;}
+#stage-1 .level-4{position: absolute;top:15%;right:15px;width: 42%;}
 
 /*-----------------------------------------------------------------------舞台2---*/
 #stage-2 {padding-bottom: 40px;}
@@ -199,7 +200,7 @@ hr{border:none;border-bottom:1px solid #9D9D9D;max-width: 1024px;margin:0 auto;}
 
 /*-----------------------------------------------------------------------頁尾---*/
 
-footer{background:#710908;color:#fff}
+footer{background:#710908;color:#fff;overflow: hidden;}
 footer .content{background:url(/images/footer2.png) 15px 40px no-repeat;padding:160px 15px 40px 15px;position:relative}
 footer img{width: auto;}
 footer p{color:#fff;}

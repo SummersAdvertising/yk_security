@@ -21,6 +21,7 @@
 <link rel="stylesheet" href="/css/jquery.bxslider.css">
 <link rel="stylesheet" href="/css/bootstrap.min.css">
 <link rel="stylesheet" href="/css/reset.css">
+<link rel="stylesheet" href="/css/video.css">
 <link rel="stylesheet" href="/css/index.css" media="(min-width:900px)">
 <link rel="stylesheet" href="/css/index_m.css" media="(max-width:899px)">
 <!--[if lt IE 9]>
@@ -112,8 +113,9 @@ ga('send', 'pageview');
 			<a href="#news">最新消息</a>
 			<a href="#anchor-1">人員素質</a>
 			<a href="#service">服務項目</a>
-			<a href="#anchor-2"><span>NEW</span>叭叭房</a>
-			<a href="#anchor-2"><span>NEW</span>迷你倉</a>
+			<a href="#anchor-2">叭叭房</a>
+			<a href="#anchor-2">迷你倉</a>
+			<a class="watchBtn" href="javascript:;"><span>NEW</span>熊安星大挑戰</a>
 			<a href="#stage-10">管制中心</a> <a href="#stage-11">新光集團</a>
 		</aside>
 		
@@ -172,7 +174,27 @@ ga('send', 'pageview');
 				<a class="contact" href="<%= new_ticket_path %>">由專人與您聯繫</a>
 			</div>
 			<div class="level-3 level col-sm-5 col-xs-7"><img src="/images/id-06.png"></div>
+			<div class="level-4">
+				<a class="watchBtn" href="https://www.youtube.com/embed/onLiezXYOx8" title="看熊安心如何為您服務"><img src="images/mainvideo.png" alt="看熊安心如何為您服務"></a>
+			</div>
 		</div>
+		<!-- activity -->
+		<div id="caseVideo">
+			<div id="videoBg"></div>
+			<div id="videoContent">
+				<div class="div-table">
+					<div class="row">
+						<div id="videoText">
+							<a id="videoClose" href="#" title="close"></a>
+							<div class="video-container">
+								<iframe src="" frameborder="0" allowfullscreen></iframe>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
 
 		<!--stage-2-->
 		<div id="stage-2" class="stage">
