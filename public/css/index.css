@@ -63,8 +63,8 @@ aside #top{display:block;background:url(/images/id-03-top.png) 0 0 no-repeat;wid
 #stage-1 .title{top:-20px;left:45%}
 
 /*電話*/
-#stage-1 .phone{bottom:7%;left:10%;background:url(/images/id-08.png) 0 0 no-repeat;width:457px;height:95px;
-padding:25px 0 0 270px;z-index: 9;}
+#stage-1 .phone{bottom:20%;left:45%;background:url(/images/id-08.png) 0 0 no-repeat;width:457px;height:95px;
+padding:25px 0 0 270px}
 #stage-1 .phone .tel{cursor:default;}
 #stage-1 .phone a{text-indent:-9999px;display:block;background:url(/images/id-09.png) 0 0 no-repeat;width:169px;height:58px;}
 #stage-1 .phone a:hover{background:url(/images/id-09h.png) 0 0 no-repeat}
@@ -73,18 +73,11 @@ padding:25px 0 0 270px;z-index: 9;}
 #stage-1 .level-3{top:0px;left:10%}
 #stage-1 .level-3 img{max-width: none;}
 
-/*影片*/
-#stage-1 .level-4{position: absolute;bottom: 7%;left:50%;width: 35%;z-index: 10;}
-#stage-1 .level-4 img{width: 100%;}
 @media (max-width: 1280px){
 	#stage-1 .level-3{left:5%}
-	#stage-1 .phone{left:7%;bottom:0;}
-	#stage-1 .level-4{bottom: 0;}
 }
 @media (max-width: 1120px){
 	#stage-1 .level-3{left:auto;right:60%}
-	#stage-1 .phone{left:2%;bottom:-15%;}
-	#stage-1 .level-4{bottom:-15%;left:54%;}
 }
 /*-----------------------------------------------------------------------舞台2---*/
 

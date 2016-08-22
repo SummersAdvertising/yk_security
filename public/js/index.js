@@ -124,14 +124,20 @@ $(window).load(function(){
 			}
 		}
 	});
-
+	
 	/* ------------------------------------------------ lightbox*/
+	$('body').addClass('open');
+	$('#caseVideo').addClass('open');
+	$('#videoBg').stop(true,true).fadeIn(300);
+	$('#videoContent').stop(true,true).delay(200).fadeIn(600);
+	$('#videoText').find('iframe').attr('src', 'https://www.youtube.com/embed/FbfUHsElW8s');
+	
 	$('.watchBtn').click(function(){
 		$('body').addClass('open');
 		$('#caseVideo').addClass('open');
 		$('#videoBg').stop(true,true).fadeIn(300);
 		$('#videoContent').stop(true,true).delay(200).fadeIn(600);
-		$('#videoText').find('iframe').attr('src',$(this).attr('href'));
+		$('#videoText').find('iframe').attr('src', 'https://www.youtube.com/embed/FbfUHsElW8s');
 		return false;
 	});
 	
