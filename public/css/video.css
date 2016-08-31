@@ -13,4 +13,6 @@ body.open{overflow:hidden}
 
 @media (max-width: 899px) {
 	#videoClose{width:17px;height:17px;right:15px;}
+	#videoContent{top:80px;margin:0 auto;}
+
 }

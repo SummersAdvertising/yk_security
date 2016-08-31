@@ -514,5 +514,33 @@ ga('send', 'pageview');
   </div>
 </div>
 <![endif]-->
+
+<script>
+/* ------------------------------------------------ lightbox*/
+	$('body').addClass('open');
+	$('#caseVideo').addClass('open');
+	$('#videoBg').stop(true,true).fadeIn(300);
+	$('#videoContent').stop(true,true).delay(200).fadeIn(600);
+	$('#videoText').find('iframe').attr('src', 'https://www.youtube.com/embed/FbfUHsElW8s');
+	
+	$('.watchBtn').click(function(){
+		$('body').addClass('open');
+		$('#caseVideo').addClass('open');
+		$('#videoBg').stop(true,true).fadeIn(300);
+		$('#videoContent').stop(true,true).delay(200).fadeIn(600);
+		$('#videoText').find('iframe').attr('src', 'https://www.youtube.com/embed/FbfUHsElW8s');
+		return false;
+	});
+	
+	$('#videoClose, #videoBg').click(function(){
+		$('#videoContent').stop(true,true).fadeOut(500,function(){
+			$('#caseVideo').removeClass('open');
+			$('#videoText').find('iframe').attr('src','');
+		});
+		$('#videoBg').stop(true,true).delay(200).fadeOut(500);
+		$('body').removeClass('open');
+		return false;
+	});
+</script>
 </body>
 </html>
