@@ -21,13 +21,13 @@
         <div id="box-2" class="box"><a href="http://www.yes123.com.tw/admin/job_refer_comp_info.asp?p_id=48018_89441178" target="_blank">在新視窗開啟 ></a>
         <iframe frameborder="0" allowtransparency="true" src="http://www.yes123.com.tw/admin/job_refer_comp_info.asp?p_id=48018_89441178 "> </iframe></div>
         <div id="box-3" class="box"><a href="http://www.518.com.tw/誼光保全股份有限公司-company-25175.html" target="_blank">在新視窗開啟 ></a>
-        <iframe frameborder="0" allowtransparency="true" src="http://www.518.com.tw/誼光保全股份有限公司-company-25175.html"> </iframe></div>
+        <iframe frameborder="0" allowtransparency="true" rel="http://www.518.com.tw/誼光保全股份有限公司-company-25175.html"> </iframe></div>
         <div id="box-4" class="box"><a href="http://www.1111.com.tw/%E8%AA%BC%E5%85%89%E4%BF%9D%E5%85%A8%E8%82%A1%E4%BB%BD%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8-%E6%89%BE%E5%B7%A5%E4%BD%9C%E6%A9%9F%E6%9C%83-35970553.htm" target="_blank">在新視窗開啟 ></a>
           <iframe frameborder="0" allowtransparency="true" src="http://www.1111.com.tw/%E8%AA%BC%E5%85%89%E4%BF%9D%E5%85%A8%E8%82%A1%E4%BB%BD%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8-%E6%89%BE%E5%B7%A5%E4%BD%9C%E6%A9%9F%E6%9C%83-35970553.htm"> </iframe></div>
         <div id="box-5" class="box"><a href="http://www.taiwanjobs.gov.tw/Internet/jobwanted/company_desc.aspx?EMPLOYER_ID=17744&BRANCH_ID=" target="_blank">在新視窗開啟 ></a>
         <iframe frameborder="0" allowtransparency="true" src="http://www.taiwanjobs.gov.tw/Internet/jobwanted/company_desc.aspx?EMPLOYER_ID=17744&BRANCH_ID="> </iframe></div>
       </div>
-      
+
       <!--******************************* mobile show-->
       <ul id="tab-m" class="visible-xs-block">
           <li>
@@ -53,17 +53,25 @@
 <div id="subMenu" class="visible-xs-block">
   <%= render :partial => 'layouts/intro_menu' %>
 </div>
-
 <script>
-$(function(){ 
+$(function(){
   var _showTab = 0;
-  var $defaultLi = $('#tab li').eq(_showTab).addClass('active');  
-  $($defaultLi.find('a').attr('href')).siblings().hide();  
-  $('#tab li').click(function() {   
-    var $this = $(this),
-      _clickTab = $this.find('a').attr('href');   
+  var $defaultLi = $('#tab li').eq(_showTab).addClass('active');
+  $frame = $($defaultLi.find('a').attr('href'))
+  $frame.siblings().hide();
+  $frame.attr('src', $frame.attr('rel'))
+  $frame.attr('src')
+  $('#tab li').click(function() {
+    var $this = $(this), _clickTab = $this.find('a').attr('href');
     $this.addClass('active').siblings('.active').removeClass('active');
-    $(_clickTab).stop(false, true).fadeIn(300).siblings().hide(); 
+    $(_clickTab).stop(false, true).fadeIn(300).siblings().hide();
+    $iframe = $(_clickTab).find('iframe')
+    var rel = $iframe.attr('rel')
+    console.log(rel)
+    if (rel != undefined) {
+      window.open(rel)
+    }
+    // $iframe.attr('src', $iframe.attr('rel'))
     return false;
   }).find('a').focus(function(){
     this.blur();
