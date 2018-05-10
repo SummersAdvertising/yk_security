@@ -140,7 +140,7 @@ border-radius:50%;padding:40px 0 0 0;margin:0 0 10px 0}
 
 /*-----------------------------------------------------------------------舞台4---*/
 
-#stage-4{height:730px}
+#stage-4{height:730px; overflow: hidden;}
 #stage-4 .text{width:645px;right:190px;top:20px;}
 #stage-4 .text h3{font:900 48px/1.7em 微軟正黑體,Microsoft JhengHei;}
 #stage-4 .text p{font:400 22px/1.7em 微軟正黑體,Microsoft JhengHei;}
