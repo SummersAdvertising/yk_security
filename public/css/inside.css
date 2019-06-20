@@ -29,11 +29,11 @@
 }
 /*-----------------------------------------------------------------------服務據點---*/
 #office .column{float:left;}
-#office .grid { height: 60px; width: 220px; margin: 15px; font-size: 12px; line-height: 1.7em; color: #555 }
+#office .grid { height: 60px; width: 230px; margin: 15px; font-size: 12px; line-height: 1.7em; color: #555 }
 #office .tel,#office .tel:hover, #office .grid .tel:focus{color:#000;font-size: 12px;cursor: default;}
 #office .grid b { font-size: 14px; color: #000 }
 #office .content { background: url(/images/of-bg.png) 0 bottom no-repeat }
-#office .inner { width: 750px; margin: 70px 0 0 280px }
+#office .inner { width: 780px; margin: 70px 0 0 280px }
 #office address{position: relative;display: inline-block;}
 #office .map{display:inline-block;vertical-align:middle;margin-left:4px;width:15px;height:15px;background:url(../images/arrow.png) center center no-repeat;}
 
