@@ -82,8 +82,7 @@ GEM
     meta-tags (2.0.0)
       actionpack (>= 3.0.0)
     mime-types (1.25.1)
-    mini_magick (3.7.0)
-      subexec (~> 0.2.1)
+    mini_magick (4.9.5)
     minitest (4.7.5)
     multi_json (1.8.2)
     mysql2 (0.3.13)
@@ -147,7 +146,6 @@ GEM
       net-scp (>= 1.1.2)
       net-ssh
       term-ansicolor
-    subexec (0.2.3)
     term-ansicolor (1.2.2)
       tins (~> 0.8)
     therubyracer (0.11.4)
