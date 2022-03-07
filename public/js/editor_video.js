@@ -85,13 +85,13 @@ editor.video = {
 		if(video.provider){
 			switch(video.provider){
 				case "vimeo":
-				var sourceLink = "http://player.vimeo.com/video/";
+				var sourceLink = "https://player.vimeo.com/video/";
 				var code = /[a-zA-Z0-9\?\.\:]+\/([a-zA-Z0-9_\-]+)&?.*/.exec(link)[1];
 				video.embedcode = sourceLink + code;
 				break;
 				
 				case "youtube":
-				var sourceLink = "http://www.youtube.com/embed/";
+				var sourceLink = "https://www.youtube.com/embed/";
 				var code = /[a-zA-Z0-9\?\.\:\/&=]+v=([a-zA-Z0-9_\-]+)&?.*/.exec(link)[1];
 				video.embedcode = sourceLink + code;
 				break;
